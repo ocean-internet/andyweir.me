@@ -18,7 +18,7 @@ Profile.propTypes = {
   profileImage:    PropTypes.oneOfType(
     [PropTypes.string, PropTypes.shape({ fluid: fluidObject })]),
   backgroundImage: PropTypes.string,
-  content:         PropTypes.string.isRequired,
+  content:         PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   work:            PropTypes.string,
   twitter:         PropTypes.string,
   linkedin:        PropTypes.string,
@@ -43,7 +43,7 @@ function Profile ({ title, profileImage, backgroundImage, content, work, twitter
     : null
 
   return (
-    <section Tag="section" className={profile} style={style}>
+    <section className={profile} style={style}>
       <header>
         <h1>{title}</h1>
         {profileImage && <Image className={profileImageStyle}

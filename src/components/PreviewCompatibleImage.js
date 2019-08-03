@@ -6,7 +6,7 @@ import { fluidObject } from '../prop-types/gatsby-image';
 export default PreviewCompatibleImage;
 
 PreviewCompatibleImage.propTypes = {
-    image: PropTypes.oneOf([PropTypes.string, PropTypes.shape({ fluid: fluidObject })]).isRequired,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ fluid: fluidObject })]).isRequired,
     alt: PropTypes.string,
     className: PropTypes.string,
 };
