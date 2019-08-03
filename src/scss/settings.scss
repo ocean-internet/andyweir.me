@@ -1,0 +1,54 @@
+$primary: #05025d;
+$secondary: #73c327;
+$ink: #333;
+$chalk: #fff;
+
+$lineHeight-s: 1.2;
+$lineHeight-m: 1.4;
+$lineHeight-l: 1.6;
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oswald|Roboto&display=swap');
+$sansFont: 'Oswald', sans-serif;
+$serifFont: 'Noto Serif', serif;
+$labelFont: 'Roboto', sans-serif;
+
+$fontXXLarge: 2rem;
+$fontXLarge: 1.5rem;
+$fontLarge: 1.125rem;
+$fontBase: 16px;
+$fontSmall: 0.8125rem;
+$fontXSmall: 0.0625rem;
+$fontXXSmall: 0.5625rem;
+
+$gutter-s: 0.25rem;
+$gutter-m: 1rem;
+$gutter-l: 1.75rem;
+
+$gutter-0-s: 0 $gutter-m;
+$gutter-0-m: 0 $gutter-m;
+$gutter-0-l: 0 $gutter-l;
+
+$gutter-s-0: $gutter-s 0;
+$gutter-s-m: $gutter-s $gutter-m;
+$gutter-s-l: $gutter-s $gutter-l;
+
+$gutter-m-0: $gutter-m 0;
+$gutter-m-s: $gutter-m $gutter-s;
+$gutter-m-l: $gutter-m $gutter-l;
+
+$gutter-l-0: $gutter-l 0;
+$gutter-l-s: $gutter-l $gutter-s;
+$gutter-l-m: $gutter-l $gutter-m;
+
+$screenLarge: (1200px/$fontBase)+2rem;
+$mediaLarge: screen and (min-width: $screenLarge);
+
+$card-radius: 0.1rem;
+$card-0: 0 1px  1px  rgba($ink, 0.06), 0 1px  1px  rgba($ink,0.12);
+$card-1: 0 1px  3px  rgba($ink, 0.12), 0 1px  2px  rgba($ink,0.24);
+$card-2: 0 3px  6px  rgba($ink,0.16),  0 3px  6px  rgba($ink,0.23);
+$card-3: 0 10px 20px rgba($ink,0.19),  0 6px  6px  rgba($ink,0.23);
+$card-4: 0 14px 28px rgba($ink,0.25),  0 10px 10px rgba($ink,0.22);
+$card-5: 0 19px 38px rgba($ink,0.30),  0 15px 12px rgba($ink,0.22);
+
+$captionOpacity: 0.75;

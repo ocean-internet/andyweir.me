@@ -1,0 +1,30 @@
+@import "settings";
+
+@mixin font-xxl {
+    font-size: $fontXXLarge;
+    line-height: $lineHeight-m;
+}
+@mixin font-xl {
+    font-size: $fontXLarge;
+    line-height: $lineHeight-m;
+}
+@mixin font-l {
+    font-size: $fontLarge;
+    line-height: $lineHeight-m;
+}
+@mixin font-b {
+    font-size: $fontBase;
+    line-height: $lineHeight-m;
+}
+@mixin font-s {
+    font-size: $fontSmall;
+    line-height: $lineHeight-m;
+}
+@mixin font-xs {
+    font-size: $fontXSmall;
+    line-height: $lineHeight-m;
+}
+@mixin font-xxs {
+    font-size: $fontXXSmall;
+    line-height: $lineHeight-m;
+}

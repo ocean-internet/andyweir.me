@@ -1,0 +1,17 @@
+@import "settings";
+@import "transition";
+
+@mixin link($color:$primary) {
+    text-decoration: initial;
+    color: $color;
+    &:hover, &:active {
+        @include transition(color);
+        color: darken($color, 10%);
+    }
+}
+
+@mixin plainLink($color:$ink) {
+    &, &:hover {
+        color: $color;
+    }
+}

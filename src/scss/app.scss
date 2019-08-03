@@ -1,0 +1,38 @@
+@import "~normalize.css";
+@import "settings";
+@import "link";
+@import "fonts";
+html {
+    font-family: $serifFont;
+    font-size:   $fontBase;
+    line-height: $lineHeight-m;
+    color:       $ink;
+    background:  $chalk;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+        font-family: $sansFont;
+        line-height: $lineHeight-l;
+        text-transform: uppercase;
+    }
+
+    #___gatsby > * {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    * {
+        outline: none;
+    }
+
+    h1 {
+        @include font-xl;
+        margin: $gutter-m 0 $gutter-s;
+    }
+
+    a {
+        @include link;
+        font-family: $labelFont;
+    }
+}

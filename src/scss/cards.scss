@@ -1,0 +1,56 @@
+@import "settings";
+@import "transition";
+
+@mixin card-0 {
+    border-radius: $card-radius;
+    box-shadow: $card-0;
+    @include transition($style:box-shadow);
+
+    &:hover {
+        box-shadow: $card-1;
+    }
+}
+
+@mixin card-1 {
+    border-radius: $card-radius;
+    box-shadow: $card-1;
+    @include transition($style:box-shadow);
+
+    &:hover {
+        box-shadow: $card-2;
+    }
+}
+
+@mixin card-2 {
+    border-radius: $card-radius;
+    box-shadow: $card-2;
+    @include transition($style:box-shadow);
+
+    &:hover {
+        box-shadow: $card-3;
+    }
+}
+
+@mixin card-3 {
+    border-radius: $card-radius;
+    box-shadow: $card-3;
+    @include transition($style:box-shadow);
+
+    &:hover {
+        box-shadow: $card-4;
+    }
+}
+@mixin card-4 {
+    border-radius: $card-radius;
+    box-shadow: $card-4;
+    @include transition($style:box-shadow);
+
+    &:hover {
+        box-shadow: $card-5;
+    }
+}
+@mixin card-5 {
+    border-radius: $card-radius;
+    box-shadow: $card-5;
+    @include transition($style:box-shadow);
+}
