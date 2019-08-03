@@ -28,14 +28,15 @@ collections:
         label: "Profile Partial"
         name: "profile"
         fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "profile-partial"}
           - {label: "Title", name: title, widget: string}
           - {label: "Profile Image", name: profileImage, widget: image}
           - {label: "Background Image", name: backgroundImage, widget: image}
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Work Twitter", name: work, widget: string}
           - {label: "Personal Twitter", name: twitter, widget: string}
-          - {label: "LinkedIn", name: linkedin, widget: string}
-          - {label: "GitHub", name: github, widget: string}
+          - {label: "Personal LinkedIn", name: linkedin, widget: string}
+          - {label: "Personal GitHub", name: github, widget: string}
 
   - name: "pages"
     label: "Pages"

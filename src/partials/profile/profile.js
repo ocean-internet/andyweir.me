@@ -1,3 +1,4 @@
+import Content             from "../../components/Content"
 import Image               from "../../components/PreviewCompatibleImage"
 import React               from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -14,7 +15,7 @@ export default Profile
 
 Profile.propTypes = {
   title:           PropTypes.string.isRequired,
-  profileImage:    PropTypes.oneOf(
+  profileImage:    PropTypes.oneOfType(
     [PropTypes.string, PropTypes.shape({ fluid: fluidObject })]),
   backgroundImage: PropTypes.string,
   content:         PropTypes.string.isRequired,
@@ -22,6 +23,7 @@ Profile.propTypes = {
   twitter:         PropTypes.string,
   linkedin:        PropTypes.string,
   github:          PropTypes.string,
+  contentComponent: PropTypes.func,
 }
 
 Profile.defaultProps = {
@@ -33,9 +35,9 @@ Profile.defaultProps = {
   github:          null,
 }
 
-function Profile ({ title, profileImage, backgroundImage, content, work, twitter, linkedin, github }) {
+function Profile ({ title, profileImage, backgroundImage, content, work, twitter, linkedin, github, contentComponent  }) {
 
-  console.log({ title, profileImage, backgroundImage, content, work, twitter, linkedin, github });
+  const Description = contentComponent || Content;
 
   const style = backgroundImage ? { backgroundImage: `url(${backgroundImage})` }
     : null
@@ -48,7 +50,7 @@ function Profile ({ title, profileImage, backgroundImage, content, work, twitter
                                 image={profileImage}
                                 alt={title}/>}
       </header>
-      <section dangerouslySetInnerHTML={{ __html: content }}/>
+      <Description content={content} />
       <nav>
         {work && (
           <a href={`https://twitter.com/${work}`}>
