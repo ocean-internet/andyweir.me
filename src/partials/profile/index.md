@@ -9,5 +9,5 @@ linkedin: andyrlweir
 github: OceanInternet
 ---
 I'm Andy Weir,
-a software engineer living the dream in
+a full stack software engineer living the dream in
 [Cornwall](https://www.google.com/maps/place/Cornwall/)
