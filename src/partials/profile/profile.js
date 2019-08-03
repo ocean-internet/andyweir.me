@@ -1,85 +1,88 @@
-import Content             from "../../components/Content"
-import Image               from "../../components/PreviewCompatibleImage"
-import React               from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBriefcase }     from "@fortawesome/free-solid-svg-icons"
 import {
-  faTwitter, faLinkedin, faGithub,
-}                          from "@fortawesome/free-brands-svg-icons"
-import { fluidObject }     from "../../prop-types/gatsby-image"
+    faGithub, faLinkedin, faTwitter,
+}                          from '@fortawesome/free-brands-svg-icons';
+import { faBriefcase }     from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import Content             from '../../components/Content';
+import Image               from '../../components/PreviewCompatibleImage';
+import { fluidObject }     from '../../prop-types/gatsby-image';
 
-import { profile, profileImageStyle } from "./styles.module.scss"
-import PropTypes                      from "prop-types"
+import { profile, profileImageStyle } from './styles.module.scss';
 
-export default Profile
+const Profile = ({ title, profileImage, backgroundImage, content, work, twitter, linkedin, github, contentComponent }) => {
+
+    const Description = contentComponent || Content;
+
+    const style = backgroundImage
+        ? { backgroundImage: `url(${backgroundImage})` } : null;
+
+    return (
+        <section className={profile} style={style}>
+            <header>
+                <h1>{title}</h1>
+                {profileImage && <Image className={profileImageStyle}
+                                        image={profileImage}
+                                        alt={title}/>}
+            </header>
+            <Description content={content}/>
+            <nav>
+                {work && (
+                    <a href={`https://twitter.com/${work}`}>
+                        <FontAwesomeIcon icon={faBriefcase}
+                                         fixedWidth
+                                         size="2x"
+                                         title={work}/>
+                    </a>)}
+                {twitter && (
+                    <a href={`https://twitter.com/${twitter}`}>
+                        <FontAwesomeIcon icon={faTwitter}
+                                         fixedWidth
+                                         size="2x"
+                                         title={twitter}/>
+                    </a>)}
+                {linkedin && (
+                    <a href={`https://linkedin.com/in/${linkedin}`}>
+                        <FontAwesomeIcon icon={faLinkedin}
+                                         fixedWidth
+                                         size="2x"
+                                         title={linkedin}/>
+                    </a>)}
+                {github && (
+                    <a href={`https://github.com/${github}`}>
+                        <FontAwesomeIcon icon={faGithub}
+                                         fixedWidth
+                                         size="2x"
+                                         title={github}/>
+                    </a>)}
+            </nav>
+        </section>);
+};
 
 Profile.propTypes = {
-  title:           PropTypes.string.isRequired,
-  profileImage:    PropTypes.oneOfType(
-    [PropTypes.string, PropTypes.shape({ fluid: fluidObject })]),
-  backgroundImage: PropTypes.string,
-  content:         PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-  work:            PropTypes.string,
-  twitter:         PropTypes.string,
-  linkedin:        PropTypes.string,
-  github:          PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+    title:            PropTypes.string.isRequired,
+    profileImage:     PropTypes.oneOfType(
+        [PropTypes.string, PropTypes.shape({ fluid: fluidObject })]),
+    backgroundImage:  PropTypes.string,
+    content:          PropTypes.oneOfType(
+        [PropTypes.string, PropTypes.object]).isRequired,
+    work:             PropTypes.string,
+    twitter:          PropTypes.string,
+    linkedin:         PropTypes.string,
+    github:           PropTypes.string,
+    contentComponent: PropTypes.func,
+};
 
 Profile.defaultProps = {
-  profileImage:    null,
-  backgroundImage: null,
-  work:            null,
-  twitter:         null,
-  linkedin:        null,
-  github:          null,
-}
+    profileImage:     null,
+    backgroundImage:  null,
+    work:             null,
+    twitter:          null,
+    linkedin:         null,
+    github:           null,
+    contentComponent: null,
+};
 
-function Profile ({ title, profileImage, backgroundImage, content, work, twitter, linkedin, github, contentComponent  }) {
 
-  const Description = contentComponent || Content;
-
-  const style = backgroundImage ? { backgroundImage: `url(${backgroundImage})` }
-    : null
-
-  return (
-    <section className={profile} style={style}>
-      <header>
-        <h1>{title}</h1>
-        {profileImage && <Image className={profileImageStyle}
-                                image={profileImage}
-                                alt={title}/>}
-      </header>
-      <Description content={content} />
-      <nav>
-        {work && (
-          <a href={`https://twitter.com/${work}`}>
-            <FontAwesomeIcon icon={faBriefcase}
-                             fixedWidth
-                             size="2x"
-                             title={work}/>
-          </a>)}
-        {twitter && (
-          <a href={`https://twitter.com/${twitter}`}>
-            <FontAwesomeIcon icon={faTwitter}
-                             fixedWidth
-                             size="2x"
-                             title={twitter}/>
-          </a>)}
-        {linkedin && (
-          <a href={`https://linkedin.com/in/${linkedin}`}>
-            <FontAwesomeIcon icon={faLinkedin}
-                             fixedWidth
-                             size="2x"
-                             title={linkedin}/>
-          </a>)}
-        {github && (
-          <a href={`https://github.com/${github}`}>
-            <FontAwesomeIcon icon={faGithub}
-                             fixedWidth
-                             size="2x"
-                             title={github}/>
-          </a>)}
-      </nav>
-    </section>)
-}
+export default Profile;

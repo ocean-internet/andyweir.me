@@ -7,6 +7,7 @@ const gatsbySourceFilesystemImages = require('./gatsby/source-filesystem-images'
 const gatsbyTransformerRemark = require('./gatsby/transformer-remark');
 const gatsbyPluginNetlifyCms = require('./gatsby/plugin-netlify-cms');
 const gatsbyPluginManifest = require('./gatsby/plugin-manifest');
+const developMiddleware = require('./gatsby/develop-middleware');
 
 module.exports = {
     siteMetadata,
@@ -27,4 +28,5 @@ module.exports = {
         // make sure to keep "gatsby-plugin-netlify" last in the array
         'gatsby-plugin-netlify',
     ],
+    // developMiddleware,
 };
