@@ -17,7 +17,7 @@ function TalkPage({ data }) {
     console.log({ talk });
 
     const { content, frontmatter } = talk;
-    const { title, author, image, summary } = frontmatter;
+    const { title, youtube, summary } = frontmatter;
 
     const seoProps = {
         title,
@@ -26,9 +26,8 @@ function TalkPage({ data }) {
 
     const props = {
         title,
-        author,
-        image,
         summary,
+        youtube,
         content,
         contentComponent: HTMLContent,
     };
