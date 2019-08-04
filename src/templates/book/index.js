@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby';
-import React       from 'react';
-import BookPage    from './book-page';
+import React from 'react';
+import BookPage from './book-page';
 
-export {default as BookPage} from './book-page';
-export {default as BookTemplate} from './book-template';
+export { default as BookPage } from './book-page';
+export { default as BookTemplate } from './book-template';
 
-export default props => <BookPage {...props}/>
+export default props => <BookPage {...props} />;
 
 export const bookPageQuery = graphql`
     query BookPageByID($id: String!) {

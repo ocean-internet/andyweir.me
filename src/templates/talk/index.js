@@ -1,11 +1,11 @@
-import { graphql }               from 'gatsby';
-import React                     from 'react';
-import TalkPage                  from './talk-page';
+import { graphql } from 'gatsby';
+import React from 'react';
+import TalkPage from './talk-page';
 
-export {default as TalkPage} from './talk-page';
-export {default as TalkTemplate} from './talk-template';
+export { default as TalkPage } from './talk-page';
+export { default as TalkTemplate } from './talk-template';
 
-export default props => <TalkPage {...props}/>;
+export default props => <TalkPage {...props} />;
 
 export const talkPageQuery = graphql`
     query TalkTalkByID($id: String!) {

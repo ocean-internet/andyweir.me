@@ -1,16 +1,15 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import BookTemplate from '../../templates/book/book-template';
 
 export default BookPreview;
 
 BookPreview.propTypes = {
-    entry:     PropTypes.shape({ getIn: PropTypes.func }),
+    entry: PropTypes.shape({ getIn: PropTypes.func }),
     widgetFor: PropTypes.func,
 };
 
 function BookPreview({ entry, widgetFor }) {
-
     const props = {
         title: entry.getIn(['data', 'title']),
         author: entry.getIn(['data', 'author']),
@@ -19,5 +18,5 @@ function BookPreview({ entry, widgetFor }) {
         content: widgetFor('body'),
     };
 
-    return <BookTemplate {...props}/>;
+    return <BookTemplate {...props} />;
 }

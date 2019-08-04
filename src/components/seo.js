@@ -1,24 +1,24 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import PropTypes                   from 'prop-types';
-import React                       from 'react';
-import Helmet                      from 'react-helmet';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
 
 export default SEO;
 
 SEO.propTypes = {
     summary: PropTypes.string,
-    lang:    PropTypes.string,
-    meta:    PropTypes.arrayOf(PropTypes.object),
-    title:   PropTypes.string.isRequired,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string.isRequired,
 };
 
 SEO.defaultProps = {
-    lang:    `en`,
-    meta:    [],
+    lang: `en`,
+    meta: [],
     summary: ``,
 };
 
-function SEO ({ summary: description, lang, meta, title }) {
+function SEO({ summary: description, lang, meta, title }) {
     const { site } = useStaticQuery(graphql`
         query {
             site {
@@ -34,47 +34,45 @@ function SEO ({ summary: description, lang, meta, title }) {
     const metaDescription = description || site.siteMetadata.description;
     const defautMeta = [
         {
-            name:    `description`,
+            name: `description`,
             content: metaDescription,
         },
         {
             property: `og:title`,
-            content:  title,
-        },
-        {
-            property: `og:description`,
-            content:  metaDescription,
-        },
-        {
-            property: `og:type`,
-            content:  `website`,
-        },
-        {
-            name:    `twitter:card`,
-            content: `summary`,
-        },
-        {
-            name:    `twitter:creator`,
-            content: site.siteMetadata.author,
-        },
-        {
-            name:    `twitter:title`,
             content: title,
         },
         {
-            name:    `twitter:description`,
+            property: `og:description`,
+            content: metaDescription,
+        },
+        {
+            property: `og:type`,
+            content: `website`,
+        },
+        {
+            name: `twitter:card`,
+            content: `summary`,
+        },
+        {
+            name: `twitter:creator`,
+            content: site.siteMetadata.author,
+        },
+        {
+            name: `twitter:title`,
+            content: title,
+        },
+        {
+            name: `twitter:description`,
             content: metaDescription,
         },
     ];
 
     const props = {
         htmlAttributes: { lang },
-        title:          title,
-        titleTemplate:  `%s | ${site.siteMetadata.title}`,
-        meta: defautMeta.concat(meta)
+        title: title,
+        titleTemplate: `%s | ${site.siteMetadata.title}`,
+        meta: defautMeta.concat(meta),
     };
 
-    return (
-        <Helmet {...props}/>);
-
+    return <Helmet {...props} />;
 }

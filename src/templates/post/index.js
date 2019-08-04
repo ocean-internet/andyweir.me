@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby';
-import React       from 'react';
-import PostPage    from './post-page';
+import React from 'react';
+import PostPage from './post-page';
 
-export {default as PostPage} from './post-page';
-export {default as PostTemplate} from './post-template';
+export { default as PostPage } from './post-page';
+export { default as PostTemplate } from './post-template';
 
-export default props => <PostPage {...props}/>;
+export default props => <PostPage {...props} />;
 
 export const postPageQuery = graphql`
     query PostPageByID($id: String!) {

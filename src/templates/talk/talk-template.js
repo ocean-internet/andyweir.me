@@ -1,9 +1,8 @@
-import React, {Fragment}           from 'react';
-import Content                     from '../../components/layout/content';
+import React, { Fragment } from 'react';
+import Content from '../../components/layout/content';
 import { headerStyle, embedStyle } from './styles.module.scss';
 
-export default function TalkTemplate ({ title, summary, youtube, content, contentComponent }) {
-
+export default function TalkTemplate({ title, summary, youtube, content, contentComponent }) {
     const PostContent = contentComponent || Content;
 
     return (
@@ -13,11 +12,14 @@ export default function TalkTemplate ({ title, summary, youtube, content, conten
                 <p>{summary}</p>
             </header>
             <div className={embedStyle}>
-                <iframe title={title}
-                        src={`https://www.youtube.com/embed/${youtube}`}
-                        frameBorder="0"
-                        allowFullScreen/>
+                <iframe
+                    title={title}
+                    src={`https://www.youtube.com/embed/${youtube}`}
+                    frameBorder="0"
+                    allowFullScreen
+                />
             </div>
-            <PostContent content={content}/>
-        </Fragment>);
+            <PostContent content={content} />
+        </Fragment>
+    );
 }

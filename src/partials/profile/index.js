@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import React                       from 'react';
-import HTMLContent             from "../../components/layout/html-content"
-import Profile                     from './profile';
+import React from 'react';
+import HTMLContent from '../../components/layout/html-content';
+import ProfileTemplate from './profile-template';
 
 export default function() {
     const { partial } = useStaticQuery(graphql`
@@ -34,12 +34,30 @@ export default function() {
     `);
 
     const { frontmatter, summary } = partial;
-    const { backgroundImage, title, profileImage, work, twitter, linkedin, github } = frontmatter;
-    const { childImageSharp: image } = profileImage;
-    const { src: background } = backgroundImage.childImageSharp.fluid;
+    const {
+        backgroundImage: backgroundImageFile,
+        title,
+        profileImage: profileImageFile,
+        work,
+        twitter,
+        linkedin,
+        github,
+    } = frontmatter;
+    const { childImageSharp: profileImage } = profileImageFile;
+    const { src: backgroundImage } = backgroundImageFile.childImageSharp.fluid;
     const contentComponent = HTMLContent;
 
-    const props = { title, image, background, summary, work, twitter, linkedin, github, contentComponent };
+    const props = {
+        title,
+        profileImage,
+        backgroundImage,
+        summary,
+        work,
+        twitter,
+        linkedin,
+        github,
+        contentComponent,
+    };
 
-    return <Profile {...props} />;
+    return <ProfileTemplate {...props} />;
 }

@@ -11,12 +11,21 @@ function profileDefault() {
 }
 
 function page() {
-    return <section>
-        <Profile />
+    return (
         <section>
-            <header>{faker.lorem.words()}</header>
-            <main>{faker.lorem.paragraphs(100).split('\n').map(p => <p>{p}</p>)}</main>
-            <footer>{faker.lorem.words()}</footer>
+            <Profile />
+            <section>
+                <header>{faker.lorem.words()}</header>
+                <main>
+                    {faker.lorem
+                        .paragraphs(100)
+                        .split('\n')
+                        .map(p => (
+                            <p>{p}</p>
+                        ))}
+                </main>
+                <footer>{faker.lorem.words()}</footer>
+            </section>
         </section>
-    </section>
+    );
 }

@@ -1,8 +1,8 @@
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import HTMLContent    from '../../components/layout/html-content';
-import Layout            from '../../components/layout/layout';
-import SEO               from '../../components/seo';
+import PropTypes from 'prop-types';
+import React from 'react';
+import HTMLContent from '../../components/layout/html-content';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
 import AboutPageTemplate from './about-template';
 
 export default AboutPage;
@@ -11,9 +11,9 @@ AboutPage.propTypes = {
     data: PropTypes.object.isRequired,
 };
 
-function AboutPage ({ data }) {
+function AboutPage({ data }) {
     const { content, frontmatter } = data.post;
-    const { title, summary }       = frontmatter;
+    const { title, summary } = frontmatter;
 
     const seoProps = {
         title,
@@ -27,8 +27,10 @@ function AboutPage ({ data }) {
         contentComponent: HTMLContent,
     };
 
-    return <Layout>
-        <SEO {...seoProps}/>
-        <AboutPageTemplate {...props} />
-    </Layout>;
+    return (
+        <Layout>
+            <SEO {...seoProps} />
+            <AboutPageTemplate {...props} />
+        </Layout>
+    );
 }
