@@ -1,8 +1,8 @@
-import Image           from 'gatsby-image';
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import { fluidObject } from '../../prop-types/gatsby-image';
-import { packerStyle, imageStyle }         from './styles.module.scss';
+import Image                       from 'gatsby-image';
+import PropTypes                   from 'prop-types';
+import React                       from 'react';
+import { fluidObject }             from '../../../prop-types/gatsby-image';
+import { packerStyle, imageStyle } from './styles.module.scss';
 
 export default PreviewCompatibleImage;
 
@@ -11,6 +11,7 @@ PreviewCompatibleImage.propTypes = {
     alt: PropTypes.string,
     className: PropTypes.string,
 };
+
 PreviewCompatibleImage.defaultProps = {
     alt: null,
     className: null,

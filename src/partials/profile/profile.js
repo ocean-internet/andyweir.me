@@ -3,25 +3,25 @@ import { faBriefcase }                     from '@fortawesome/free-solid-svg-ico
 import { FontAwesomeIcon }                 from '@fortawesome/react-fontawesome';
 import PropTypes                           from 'prop-types';
 import React                               from 'react';
-import Content                             from '../../components/content';
-import Image                               from '../../components/preview-compatible-images';
+import Content                             from '../../components/layout/content';
+import Image                               from '../../components/layout/image';
 import { fluidObject }                     from '../../prop-types/gatsby-image';
 
 import { profile, profileImageStyle } from './styles.module.scss';
 
-const Profile = ({ title, profileImage, backgroundImage, summary, work, twitter, linkedin, github, contentComponent }) => {
+const Profile = ({ title, image, background, summary, work, twitter, linkedin, github, contentComponent }) => {
 
     const Summary = contentComponent || Content;
 
-    const style = backgroundImage
-        ? { backgroundImage: `url(${backgroundImage})` } : null;
+    const style = background
+        ? { backgroundImage: `url(${background})` } : null;
 
     return (
         <section className={profile} style={style}>
             <header>
                 <h1>{title}</h1>
-                {profileImage && <Image className={profileImageStyle}
-                                        image={profileImage}
+                {image && <Image className={profileImageStyle}
+                                        image={image}
                                         alt={title}/>}
             </header>
             <Summary content={summary}/>
@@ -60,9 +60,9 @@ const Profile = ({ title, profileImage, backgroundImage, summary, work, twitter,
 
 Profile.propTypes = {
     title:            PropTypes.string.isRequired,
-    profileImage:     PropTypes.oneOfType(
+    image:     PropTypes.oneOfType(
         [PropTypes.string, PropTypes.shape({ fluid: fluidObject })]),
-    backgroundImage:  PropTypes.string,
+    background:  PropTypes.string,
     summary:          PropTypes.oneOfType(
         [PropTypes.string, PropTypes.object]).isRequired,
     work:             PropTypes.string,
@@ -73,8 +73,8 @@ Profile.propTypes = {
 };
 
 Profile.defaultProps = {
-    profileImage:     null,
-    backgroundImage:  null,
+    image:     null,
+    background:  null,
     work:             null,
     twitter:          null,
     linkedin:         null,

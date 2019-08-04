@@ -1,5 +1,5 @@
 ---
-templateKey: talk-template
+templateKey: talk
 date: 2019-08-04T11:52:35.437Z
 title: The Elephant in the Room
 summary: Post Agile on the Beach lightning talk.

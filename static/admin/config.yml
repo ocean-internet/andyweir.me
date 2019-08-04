@@ -17,10 +17,10 @@ collections:
     slug: "{{slug}}"
     preview_path: "blog/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post-template"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "featuredImage", widget: image}
+      - {label: "Featured Image", name: "image", widget: image}
       - {label: "Summary", name: "summary", widget: "text"}
       - {label: "Content", name: "body", widget: "markdown"}
 
@@ -32,7 +32,7 @@ collections:
     slug: "{{slug}}"
     preview_path: "talks/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "talk-template"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "talk"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Summary", name: "summary", widget: "text"}
@@ -48,7 +48,7 @@ collections:
     slug: "{{slug}}"
     preview_path: "books/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "book-template"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "book"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Author"
@@ -73,7 +73,7 @@ collections:
         label: "Profile Partial"
         name: "profile"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "profile-partial"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "profile"}
           - {label: "Background Image", name: backgroundImage, widget: image}
           - {label: "Title", name: title, widget: string}
           - {label: "Profile Image", name: profileImage, widget: image}
@@ -92,7 +92,7 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Summary", name: "summary", widget: "string"}
           - {label: "Content", name: "body", widget: "markdown"}

@@ -1,22 +1,22 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import TalkTemplate from '../../templates/talk/talk-template';
+import PostTemplate from '../../templates/post/post-template';
 
-export default TalkPreview;
+export default PostPreview;
 
-TalkPreview.propTypes = {
+PostPreview.propTypes = {
     entry:     PropTypes.shape({ getIn: PropTypes.func }),
     widgetFor: PropTypes.func,
 };
 
-function TalkPreview ({ entry, widgetFor }) {
+function PostPreview ({ entry, widgetFor }) {
 
     const props = {
         title:   entry.getIn(['data', 'title']),
+        image:   entry.getIn(['data', 'image']),
         summary: entry.getIn(['data', 'summary']),
-        youtube: entry.getIn(['data', 'youtube']),
         content: widgetFor('body'),
     };
 
-    return <TalkTemplate {...props}/>;
+    return <PostTemplate {...props}/>;
 }

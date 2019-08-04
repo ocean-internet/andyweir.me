@@ -1,7 +1,7 @@
 import React         from 'react';
 import { storiesOf } from '@storybook/react';
 import faker         from 'faker';
-import TalkTemplate  from './index';
+import TalkTemplate  from './talk-template';
 
 const youtubes = ["Ks-_Mh1QhMc","c0KYU2j0TM4","eIho2S0ZahI"];
 

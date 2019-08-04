@@ -1,5 +1,5 @@
-import React, {Fragment} from 'react';
-import Content            from '../../components/content';
+import React, {Fragment}           from 'react';
+import Content                     from '../../components/layout/content';
 import { headerStyle, embedStyle } from './styles.module.scss';
 
 export default function TalkTemplate ({ title, summary, youtube, content, contentComponent }) {

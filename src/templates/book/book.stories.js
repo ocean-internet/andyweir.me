@@ -1,7 +1,7 @@
 import React         from 'react';
 import { storiesOf } from '@storybook/react';
 import faker         from 'faker';
-import BookTemplate  from './index';
+import BookTemplate  from './book-template';
 
 storiesOf('Templates/Book', module).add('default', bookTemplate);
 

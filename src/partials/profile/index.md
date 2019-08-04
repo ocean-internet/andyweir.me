@@ -1,5 +1,5 @@
 ---
-templateKey: profile-partial
+partial: profile
 backgroundImage: /img/andy-weir-firefly-sailing-tall.jpg
 title: Andy Weir
 profileImage: /img/andy-weir.jpg

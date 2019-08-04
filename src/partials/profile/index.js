@@ -1,45 +1,45 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React                       from 'react';
-import { HTMLContent }             from "../../components/content"
+import HTMLContent             from "../../components/layout/html-content"
 import Profile                     from './profile';
 
 export default function() {
-    const { partial, profileImageFile, backgroundImageFile } = useStaticQuery(graphql`
+    const { partial } = useStaticQuery(graphql`
         query ProfileQuery {
-            partial: markdownRemark(frontmatter: { templateKey: { eq: "profile-partial" } }) {
-                summary: html
+            partial: markdownRemark(frontmatter: { partial: { eq: "profile" } }) {
                 frontmatter {
+                    backgroundImage {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                            }
+                        }
+                    }
                     title
+                    profileImage {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                            }
+                        }
+                    }
                     work
                     twitter
                     linkedin
                     github
                 }
-            }
-            profileImageFile: file(relativePath: { eq: "andy-weir.jpg" }) {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                    }
-                }
-            }
-            backgroundImageFile: file(relativePath: { eq: "andy-weir-firefly-sailing-tall.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 1600, fit: COVER, cropFocus: ENTROPY) {
-                        src
-                    }
-                }
+                summary: html
             }
         }
     `);
 
     const { frontmatter, summary } = partial;
-    const { title, work, twitter, linkedin, github } = frontmatter;
-    const { childImageSharp: profileImage } = profileImageFile;
-    const { src: backgroundImage } = backgroundImageFile.childImageSharp.fluid;
+    const { backgroundImage, title, profileImage, work, twitter, linkedin, github } = frontmatter;
+    const { childImageSharp: image } = profileImage;
+    const { src: background } = backgroundImage.childImageSharp.fluid;
     const contentComponent = HTMLContent;
 
-    const props = { title, profileImage, backgroundImage, summary, work, twitter, linkedin, github, contentComponent };
+    const props = { title, image, background, summary, work, twitter, linkedin, github, contentComponent };
 
     return <Profile {...props} />;
 }
