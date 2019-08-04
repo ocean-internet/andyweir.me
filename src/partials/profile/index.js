@@ -7,7 +7,7 @@ export default function() {
     const { partial, profileImageFile, backgroundImageFile } = useStaticQuery(graphql`
         query ProfileQuery {
             partial: markdownRemark(frontmatter: { templateKey: { eq: "profile-partial" } }) {
-                content: html
+                summary: html
                 frontmatter {
                     title
                     work
@@ -33,13 +33,13 @@ export default function() {
         }
     `);
 
-    const { frontmatter, content } = partial;
+    const { frontmatter, summary } = partial;
     const { title, work, twitter, linkedin, github } = frontmatter;
     const { childImageSharp: profileImage } = profileImageFile;
     const { src: backgroundImage } = backgroundImageFile.childImageSharp.fluid;
     const contentComponent = HTMLContent;
 
-    const props = { title, profileImage, backgroundImage, content, work, twitter, linkedin, github, contentComponent };
+    const props = { title, profileImage, backgroundImage, summary, work, twitter, linkedin, github, contentComponent };
 
     return <Profile {...props} />;
 }

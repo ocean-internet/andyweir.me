@@ -5,10 +5,10 @@ import Profile   from '../../partials/profile/profile';
 const ProfilePartialPreview = ({ entry, widgetFor }) => {
 
     return (
-        <Profile title={entry.getIn(['data', 'title'])}
+        <Profile backgroundImage={entry.getIn(['data', 'backgroundImage'])}
+                 title={entry.getIn(['data', 'title'])}
                  profileImage={entry.getIn(['data', 'profileImage'])}
-                 backgroundImage={entry.getIn(['data', 'backgroundImage'])}
-                 content={widgetFor('body')}
+                 summary={widgetFor('body')}
                  work={entry.getIn(['data', 'work'])}
                  twitter={entry.getIn(['data', 'twitter'])}
                  linkedin={entry.getIn(['data', 'linkedin'])}

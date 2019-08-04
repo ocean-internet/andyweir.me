@@ -11,9 +11,9 @@ import { fluidObject }     from '../../prop-types/gatsby-image';
 
 import { profile, profileImageStyle } from './styles.module.scss';
 
-const Profile = ({ title, profileImage, backgroundImage, content, work, twitter, linkedin, github, contentComponent }) => {
+const Profile = ({ title, profileImage, backgroundImage, summary, work, twitter, linkedin, github, contentComponent }) => {
 
-    const Description = contentComponent || Content;
+    const Summary = contentComponent || Content;
 
     const style = backgroundImage
         ? { backgroundImage: `url(${backgroundImage})` } : null;
@@ -26,7 +26,7 @@ const Profile = ({ title, profileImage, backgroundImage, content, work, twitter,
                                         image={profileImage}
                                         alt={title}/>}
             </header>
-            <Description content={content}/>
+            <Summary content={summary}/>
             <nav>
                 {work && (
                     <a href={`https://twitter.com/${work}`}>
@@ -65,7 +65,7 @@ Profile.propTypes = {
     profileImage:     PropTypes.oneOfType(
         [PropTypes.string, PropTypes.shape({ fluid: fluidObject })]),
     backgroundImage:  PropTypes.string,
-    content:          PropTypes.oneOfType(
+    summary:          PropTypes.oneOfType(
         [PropTypes.string, PropTypes.object]).isRequired,
     work:             PropTypes.string,
     twitter:          PropTypes.string,
