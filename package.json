@@ -55,5 +55,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "storybook": "NODE_ENV=production start-storybook -s ./public,./static",
     "build-storybook": "NODE_ENV=production build-storybook -s ./public,./static"
+  },
+  "dependencies": {
+    "faker": "^4.1.0"
   }
 }

@@ -3,10 +3,14 @@
 $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
 
 .profile {
+    flex-basis: 25%;
+    flex-shrink: 0;
+
     text-shadow:  $shadow;
     text-align: center;
     height: calc(100vh - #{2*$gutter-l});
     width: calc(100vw - #{2*$gutter-l});
+    max-width: 400px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -62,6 +66,5 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
 .profileImageStyle {
     @include card-2;
     border-radius: 100%;
-    width: calc(62vw - #{1.24*$gutter-l});
     margin: $gutter-l-0;
 }

@@ -5,41 +5,89 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+site_url: https://andyweir.me
+logo_url: /img/andy-weir.jpg
+
 collections:
   - name: "blog"
-    label: "Blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
     folder: "src/pages/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post-template"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "talks"
+    label: "Talks"
+    label_singular: "Talk"
+    folder: "src/pages/talks"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "talks/{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "talk-template"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "YouTube", name: "youtube", widget: string}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: books
+    label: Books
+    label_singular: Book
+    description: "My book reviews."
+    folder: src/pages/books
+    create: true
+    slug: "{{slug}}"
+    preview_path: "books/{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "book-template"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - label: "URL"
+            name: "url"
+            widget: "string"
+            pattern: /^http(?:s):\/\/.+$/
+            required: false
+      - {label: "Cover Image", name: image, widget: image}
+      - {label: "Summary", name: "summary", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
 
   - name: "partials"
     label: "Partials"
+    create: false
+    delete: false
     files:
       - file: "src/partials/profile/index.md"
         label: "Profile Partial"
         name: "profile"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "profile-partial"}
+          - {label: "Background Image", name: backgroundImage, widget: image}
           - {label: "Title", name: title, widget: string}
           - {label: "Profile Image", name: profileImage, widget: image}
-          - {label: "Background Image", name: backgroundImage, widget: image}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Summary", name: "body", widget: "markdown"}
           - {label: "Work Twitter", name: work, widget: string}
-          - {label: "Personal Twitter", name: twitter, widget: string}
-          - {label: "Personal LinkedIn", name: linkedin, widget: string}
-          - {label: "Personal GitHub", name: github, widget: string}
+          - {label: "Twitter", name: twitter, widget: string}
+          - {label: "LinkedIn", name: linkedin, widget: string}
+          - {label: "GitHub", name: github, widget: string}
 
   - name: "pages"
     label: "Pages"
+    create: false
+    delete: false
     files:
       - file: "src/pages/about/index.md"
         label: "About"

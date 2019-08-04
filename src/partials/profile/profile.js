@@ -5,8 +5,8 @@ import { faBriefcase }     from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import Content             from '../../components/Content';
-import Image               from '../../components/PreviewCompatibleImage';
+import Content             from '../../components/content';
+import Image               from '../../components/preview-compatible-image';
 import { fluidObject }     from '../../prop-types/gatsby-image';
 
 import { profile, profileImageStyle } from './styles.module.scss';

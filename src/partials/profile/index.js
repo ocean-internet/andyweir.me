@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React                       from 'react';
-import { HTMLContent }             from "../../components/Content"
+import { HTMLContent }             from "../../components/content"
 import Profile                     from './profile';
 
 export default function() {
