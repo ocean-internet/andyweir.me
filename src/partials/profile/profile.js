@@ -1,6 +1,4 @@
-import {
-    faGithub, faLinkedin, faTwitter,
-}                          from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faBriefcase }     from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes           from 'prop-types';
