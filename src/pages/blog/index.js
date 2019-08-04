@@ -7,13 +7,15 @@ export default PostIndexPage;
 
 PostIndexPage.propTypes = {};
 
-function PostIndexPage(props) {
-    console.log({ props });
-
+function PostIndexPage() {
     const title = 'My Posts';
     const summary = `I've written some posts - you can find some of them here.`;
 
     const seoProps = {
+        title,
+        summary,
+    };
+    const props = {
         title,
         summary,
     };

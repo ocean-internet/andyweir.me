@@ -7,13 +7,15 @@ export default TalkIndexPage;
 
 TalkIndexPage.propTypes = {};
 
-function TalkIndexPage(props) {
-    console.log({ props });
-
+function TalkIndexPage() {
     const title = 'My Talks';
     const summary = `I've done some talking - you can find some of them here.`;
 
     const seoProps = {
+        title,
+        summary,
+    };
+    const props = {
         title,
         summary,
     };
