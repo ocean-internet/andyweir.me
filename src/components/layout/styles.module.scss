@@ -1,27 +1,32 @@
 @import "../../scss/base";
+
 .page {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
 
-    > header {
-        font-size: 2rem;
-        padding: 1rem;
-        font-weight: bold;
+    > nav {
+        padding-top: $gutter-m;
+        margin: $gutter-0-xl;
         position: sticky;
         top: 0;
-        background: $secondary;
+        background: $chalk;
         color: white;
+        z-index: 999;
+        box-shadow: $gutter-0-xs $gutter-m-s rgba($chalk,$captionOpacity);
+        border-bottom: 1px solid $ink;
+        line-height: $lineHeight-l;
+        @include font-l;
 
-        h1 {
-            @include font-xxl;
-            margin: 0;
+        > a {
+            opacity: $captionOpacity;
+            padding: $gutter-0-s;
         }
     }
 
     > main {
-        margin: 1rem;
+        margin: $gutter-m-xl;
         flex-grow: 1;
 
         > :first-child {
@@ -34,8 +39,17 @@
 
     > footer {
         @include font-s;
-        padding: 1rem;
+        padding: $gutter-m-xl;
         background: rgba($primary, 0.5);
         color: white;
     }
+}
+
+.active {
+    opacity: 1;
+    @include link($secondary);
+}
+
+.icon {
+    margin-right: $gutter-xs;
 }

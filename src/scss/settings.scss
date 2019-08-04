@@ -20,25 +20,46 @@ $fontSmall: 0.8125rem;
 $fontXSmall: 0.0625rem;
 $fontXXSmall: 0.5625rem;
 
-$gutter-s: 0.25rem;
+$gutter-xs: 0.25rem;
+$gutter-s: 0.5rem;
 $gutter-m: 1rem;
-$gutter-l: 1.75rem;
+$gutter-l: 2rem;
+$gutter-xl: 4rem;
 
-$gutter-0-s: 0 $gutter-m;
+$gutter-0-xs: 0 $gutter-xs;
+$gutter-0-s: 0 $gutter-s;
 $gutter-0-m: 0 $gutter-m;
 $gutter-0-l: 0 $gutter-l;
+$gutter-0-xl: 0 $gutter-xl;
+
+$gutter-xa-s: 0 $gutter-s;
+$gutter-xa-m: 0 $gutter-m;
+$gutter-xa-l: 0 $gutter-l;
+$gutter-xa-xl: 0 $gutter-xl;
 
 $gutter-s-0: $gutter-s 0;
+$gutter-s-xs: $gutter-s $gutter-xs;
 $gutter-s-m: $gutter-s $gutter-m;
 $gutter-s-l: $gutter-s $gutter-l;
+$gutter-s-xl: $gutter-s $gutter-xl;
 
 $gutter-m-0: $gutter-m 0;
+$gutter-m-xs: $gutter-m $gutter-xs;
 $gutter-m-s: $gutter-m $gutter-s;
 $gutter-m-l: $gutter-m $gutter-l;
+$gutter-m-xl: $gutter-m $gutter-xl;
 
 $gutter-l-0: $gutter-l 0;
+$gutter-l-xs: $gutter-l $gutter-xs;
 $gutter-l-s: $gutter-l $gutter-s;
 $gutter-l-m: $gutter-l $gutter-m;
+$gutter-l-xl: $gutter-l $gutter-xl;
+
+$gutter-xl-0: $gutter-xl 0;
+$gutter-xl-xs: $gutter-xl $gutter-xs;
+$gutter-xl-s: $gutter-xl $gutter-s;
+$gutter-xl-m: $gutter-xl $gutter-m;
+$gutter-xl-l: $gutter-xl $gutter-l;
 
 $screenLarge: (1200px/$fontBase)+2rem;
 $mediaLarge: screen and (min-width: $screenLarge);

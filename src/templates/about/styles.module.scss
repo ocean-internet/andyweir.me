@@ -3,9 +3,6 @@
 .headerStyle {
     @include page-header;
 }
-.imageStyle {
-    @include card-1;
-}
 .contentStyle {
     @include page-content;
 }

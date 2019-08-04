@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Content from '../../components/layout/content';
+import { headerStyle, contentStyle } from './styles.module.scss';
 
 export default AboutTemplate;
 
@@ -16,11 +17,11 @@ function AboutTemplate({ title, summary, content, contentComponent }) {
 
     return (
         <article>
-            <header>
+            <header className={headerStyle}>
                 <h1>{title}</h1>
                 <p>{summary}</p>
             </header>
-            <PageContent content={content} />
+            <PageContent className={contentStyle} content={content} />
         </article>
     );
 }

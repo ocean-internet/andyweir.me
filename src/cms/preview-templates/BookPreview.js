@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import BookTemplate from '../../templates/book/book-template';
+import { wrapperStyles } from '../../scss/page/styles.module.scss';
 
 export default BookPreview;
 
@@ -18,5 +19,9 @@ function BookPreview({ entry, widgetFor }) {
         content: widgetFor('body'),
     };
 
-    return <BookTemplate {...props} />;
+    return (
+        <section className={wrapperStyles}>
+            <BookTemplate {...props} />
+        </section>
+    );
 }

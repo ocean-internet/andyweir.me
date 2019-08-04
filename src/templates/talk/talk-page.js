@@ -14,8 +14,6 @@ TalkPage.propTypes = {
 function TalkPage({ data }) {
     const { talk } = data;
 
-    console.log({ talk });
-
     const { content, frontmatter } = talk;
     const { title, youtube, summary } = frontmatter;
 

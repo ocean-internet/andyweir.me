@@ -1,0 +1,15 @@
+@import "../settings";
+
+@mixin page-content {
+
+    text-align: justify;
+
+    margin: $gutter-m-0 0;
+
+    > :last-child {
+        margin-top: 0;
+    }
+    > :last-child {
+        margin-bottom: 0;
+    }
+}

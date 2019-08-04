@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PostTemplate from '../../templates/post/post-template';
+import { wrapperStyles } from '../../scss/page/styles.module.scss';
 
 export default PostPreview;
 
@@ -17,5 +18,9 @@ function PostPreview({ entry, widgetFor }) {
         content: widgetFor('body'),
     };
 
-    return <PostTemplate {...props} />;
+    return (
+        <section className={wrapperStyles}>
+            <PostTemplate {...props} />
+        </section>
+    );
 }

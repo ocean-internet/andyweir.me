@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Content from '../../components/layout/content';
-import { headerStyle, embedStyle } from './styles.module.scss';
+import { headerStyle, embedStyle, contentStyle } from './styles.module.scss';
 
 export default function TalkTemplate({ title, summary, youtube, content, contentComponent }) {
     const PostContent = contentComponent || Content;
@@ -19,7 +19,7 @@ export default function TalkTemplate({ title, summary, youtube, content, content
                     allowFullScreen
                 />
             </div>
-            <PostContent content={content} />
+            <PostContent className={contentStyle} content={content} />
         </Fragment>
     );
 }

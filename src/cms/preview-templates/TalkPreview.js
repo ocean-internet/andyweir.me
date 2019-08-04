@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { wrapperStyles } from '../../scss/page/styles.module.scss';
 import TalkTemplate from '../../templates/talk/talk-template';
 
 export default TalkPreview;
@@ -17,5 +18,9 @@ function TalkPreview({ entry, widgetFor }) {
         content: widgetFor('body'),
     };
 
-    return <TalkTemplate {...props} />;
+    return (
+        <section className={wrapperStyles}>
+            <TalkTemplate {...props} />
+        </section>
+    );
 }

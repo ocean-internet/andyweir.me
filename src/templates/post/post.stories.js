@@ -1,16 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import faker from 'faker';
-import TalkIndexTemplate from './talk-index-template';
-import TalkTemplate from './talk-template';
+import PostIndexTemplate from './post-index-template';
+import PostTemplate from './post-template';
 import { wrapperStyles } from '../../scss/page/styles.module.scss';
 
-const youtubes = ['Ks-_Mh1QhMc', 'c0KYU2j0TM4', 'eIho2S0ZahI'];
+storiesOf('Templates/Post', module).add('post index', bookIndex);
+storiesOf('Templates/Post', module).add('post page', postPage);
 
-storiesOf('Templates/Talk', module).add('talk index', talkIndex);
-storiesOf('Templates/Talk', module).add('talk page', talkPage);
-
-function talkIndex() {
+function bookIndex() {
     const props = {
         title: faker.company.catchPhrase(),
         summary: faker.hacker.phrase(),
@@ -18,15 +16,15 @@ function talkIndex() {
 
     return (
         <section className={wrapperStyles}>
-            <TalkIndexTemplate {...props} />
+            <PostIndexTemplate {...props} />
         </section>
     );
 }
-function talkPage() {
+function postPage() {
     const props = {
         title: faker.company.catchPhrase(),
+        image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
         summary: faker.hacker.phrase(),
-        youtube: faker.random.arrayElement(youtubes),
         content: faker.lorem
             .paragraphs(10)
             .split('\n')
@@ -35,7 +33,7 @@ function talkPage() {
 
     return (
         <section className={wrapperStyles}>
-            <TalkTemplate {...props} />
+            <PostTemplate {...props} />
         </section>
     );
 }

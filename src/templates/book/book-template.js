@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import Content from '../../components/layout/content';
 import Image from '../../components/layout/image';
 import { fluidObject } from '../../prop-types/gatsby-image';
-import { authorStyle, headerStyle } from './styles.module.scss';
+import { headerStyle, imageStyle, contentStyle } from './styles.module.scss';
 
 export default BookTemplate;
 
@@ -30,12 +30,12 @@ function BookTemplate({ title, author, image, summary, content, contentComponent
             <header className={headerStyle}>
                 <h1>
                     {title}
-                    <Author className={authorStyle} />
+                    <Author />
                 </h1>
                 <p>{summary}</p>
-                <Image image={image} alt={title} />
+                <Image className={imageStyle} image={image} alt={title} />
             </header>
-            <BookContent content={content} />
+            <BookContent className={contentStyle} content={content} />
         </Fragment>
     );
 }
