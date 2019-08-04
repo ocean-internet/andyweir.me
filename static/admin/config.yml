@@ -59,7 +59,6 @@ collections:
           - label: "URL"
             name: "url"
             widget: "string"
-            pattern: /^http(?:s):\/\/.+$/
             required: false
       - {label: "Cover Image", name: image, widget: image}
       - {label: "Summary", name: "summary", widget: "string"}

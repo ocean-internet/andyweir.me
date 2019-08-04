@@ -1,11 +1,11 @@
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faBriefcase }     from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes           from 'prop-types';
-import React               from 'react';
-import Content             from '../../components/content';
-import Image               from '../../components/preview-compatible-images/preview-compatible-image';
-import { fluidObject }     from '../../prop-types/gatsby-image';
+import { faBriefcase }                     from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon }                 from '@fortawesome/react-fontawesome';
+import PropTypes                           from 'prop-types';
+import React                               from 'react';
+import Content                             from '../../components/content';
+import Image                               from '../../components/preview-compatible-images';
+import { fluidObject }                     from '../../prop-types/gatsby-image';
 
 import { profile, profileImageStyle } from './styles.module.scss';
 

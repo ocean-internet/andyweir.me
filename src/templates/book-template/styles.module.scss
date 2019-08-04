@@ -1,0 +1,29 @@
+@import "../../scss/base";
+
+.headerStyle {
+    h1 {
+        display: flex;
+        flex-direction: column;
+        > :last-child {
+            text-transform: initial;
+            font-family: $labelFont;
+            @include font-b;
+            padding-left: $gutter-m;
+            &:before {
+                content: "\2014\00a0";
+            }
+        }
+    }
+
+    p {
+        @include font-l;
+        padding: $gutter-0-m;
+        text-align: center;
+        font-style: italic;
+        opacity: $captionOpacity;
+    }
+}
+
+.authorStyle {
+
+}

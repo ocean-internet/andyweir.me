@@ -1,7 +1,7 @@
 import React                          from 'react';
 import PropTypes                      from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage         from './preview-compatible-images/preview-compatible-image';
+import PreviewCompatibleImage         from './preview-compatible-images';
 
 class BlogRoll extends React.Component {
     render() {
