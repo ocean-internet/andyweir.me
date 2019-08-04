@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Content from '../../components/layout/content';
 import Image from '../../components/layout/image';
+import { imageStyle } from './styles.module.scss';
 
 export default PostTemplate;
 
@@ -22,7 +23,7 @@ function PostTemplate({ title, image, summary, content, contentComponent }) {
                 <h1>{title}</h1>
                 <p>{summary}</p>
             </header>
-            <Image image={image} />
+            <Image className={imageStyle} image={image} />
             <PostContent content={content} />
         </article>
     );

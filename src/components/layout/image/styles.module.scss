@@ -1,13 +1,21 @@
+.wrapperStyle {
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vw - 2rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.packerStyle {
+    width: 100%;
+    padding-bottom: 100%;
+}
+
 .imageStyle {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
-}
-.packerStyle {
-    width: 100%;
-    padding-bottom: 100%;
 }

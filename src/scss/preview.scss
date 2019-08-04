@@ -2,6 +2,8 @@
 @import "settings";
 @import "link";
 @import "fonts";
+@import "cards";
+
 html {
     font-family: $serifFont;
     font-size:   $fontBase;
@@ -9,22 +11,11 @@ html {
     color:       $ink;
     background:  $chalk;
 
-    margin: 0;
-    padding: 0;
-
     h1, h2, h3, h4, h5, h6 {
         font-weight: normal;
         font-family: $sansFont;
         line-height: $lineHeight-l;
         text-transform: uppercase;
-    }
-
-    #___gatsby > * {
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-        height: 100vh;
-        width: 100vw;
     }
 
     * {
@@ -39,5 +30,10 @@ html {
     a {
         @include link;
         font-family: $labelFont;
+    }
+
+    .frame-content {
+        @include card-1;
+        margin: $gutter-m;
     }
 }
