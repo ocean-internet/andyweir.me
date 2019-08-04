@@ -37,7 +37,8 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
 
     > header {
         h1 {
-            @include font-xxl
+            @include font-xxl;
+            margin: 0;
         }
         display: flex;
         flex-direction: column;
