@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import parseHtml from 'html-react-parser'
 
 export const HTMLContent = ({ content, className }) => (
-  <section className={className} dangerouslySetInnerHTML={{ __html: content }} />
+    <section className={className}>{parseHtml(content)}</section>
 )
 
 const Content = ({ content, className }) => (

@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: OceanInternet/andyweir.me
   branch: master
 
 media_folder: static/img
