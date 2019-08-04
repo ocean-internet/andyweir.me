@@ -33,8 +33,6 @@ export default function() {
         }
     `);
 
-    console.log({ partial, profileImageFile, backgroundImageFile });
-
     const { frontmatter, content } = partial;
     const { title, work, twitter, linkedin, github } = frontmatter;
     const { childImageSharp: profileImage } = profileImageFile;

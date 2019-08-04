@@ -1,8 +1,8 @@
 ---
 templateKey: profile-partial
+backgroundImage: /img/andy-weir-firefly-sailing-tall.jpg
 title: Andy Weir
 profileImage: /img/andy-weir.jpg
-backgroundImage: /img/andy-weir-firefly-sailing-tall.jpg
 work: '@headforwards'
 twitter: '@OceanInternetNQ'
 linkedin: andyrlweir

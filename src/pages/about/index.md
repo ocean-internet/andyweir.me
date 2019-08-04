@@ -1,10 +1,10 @@
 ---
-templateKey: 'about-page'
 path: /about
+templateKey: 'about-page'
 title: About Me
+summary: 'Seven years ago, I managed to convince my employer that repairing tanks and making beds were transferable skills appropriate for a software business.'
 ---
-Seven years ago, I managed to convince my employer that repairing tanks and making beds were transferable skills appropriate for a software business.
-I still work for that same employer, as part of [Headforwards](https://www.headforwards.com/) Special Projects Division (SPD).
+I still work for that same employer, as part of [Headforwards](https://headforwards.com) Special Projects Division (SPD).
 
 I'm a full stack software engineer with a background that gives me a unique perspective.
 I have repaired tanks in the army, and designed digital electronics for the offshore oil and gas industry.
