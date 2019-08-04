@@ -1,4 +1,16 @@
-.embedContainer {
+@import "../../scss/base";
+
+.headerStyle {
+    p {
+        @include font-l;
+        padding: $gutter-0-m;
+        text-align: center;
+        font-style: italic;
+        opacity: $captionOpacity;
+    }
+}
+
+.embedStyle {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
