@@ -1,46 +1,64 @@
-const path = require('path');
+const path = require(`path`);
+const createPaginatedPages = require('gatsby-paginate');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const { postIndexMeta, talkIndexMeta, bookIndexMeta } = require('./gatsby/site-metadata');
+
+exports.onCreateWebpackConfig = function onCreateWebpackConfig({ getConfig }) {
+    const config = getConfig();
+
+    config.module.rules.push({
+        test: /\.stories\.jsx?$/,
+        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        enforce: 'pre',
+    });
+
+    return config;
+};
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
 
-    return graphql(`
-        {
-            allMarkdownRemark(filter: { frontmatter: { templateKey: { ne: null } } }) {
-                edges {
-                    node {
-                        id
-                        fields {
-                            slug
-                        }
-                        frontmatter {
-                            templateKey
-                        }
-                    }
-                }
-            }
-        }
-    `).then(result => {
-        if (result.errors) {
-            result.errors.forEach(e => console.error(e.toString()));
-            return Promise.reject(result.errors);
-        }
+    return getData(graphql)
+        .then(({ data, errors }) => (!errors ? Promise.resolve(data) : Promise.reject(errors)))
+        .then(({ pages, posts, talks, books }) => {
+            const pageProps = {
+                edges: posts.edges,
+                createPage,
+                pageTemplate: './src/templates/blog/post-index.js',
+                pageLength: 10,
+                pathPrefix: '/blog',
+                context: postIndexMeta,
+            };
 
-        const posts = result.data.allMarkdownRemark.edges;
+            const talkProps = {
+                edges: talks.edges,
+                createPage,
+                pageTemplate: './src/templates/talks/talk-index.js',
+                pageLength: 10,
+                pathPrefix: '/talks',
+                context: talkIndexMeta,
+            };
 
-        posts.forEach(edge => {
-            const id = edge.node.id;
-            createPage({
-                path: edge.node.fields.slug,
-                component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}/index.js`),
-                // additional data can be passed via context
-                context: {
-                    id,
-                },
-            });
+            const bookProps = {
+                edges: books.edges,
+                createPage,
+                pageTemplate: './src/templates/books/book-index.js',
+                pageLength: 10,
+                pathPrefix: '/books',
+                context: bookIndexMeta,
+            };
+
+            return Promise.all([
+                createPaginatedPages(pageProps),
+                createPaginatedPages(talkProps),
+                createPaginatedPages(bookProps),
+                createAllPosts(createPage, posts),
+                createAllPosts(createPage, talks),
+                createAllPosts(createPage, books),
+                createAllPages(createPage, pages),
+            ]);
         });
-    });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -56,3 +74,125 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         });
     }
 };
+
+function createAllPages(createPage, { edges: pages = [] }) {
+    return pages.forEach(({ node: page }) => {
+        const { id, frontmatter } = page;
+        const { path: pagePath, type } = frontmatter;
+
+        return createPage({
+            path: pagePath,
+            component: path.resolve(`src/templates/${pagePath}-${type}.js`),
+            context: { id },
+        });
+    });
+}
+
+function createAllPosts(createPage, { edges: posts = [] }) {
+    const firstIndex = 0;
+    const lastIndex = posts.length - 1;
+
+    return posts.forEach(({ node: post }, index) => {
+        const { id, fields, frontmatter } = post;
+        const { slug } = fields;
+        const { path: postPath, type } = frontmatter;
+
+        const { id: prevId = '' } = index > firstIndex ? posts[index - 1].node : {};
+        const { id: nextId = '' } = index < lastIndex ? posts[index + 1].node : {};
+
+        return createPage({
+            path: slug,
+            component: path.resolve(`src/templates/${postPath}/${type}-page.js`),
+            context: { id, prevId, nextId },
+        });
+    });
+}
+
+function getData(graphql) {
+    return graphql(`
+        {
+            pages: allMarkdownRemark(filter: { frontmatter: { type: { eq: "page" } } }) {
+                edges {
+                    node {
+                        id
+                        frontmatter {
+                            type
+                            path
+                        }
+                    }
+                }
+            }
+            posts: allMarkdownRemark(filter: { frontmatter: { path: { eq: "blog" } } }) {
+                edges {
+                    node {
+                        id
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            type
+                            path
+                            title
+                            summary
+                            image {
+                                childImageSharp {
+                                    fluid(fit: COVER, maxWidth: 400, maxHeight: 400, cropFocus: ENTROPY) {
+                                        tracedSVG
+                                        aspectRatio
+                                        src
+                                        srcSet
+                                        sizes
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            talks: allMarkdownRemark(filter: { frontmatter: { path: { eq: "talks" } } }) {
+                edges {
+                    node {
+                        id
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            type
+                            path
+                            title
+                            summary
+                            youtube
+                        }
+                    }
+                }
+            }
+            books: allMarkdownRemark(filter: { frontmatter: { path: { eq: "books" } } }) {
+                edges {
+                    node {
+                        id
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            type
+                            path
+                            title
+                            summary
+                            image {
+                                childImageSharp {
+                                    fluid(fit: COVER, maxWidth: 400, maxHeight: 400, cropFocus: ENTROPY) {
+                                        tracedSVG
+                                        aspectRatio
+                                        src
+                                        srcSet
+                                        sizes
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `);
+}

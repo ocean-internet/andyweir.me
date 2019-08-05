@@ -1,0 +1,66 @@
+@import "../../scss/base";
+@import "../../scss/transition";
+@import "../../scss/ellipsis";
+
+.pagination {
+    font-family: $labelFont;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        margin: $gutter-s $gutter-m;
+    }
+}
+
+.prevNext {
+    margin: $gutter-m 0 0;
+    display: flex;
+    flex-direction: column;
+    font-family: $labelFont;
+}
+
+.prevLink, .nextLink {
+
+    @include card-0;
+
+    &.prevLink > :last-child {
+        padding: $gutter-s #{$gutter-m + $gutter-s} $gutter-s $gutter-s;
+    }
+    &.nextLink > :first-child {
+        padding: $gutter-s $gutter-s $gutter-s #{$gutter-m + $gutter-s} ;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-s;
+    }
+    background: rgba($ink, .05);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > div {
+        flex-grow: 1;
+        flex-shrink: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        div {
+            height: $fontMedium * $lineHeight-m;
+            @include ellipsis;
+        }
+
+        span {
+            @include font-s;
+            color: $ink;
+            font-style: italic;
+        }
+    }
+}
+
+.disabled {
+    opacity: 0.2;
+}

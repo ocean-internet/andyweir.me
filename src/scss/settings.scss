@@ -1,13 +1,27 @@
-$primary: #309a01;
-$secondary: #030332;
 $ink: #333;
 $chalk: #fff;
+
+$primary:   #388e3c;
+$primary-l: #6abf69;
+$primary-d: #00600f;
+
+$textOn-p:   #000;
+$textOn-p-l: #000;
+$textOn-p-d: #fff;
+
+$secondary:   #303f9f;
+$secondary-l: #666ad1;
+$secondary-d: #001970;
+
+$textOn-s:   #fff;
+$textOn-s-l: #fff;
+$textOn-s-d: #fff;
 
 $lineHeight-s: 1.2;
 $lineHeight-m: 1.4;
 $lineHeight-l: 1.6;
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oswald|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Noto+Serif:400,400i,700,700i|Roboto&display=swap');
 $sansFont: 'Oswald', sans-serif;
 $serifFont: 'Noto Serif', serif;
 $labelFont: 'Roboto', sans-serif;
@@ -15,7 +29,7 @@ $labelFont: 'Roboto', sans-serif;
 $fontXXLarge: 2rem;
 $fontXLarge: 1.5rem;
 $fontLarge: 1.125rem;
-$fontBase: 16px;
+$fontMedium: 16px;
 $fontSmall: 0.8125rem;
 $fontXSmall: 0.0625rem;
 $fontXXSmall: 0.5625rem;
@@ -61,7 +75,7 @@ $gutter-xl-s: $gutter-xl $gutter-s;
 $gutter-xl-m: $gutter-xl $gutter-m;
 $gutter-xl-l: $gutter-xl $gutter-l;
 
-$screenLarge: (1200px/$fontBase)+2rem;
+$screenLarge: (1200px/$fontMedium)+2rem;
 $mediaLarge: screen and (min-width: $screenLarge);
 
 $card-radius: 0.1rem;

@@ -7,20 +7,19 @@ const gatsbySourceFilesystemImages = require('./gatsby/source-filesystem-images'
 const gatsbyTransformerRemark = require('./gatsby/transformer-remark');
 const gatsbyPluginNetlifyCms = require('./gatsby/plugin-netlify-cms');
 const gatsbyPluginManifest = require('./gatsby/plugin-manifest');
-const developMiddleware = require('./gatsby/develop-middleware');
 
 module.exports = {
     siteMetadata,
     plugins: [
-        `gatsby-plugin-react-helmet`,
-        { ...gatsbyPluginSass },
-        `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
-        { ...gatsbyTransformerRemark },
+        `gatsby-plugin-sharp`,
+        { ...gatsbyPluginSass },
+        `gatsby-plugin-react-helmet`,
         { ...gatsbySourceFilesystemUploads },
         { ...gatsbySourceFilesystemPages },
         { ...gatsbySourceFilesystemPartials },
         { ...gatsbySourceFilesystemImages },
+        { ...gatsbyTransformerRemark },
         { ...gatsbyPluginNetlifyCms },
         { ...gatsbyPluginManifest },
         'gatsby-plugin-netlify-cache',
@@ -28,5 +27,4 @@ module.exports = {
         // make sure to keep "gatsby-plugin-netlify" last in the array
         'gatsby-plugin-netlify',
     ],
-    // developMiddleware,
 };

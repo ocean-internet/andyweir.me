@@ -1,6 +1,6 @@
 ---
-path: /about
-templateKey: 'about'
+path: about
+type: page
 title: About Me
 summary: 'Seven years ago, I managed to convince my employer that repairing tanks and making beds were transferable skills appropriate for a software business.'
 ---

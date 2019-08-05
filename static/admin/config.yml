@@ -17,7 +17,8 @@ collections:
     slug: "{{slug}}"
     preview_path: "blog/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post"}
+      - {label: "Path", name: "path", widget: "hidden", default: "blog"}
+      - {label: "Type", name: "type", widget: "hidden", default: "post"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "image", widget: image}
@@ -32,7 +33,8 @@ collections:
     slug: "{{slug}}"
     preview_path: "talks/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "talk"}
+      - {label: "Path", name: "path", widget: "hidden", default: "talks"}
+      - {label: "Type", name: "type", widget: "hidden", default: "talk"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Summary", name: "summary", widget: "text"}
@@ -48,7 +50,8 @@ collections:
     slug: "{{slug}}"
     preview_path: "books/{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "book"}
+      - {label: "Path", name: "path", widget: "hidden", default: "books"}
+      - {label: "Type", name: "type", widget: "hidden", default: "book"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - label: "Author"
@@ -73,6 +76,7 @@ collections:
         label: "Profile Partial"
         name: "profile"
         fields:
+          - {label: "Partial", name: "partial", widget: "hidden", default: "profile"}
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "profile"}
           - {label: "Background Image", name: backgroundImage, widget: image}
           - {label: "Title", name: title, widget: string}
@@ -92,7 +96,8 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+          - {label: "Path", name: "path", widget: "hidden", default: "about"}
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Summary", name: "summary", widget: "string"}
           - {label: "Content", name: "body", widget: "markdown"}

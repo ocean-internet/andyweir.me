@@ -12,8 +12,8 @@
     font-size: $fontLarge;
     line-height: $lineHeight-m;
 }
-@mixin font-b {
-    font-size: $fontBase;
+@mixin font-m {
+    font-size: $fontMedium;
     line-height: $lineHeight-m;
 }
 @mixin font-s {

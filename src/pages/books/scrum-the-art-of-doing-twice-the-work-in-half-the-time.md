@@ -1,5 +1,6 @@
 ---
-templateKey: book
+path: books
+type: book
 date: 2019-08-04T12:43:54.739Z
 title: 'Scrum: The Art of Doing Twice the Work in Half the Time'
 author:

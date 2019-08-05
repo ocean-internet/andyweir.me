@@ -1,0 +1,8 @@
+@import "../../../scss/base";
+
+.headerStyle {
+    @include page-header;
+}
+.contentStyle {
+    @include page-content;
+}

@@ -5,12 +5,14 @@ import { fluidObject } from '../../../prop-types/gatsby-image';
 import { wrapperStyle, packerStyle, imageStyle } from './styles.module.scss';
 
 export default PreviewCompatibleImage;
-
-PreviewCompatibleImage.propTypes = {
-    image: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ fluid: fluidObject })]).isRequired,
+export const imageProp = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ fluid: fluidObject })]);
+export const ImageProp = {
+    image: imageProp.isRequired,
     alt: PropTypes.string,
     className: PropTypes.string,
 };
+
+PreviewCompatibleImage.propTypes = ImageProp;
 
 PreviewCompatibleImage.defaultProps = {
     alt: null,
