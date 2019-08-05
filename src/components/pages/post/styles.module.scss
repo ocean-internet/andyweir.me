@@ -2,6 +2,14 @@
 
 .headerStyle {
     @include page-header;
+    h1 {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        :first-child {
+            margin-right: 0.25rem;
+        }
+    }
 }
 .imageStyle {
     @include card-1;

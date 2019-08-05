@@ -39,7 +39,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Summary", name: "summary", widget: "text"}
       - {label: "YouTube", name: "youtube", widget: string}
-      - {label: "Image", name: "image", widget: hidden, default: "https://img.youtube.com/vi/{{youtube}}/default.jpg"}
       - {label: "Content", name: "body", widget: "markdown"}
 
   - name: books

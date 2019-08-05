@@ -1,10 +1,10 @@
-import { faPenAlt }         from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
-import PropTypes            from 'prop-types';
-import React, { Fragment }  from 'react';
+import { faPenAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 import PaginationNavigation from '../../navigation/pagination';
-import PostSummary          from './post-summary';
-import { headerStyle }      from './styles.module.scss';
+import PostSummary from './post-summary';
+import { headerStyle } from './styles.module.scss';
 
 export default PostIndexTemplate;
 
@@ -56,7 +56,7 @@ function PostIndexTemplate({ group: posts, index, first, last, pageCount, title,
                 <p>{summary}</p>
             </header>
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
-            {hasPosts && <section {...postListProps}/>}
+            {hasPosts && <section {...postListProps} />}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );

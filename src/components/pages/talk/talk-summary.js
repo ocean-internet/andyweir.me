@@ -1,26 +1,23 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Image, { imageProp } from '../../layout/image';
 import PropTypes from 'prop-types';
 
-export default PostSummary;
+export default TalkSummary;
 
-PostSummary.propTypes = {
+TalkSummary.propTypes = {
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    image: imageProp.isRequired,
+    imageUrl: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
 };
 
-function PostSummary({ slug, title, image: imageFile, summary }) {
-    const { childImageSharp: image } = imageFile;
-
+function TalkSummary({ slug, title, imageUrl, summary }) {
     return (
         <Link to={slug}>
             <section>
                 <h1>{title}</h1>
                 <p>{summary}</p>
-                <Image image={image} />
+                <img src={imageUrl} alt={title} />
             </section>
         </Link>
     );

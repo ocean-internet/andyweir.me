@@ -18,10 +18,17 @@
         border-bottom: 1px solid $ink;
         line-height: $lineHeight-l;
         @include font-l;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
 
         > a {
             opacity: $captionOpacity;
             padding: $gutter-0-s;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
     }
 

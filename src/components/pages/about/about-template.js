@@ -1,6 +1,9 @@
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Content from '../../layout/content';
+import { icon } from '../../layout/styles.module.scss';
 import { headerStyle, contentStyle } from './styles.module.scss';
 
 export default AboutTemplate;
@@ -23,7 +26,10 @@ function AboutTemplate({ title, summary, content, contentComponent }) {
     return (
         <article>
             <header className={headerStyle}>
-                <h1>{title}</h1>
+                <h1>
+                    <FontAwesomeIcon className={icon} icon={faUser} fixedWidth />
+                    {title}
+                </h1>
                 <p>{summary}</p>
             </header>
             <PageContent className={contentStyle} content={content} />

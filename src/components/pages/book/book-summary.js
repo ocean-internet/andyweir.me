@@ -3,16 +3,16 @@ import React from 'react';
 import Image, { imageProp } from '../../layout/image';
 import PropTypes from 'prop-types';
 
-export default PostSummary;
+export default BookSummary;
 
-PostSummary.propTypes = {
+BookSummary.propTypes = {
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     image: imageProp.isRequired,
     summary: PropTypes.string.isRequired,
 };
 
-function PostSummary({ slug, title, image: imageFile, summary }) {
+function BookSummary({ slug, title, image: imageFile, summary }) {
     const { childImageSharp: image } = imageFile;
 
     return (

@@ -63,9 +63,17 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
+    const { internal, frontmatter = null } = node;
+    const { type } = internal;
     fmImagesToRelative(node); // convert image paths for gatsby images
 
-    if (node.internal.type === `MarkdownRemark`) {
+    if (type === `MarkdownRemark`) {
+        const { youtube = null } = frontmatter;
+
+        if (!!youtube) {
+            frontmatter.imageUrl = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
+        }
+
         const value = createFilePath({ node, getNode });
         createNodeField({
             name: `slug`,
@@ -162,6 +170,7 @@ function getData(graphql) {
                             title
                             summary
                             youtube
+                            imageUrl
                         }
                     }
                 }
