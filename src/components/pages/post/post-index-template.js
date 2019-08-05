@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import PaginationNavigation from '../../navigation/pagination';
 import PostSummary from './post-summary';
-import { headerStyle } from './styles.module.scss';
+import { indexHeaderStyle } from './styles.module.scss';
 
 export default PostIndexTemplate;
 
@@ -48,7 +48,7 @@ function PostIndexTemplate({ group: posts, index, first, last, pageCount, title,
 
     return (
         <Fragment>
-            <header className={headerStyle}>
+            <header className={indexHeaderStyle}>
                 <h1>
                     <FontAwesomeIcon icon={faPenAlt} fixedWidth />
                     {title}&hellip;

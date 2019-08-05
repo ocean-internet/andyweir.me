@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { icon } from '../../layout/styles.module.scss';
 import PaginationNavigation from '../../navigation/pagination';
-import { headerStyle } from './styles.module.scss';
+import { indexHeaderStyle } from './styles.module.scss';
 import BookSummary from './book-summary';
 
 export default BookIndexTemplate;
@@ -47,7 +47,7 @@ function BookIndexTemplate({ group: posts, index, first, last, pageCount, title,
     };
     return (
         <Fragment>
-            <header className={headerStyle}>
+            <header className={indexHeaderStyle}>
                 <h1>
                     <FontAwesomeIcon className={icon} icon={faBookReader} fixedWidth />
                     {title}&hellip;

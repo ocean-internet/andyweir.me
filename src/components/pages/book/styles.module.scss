@@ -1,9 +1,8 @@
 @import "../../../scss/base";
 
-.headerStyle {
+.indexHeaderStyle {
 
     @include page-header;
-
     h1 {
         flex-direction: row;
         align-items: center;
@@ -12,8 +11,14 @@
         :first-child {
             margin-right: 0.25rem;
         }
+    }
+}
 
-        > :last-child {
+.headerStyle {
+
+    @include page-header;
+
+    h1 > :last-child {
             text-transform: initial;
             font-family: $labelFont;
             @include font-m;
@@ -23,7 +28,6 @@
                 content: "\2014\00a0";
             }
         }
-    }
 }
 .imageStyle {
     align-self: center;
