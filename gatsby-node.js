@@ -136,7 +136,7 @@ function getData(graphql) {
                             summary
                             image {
                                 childImageSharp {
-                                    fluid(fit: COVER, maxWidth: 400, maxHeight: 400, cropFocus: ENTROPY) {
+                                    fluid(fit: COVER, maxWidth: 200, maxHeight: 200, cropFocus: ENTROPY) {
                                         tracedSVG
                                         aspectRatio
                                         src
@@ -180,7 +180,7 @@ function getData(graphql) {
                             summary
                             image {
                                 childImageSharp {
-                                    fluid(fit: COVER, maxWidth: 400, maxHeight: 400, cropFocus: ENTROPY) {
+                                    fluid(fit: COVER, maxWidth: 129, maxHeight: 198, cropFocus: ENTROPY) {
                                         tracedSVG
                                         aspectRatio
                                         src

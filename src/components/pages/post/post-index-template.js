@@ -1,11 +1,10 @@
-import { faPenAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import { faPenAlt }         from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
+import PropTypes            from 'prop-types';
+import React, { Fragment }  from 'react';
 import PaginationNavigation from '../../navigation/pagination';
-import { headerStyle } from './styles.module.scss';
-import { Link } from 'gatsby';
-import Image from '../../../components/layout/image';
+import PostSummary          from './post-summary';
+import { headerStyle }      from './styles.module.scss';
 
 export default PostIndexTemplate;
 
@@ -28,17 +27,6 @@ function PostIndexTemplate({ group: posts, index, first, last, pageCount, title,
     });
     const hasPosts = !!postList.length;
     const hasPages = !!pageCount && pageCount < 1;
-
-    const PostSummary = ({ slug, title, image, summary }) => (
-        <Link to={slug}>
-            <section>
-                <h1>{title}</h1>
-                <p>{summary}</p>
-                <Image image={image.childImageSharp} />
-            </section>
-        </Link>
-    );
-    const PostList = ({ children }) => <section>{children}</section>;
 
     const postListProps = {
         children: postList.map(({ id: key, fields, frontmatter }) => {
@@ -68,7 +56,7 @@ function PostIndexTemplate({ group: posts, index, first, last, pageCount, title,
                 <p>{summary}</p>
             </header>
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
-            {hasPosts && <PostList {...postListProps} />}
+            {hasPosts && <section {...postListProps}/>}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );
