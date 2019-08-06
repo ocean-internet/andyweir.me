@@ -20,6 +20,16 @@
 
 .headerStyle {
     @include page-header;
+    h1 > :last-child {
+        text-transform: initial;
+        font-family: $labelFont;
+        @include font-m;
+        padding-left: $gutter-l;
+
+        &:before {
+            content: "\2014\00a0";
+        }
+    }
 }
 .embedStyle {
     @include card-1;

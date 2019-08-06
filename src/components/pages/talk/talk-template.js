@@ -6,6 +6,7 @@ import { headerStyle, embedStyle, contentStyle } from './styles.module.scss';
 export default TalkTemplate;
 export const TalkProp = {
     title: PropTypes.string.isRequired,
+    dateString: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     youtube: PropTypes.string.isRequired,
     content: PropTypes.node.isRequired,
@@ -14,7 +15,7 @@ export const TalkProp = {
 
 TalkTemplate.propTypes = TalkProp;
 
-function TalkTemplate({ title, summary, youtube, content, contentComponent }) {
+function TalkTemplate({ title, dateString, summary, youtube, content, contentComponent }) {
     const PostContent = contentComponent || Content;
 
     const backgroundImage = { backgroundImage: `url(https://img.youtube.com/vi/${youtube}/mqdefault.jpg)` };
@@ -22,7 +23,10 @@ function TalkTemplate({ title, summary, youtube, content, contentComponent }) {
     return (
         <Fragment>
             <header className={headerStyle}>
-                <h1>{title}</h1>
+                <h1>
+                    {title}
+                    <span>{dateString}</span>
+                </h1>
                 <p>{summary}</p>
             </header>
             <div className={embedStyle} style={backgroundImage}>
