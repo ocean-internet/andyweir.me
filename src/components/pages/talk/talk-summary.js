@@ -14,12 +14,15 @@ TalkSummary.propTypes = {
 };
 
 function TalkSummary({ slug, title, youtube, summary }) {
+    const image = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
+    const ratio = 9 / 16;
+
     return (
         <Link to={slug} className={plainLink}>
             <section>
                 <h1>{title}</h1>
                 <p>{summary}</p>
-                <Image image={`https://img.youtube.com/vi/${youtube}/hqdefault.jpg`} alt={title} />
+                <Image image={image} ratio={ratio} alt={title} />
             </section>
         </Link>
     );

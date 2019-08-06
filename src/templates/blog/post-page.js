@@ -33,8 +33,7 @@ PostPage.propTypes = {
 function PostPage({ data }) {
     const { page } = data;
     const { content, frontmatter } = page;
-    const { title, image: imageFile, summary } = frontmatter;
-    const { childImageSharp: image } = imageFile;
+    const { title, image, summary } = frontmatter;
 
     const seoProps = {
         title,

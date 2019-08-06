@@ -14,12 +14,14 @@ BookSummary.propTypes = {
 };
 
 function BookSummary({ slug, title, image, summary }) {
+    const ratio = 129 / 198;
+
     return (
         <Link to={slug} className={plainLink}>
             <section>
                 <h1>{title}</h1>
                 <p>{summary}</p>
-                <Image image={image} alt={summary} />
+                <Image image={image} alt={summary} ratio={ratio} />
             </section>
         </Link>
     );

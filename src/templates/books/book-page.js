@@ -36,8 +36,7 @@ BookPage.propTypes = {
 
 function BookPage({ data }) {
     const { content, frontmatter } = data.page;
-    const { title, author, image: imageFile, summary } = frontmatter;
-    const { childImageSharp: image } = imageFile;
+    const { title, author, image, summary } = frontmatter;
 
     const seoProps = {
         title,
