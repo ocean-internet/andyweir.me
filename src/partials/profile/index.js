@@ -37,13 +37,12 @@ export default function() {
     const {
         backgroundImage: backgroundImageFile,
         title,
-        profileImage: profileImageFile,
+        profileImage,
         work,
         twitter,
         linkedin,
         github,
     } = frontmatter;
-    const { childImageSharp: profileImage } = profileImageFile;
     const { src: backgroundImage } = backgroundImageFile.childImageSharp.fluid;
     const contentComponent = HTMLContent;
 
