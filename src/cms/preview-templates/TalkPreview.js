@@ -6,8 +6,8 @@ import TalkTemplate from '../../components/pages/talk/talk-template';
 export default TalkPreview;
 
 TalkPreview.propTypes = {
-    entry: PropTypes.shape({ getIn: PropTypes.func }),
-    widgetFor: PropTypes.func,
+    entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired,
+    widgetFor: PropTypes.func.isRequired,
 };
 
 function TalkPreview({ entry, widgetFor }) {

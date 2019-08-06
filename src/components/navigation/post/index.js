@@ -5,14 +5,15 @@ import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import parseHtml from 'html-react-parser';
+import { PrevNextProp } from '../../../prop-types/navigation';
 import { nextLink, prevLink, prevNext } from '../pagination.module.scss';
 
 export default PostNavigation;
 
 PostNavigation.propTypes = {
     pathPrefix: PropTypes.string,
-    prev: PropTypes.any,
-    next: PropTypes.any,
+    prev: PrevNextProp,
+    next: PrevNextProp,
 };
 
 PostNavigation.defaultProps = {

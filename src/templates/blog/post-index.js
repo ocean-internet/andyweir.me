@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
-import PostIndexTemplate from '../../components/pages/post/post-index-template';
+import PostIndexTemplate, { PostIndexProp } from '../../components/pages/post/post-index-template';
 
 export default PostIndex;
 
-PostIndex.propTypes = {};
+PostIndex.propTypes = {
+    pageContext: PropTypes.shape(PostIndexProp).isRequired,
+};
 
 function PostIndex({ pageContext }) {
     const { title, summary } = pageContext;

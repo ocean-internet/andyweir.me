@@ -2,7 +2,7 @@ import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { fluidObject } from '../../../prop-types/gatsby-image';
-import { wrapperStyle, packerStyle, imageStyle } from './styles.module.scss';
+import { imageStyle, packerStyle, wrapperStyle } from './styles.module.scss';
 
 export default PreviewCompatibleImage;
 export const imageProp = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ fluid: fluidObject })]);
@@ -20,12 +20,11 @@ PreviewCompatibleImage.defaultProps = {
 };
 
 function PreviewCompatibleImage({ image, alt, className }) {
-    const { fluid } = image || {};
+    try {
+        const { fluid } = image.childImageSharp;
 
-    if (fluid) {
         return <Image className={className} fluid={fluid} alt={alt} />;
-    }
-    if (!!image && typeof image === 'string') {
+    } catch (e) {
         return (
             <div className={wrapperStyle}>
                 <div className={packerStyle} />

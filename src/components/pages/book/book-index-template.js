@@ -8,8 +8,7 @@ import { indexHeaderStyle } from './styles.module.scss';
 import BookSummary from './book-summary';
 
 export default BookIndexTemplate;
-
-BookIndexTemplate.propTypes = {
+export const BookIndexProp = {
     group: PropTypes.arrayOf(PropTypes.any).isRequired,
     index: PropTypes.number.isRequired,
     first: PropTypes.bool.isRequired,
@@ -19,6 +18,8 @@ BookIndexTemplate.propTypes = {
     summary: PropTypes.string.isRequired,
     pathPrefix: PropTypes.string.isRequired,
 };
+
+BookIndexTemplate.propTypes = BookIndexProp;
 
 function BookIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';

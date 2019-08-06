@@ -7,8 +7,7 @@ import PostSummary from './post-summary';
 import { indexHeaderStyle } from './styles.module.scss';
 
 export default PostIndexTemplate;
-
-PostIndexTemplate.propTypes = {
+export const PostIndexProp = {
     group: PropTypes.arrayOf(PropTypes.any).isRequired,
     index: PropTypes.number.isRequired,
     first: PropTypes.bool.isRequired,
@@ -18,6 +17,8 @@ PostIndexTemplate.propTypes = {
     summary: PropTypes.string.isRequired,
     pathPrefix: PropTypes.string.isRequired,
 };
+
+PostIndexTemplate.propTypes = PostIndexProp;
 
 function PostIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';

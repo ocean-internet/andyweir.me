@@ -1,5 +1,7 @@
 import CMS from 'netlify-cms-app';
+/* eslint-disable */
 import styles from '!css-loader!sass-loader!../scss/preview.scss';
+/* eslint-enable */
 
 import AboutPreview from './preview-templates/AboutPreview';
 import BookPreview from './preview-templates/BookPreview';

@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
-import TalkIndexTemplate from '../../components/pages/talk/talk-index-template';
+import TalkIndexTemplate, { TalkIndexProp } from '../../components/pages/talk/talk-index-template';
 
 export default TalkIndex;
 
-TalkIndex.propTypes = {};
+TalkIndex.propTypes = {
+    pageContext: PropTypes.shape(TalkIndexProp).isRequired,
+};
 
 function TalkIndex({ pageContext }) {
     const { title, summary } = pageContext;

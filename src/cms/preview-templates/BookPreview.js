@@ -6,8 +6,8 @@ import { wrapperStyles } from '../../scss/page/styles.module.scss';
 export default BookPreview;
 
 BookPreview.propTypes = {
-    entry: PropTypes.shape({ getIn: PropTypes.func }),
-    widgetFor: PropTypes.func,
+    entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired,
+    widgetFor: PropTypes.func.isRequired,
 };
 
 function BookPreview({ entry, widgetFor }) {

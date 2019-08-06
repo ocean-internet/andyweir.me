@@ -8,6 +8,11 @@ Content.propTypes = {
     className: PropTypes.string,
 };
 
+Content.defaultProps = {
+    content: null,
+    className: null,
+};
+
 function Content({ content, className }) {
     return <section className={className}>{content}</section>;
 }

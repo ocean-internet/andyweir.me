@@ -8,8 +8,7 @@ import { indexHeaderStyle } from './styles.module.scss';
 import TalkSummary from './talk-summary';
 
 export default TalkIndexTemplate;
-
-TalkIndexTemplate.propTypes = {
+export const TalkIndexProp = {
     group: PropTypes.arrayOf(PropTypes.any).isRequired,
     index: PropTypes.number.isRequired,
     first: PropTypes.bool.isRequired,
@@ -19,6 +18,8 @@ TalkIndexTemplate.propTypes = {
     summary: PropTypes.string.isRequired,
     pathPrefix: PropTypes.string.isRequired,
 };
+
+TalkIndexTemplate.propTypes = TalkIndexProp;
 
 function TalkIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';

@@ -63,7 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
-    const { internal, frontmatter = null } = node;
+    const { internal = null } = node;
     const { type } = internal;
     fmImagesToRelative(node); // convert image paths for gatsby images
 
@@ -164,7 +164,6 @@ function getData(graphql) {
                             title
                             summary
                             youtube
-                            imageUrl
                         }
                     }
                 }

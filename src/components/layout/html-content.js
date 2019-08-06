@@ -9,6 +9,11 @@ HTMLContent.propTypes = {
     className: PropTypes.string,
 };
 
+HTMLContent.defaultProps = {
+    content: null,
+    className: null,
+};
+
 function HTMLContent({ content, className }) {
     return <section className={className}>{parseHtml(content)}</section>;
 }

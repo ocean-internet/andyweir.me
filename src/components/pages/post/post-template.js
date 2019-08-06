@@ -6,11 +6,11 @@ import { contentStyle, headerStyle, imageStyle } from './styles.module.scss';
 
 export default PostTemplate;
 export const PostProp = {
-    title: PropTypes.string,
-    image: imageProp.isRequired,
-    summary: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    image: imageProp.isRequired.isRequired,
+    summary: PropTypes.string.isRequired,
     content: PropTypes.node.isRequired,
-    contentComponent: PropTypes.func,
+    contentComponent: PropTypes.func.isRequired,
 };
 
 PostTemplate.propTypes = PostProp;

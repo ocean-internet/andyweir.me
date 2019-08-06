@@ -13,8 +13,8 @@ export const BookProp = {
     }).isRequired,
     image: imageProp.isRequired,
     summary: PropTypes.string.isRequired,
-    content: PropTypes.string,
-    contentComponent: PropTypes.func,
+    content: PropTypes.string.isRequired,
+    contentComponent: PropTypes.func.isRequired,
 };
 
 BookTemplate.propTypes = BookProp;

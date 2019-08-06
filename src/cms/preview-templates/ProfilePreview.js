@@ -5,8 +5,8 @@ import ProfileTemplate from '../../partials/profile/profile-template';
 export default ProfilePreview;
 
 ProfilePreview.propTypes = {
-    entry: PropTypes.shape({ getIn: PropTypes.func }),
-    widgetFor: PropTypes.func,
+    entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired,
+    widgetFor: PropTypes.func.isRequired,
 };
 
 function ProfilePreview({ entry, widgetFor }) {

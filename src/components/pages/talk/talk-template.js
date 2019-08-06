@@ -5,14 +5,14 @@ import { headerStyle, embedStyle, contentStyle } from './styles.module.scss';
 
 export default TalkTemplate;
 export const TalkProp = {
-    title: PropTypes.string,
-    summary: PropTypes.string,
-    youtube: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    youtube: PropTypes.string.isRequired,
     content: PropTypes.node.isRequired,
-    contentComponent: PropTypes.func,
+    contentComponent: PropTypes.func.isRequired,
 };
 
-TalkProp.propTypes = TalkProp;
+TalkTemplate.propTypes = TalkProp;
 
 function TalkTemplate({ title, summary, youtube, content, contentComponent }) {
     const PostContent = contentComponent || Content;

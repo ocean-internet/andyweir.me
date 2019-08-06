@@ -6,8 +6,8 @@ import AboutTemplate from '../../components/pages/about/about-template';
 export default AboutPreview;
 
 AboutPreview.propTypes = {
-    entry: PropTypes.shape({ getIn: PropTypes.func }),
-    widgetFor: PropTypes.func,
+    entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired,
+    widgetFor: PropTypes.func.isRequired,
 };
 
 function AboutPreview({ entry, widgetFor }) {
