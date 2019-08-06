@@ -1,4 +1,7 @@
+reports
 .idea
+.scannerwork
+
 # Logs
 logs
 *.log

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import faker from 'faker';
+import { wrapperStyles } from '../../../scss/page/styles.module.scss';
 import PaginationNavigation from './index';
 
 storiesOf('Components/Navigation/Pagination', module)
@@ -60,7 +61,7 @@ function isMiddlePage() {
 
 function showWith(props) {
     return (
-        <Fragment>
+        <section className={wrapperStyles}>
             <article>
                 <h1>{faker.lorem.sentence()}</h1>
                 <PaginationNavigation {...props} />
@@ -76,6 +77,6 @@ function showWith(props) {
                 </ul>
             </article>
             <PaginationNavigation {...props} />
-        </Fragment>
+        </section>
     );
 }

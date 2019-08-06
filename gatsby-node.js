@@ -68,12 +68,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     fmImagesToRelative(node); // convert image paths for gatsby images
 
     if (type === `MarkdownRemark`) {
-        const { youtube = null } = frontmatter;
-
-        if (!!youtube) {
-            frontmatter.imageUrl = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
-        }
-
         const value = createFilePath({ node, getNode });
         createNodeField({
             name: `slug`,

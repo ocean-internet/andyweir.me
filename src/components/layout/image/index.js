@@ -22,12 +22,13 @@ PreviewCompatibleImage.defaultProps = {
 function PreviewCompatibleImage({ image, alt, className }) {
     const { fluid } = image || {};
 
-    if (!!fluid) {
+    if (fluid) {
         return <Image className={className} fluid={fluid} alt={alt} />;
-    } else if (!!image && typeof image === 'string') {
+    }
+    if (!!image && typeof image === 'string') {
         return (
             <div className={wrapperStyle}>
-                <div className={packerStyle}></div>
+                <div className={packerStyle} />
                 <img className={imageStyle} src={image} alt={alt} />
             </div>
         );

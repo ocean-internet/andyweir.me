@@ -1,4 +1,9 @@
 @import "../../../scss/base";
+
+.plainLink {
+    @include plainLink;
+}
+
 .indexHeaderStyle {
 
     @include page-header;
@@ -23,6 +28,7 @@
     height: 0;
     overflow: hidden;
     max-width: 100%;
+    background-size:cover;
 
     iframe, object, embed {
         position: absolute;

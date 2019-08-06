@@ -1,42 +1,42 @@
 import React from 'react';
 import faker from 'faker';
-import PostIndexTemplate from './post-index-template';
-import PostTemplate from './post-template';
+import BookIndexTemplate from './book-index-template';
+import BookTemplate from './book-template';
 import { wrapperStyles } from '../../../scss/page/styles.module.scss';
 
-export function postIndex() {
+export function bookIndex() {
     const props = {
         title: faker.company.catchPhrase(),
         summary: faker.hacker.phrase(),
-        group: generatePosts(),
+        group: generateBooks(),
     };
 
     return (
         <section className={wrapperStyles}>
-            <PostIndexTemplate {...props} />
+            <BookIndexTemplate {...props} />
         </section>
     );
 }
 
-export function postPage() {
-    const props = generatePostProps();
+export function bookPage() {
+    const props = generateBookProps();
 
     return (
         <section className={wrapperStyles}>
-            <PostTemplate {...props} />
+            <BookTemplate {...props} />
         </section>
     );
 }
 
-function generatePosts() {
+function generateBooks() {
     const number = faker.random.number({ min: 2, max: 10 });
 
     return Array(number)
         .fill(null)
-        .map(() => ({ node: generatePostSummaryProps() }));
+        .map(() => ({ node: generateBookSummaryProps() }));
 }
 
-function generatePostSummaryProps() {
+function generateBookSummaryProps() {
     return {
         id: faker.random.uuid(),
         fields: {
@@ -44,16 +44,24 @@ function generatePostSummaryProps() {
         },
         frontmatter: {
             title: faker.company.catchPhrase(),
-            image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
+            author: {
+                name: faker.name.findName(),
+                url: faker.random.boolean() ? faker.internet.url() : null,
+            },
+            image: `https://picsum.photos/id/600/900/${faker.random.number(100)}`,
             summary: faker.hacker.phrase(),
         },
     };
 }
 
-function generatePostProps() {
+function generateBookProps() {
     return {
         title: faker.company.catchPhrase(),
-        image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
+        author: {
+            name: faker.name.findName(),
+            url: faker.random.boolean() ? faker.internet.url() : null,
+        },
+        image: `https://picsum.photos/id/600/900/${faker.random.number(100)}`,
         summary: faker.hacker.phrase(),
         content: faker.lorem
             .paragraphs(10)

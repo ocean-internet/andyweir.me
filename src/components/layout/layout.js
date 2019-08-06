@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import Profile from '../../partials/profile';
 import { page, icon, active } from './styles.module.scss';
-import { Link } from 'gatsby';
 
 export default Layout;
 
@@ -23,19 +23,19 @@ function Layout({ children }) {
                         <FontAwesomeIcon className={icon} icon={faHome} fixedWidth />
                         Home
                     </Link>
-                    <Link activeClassName={active} partiallyActive={true} to="/blog">
+                    <Link activeClassName={active} partiallyActive to="/blog">
                         <FontAwesomeIcon className={icon} icon={faPenAlt} fixedWidth />
                         Posts
                     </Link>
-                    <Link activeClassName={active} partiallyActive={true} to="/talks">
+                    <Link activeClassName={active} partiallyActive to="/talks">
                         <FontAwesomeIcon className={icon} icon={faCommentAlt} />
                         Talks
                     </Link>
-                    <Link activeClassName={active} partiallyActive={true} to="/books">
+                    <Link activeClassName={active} partiallyActive to="/books">
                         <FontAwesomeIcon className={icon} icon={faBookReader} fixedWidth />
                         Books
                     </Link>
-                    <Link activeClassName={active} partiallyActive={true} to="/about">
+                    <Link activeClassName={active} partiallyActive to="/about">
                         <FontAwesomeIcon className={icon} icon={faUser} />
                         About
                     </Link>

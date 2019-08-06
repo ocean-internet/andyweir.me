@@ -11,7 +11,7 @@ const IndexPage = () => (
         <SEO title="Home" />
         <h1>
             <FontAwesomeIcon className={icon} icon={faHome} fixedWidth />
-            What's new&hellip;
+            {`What's new`}&hellip;
         </h1>
     </Layout>
 );

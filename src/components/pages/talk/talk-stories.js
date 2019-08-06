@@ -1,42 +1,43 @@
 import React from 'react';
 import faker from 'faker';
-import PostIndexTemplate from './post-index-template';
-import PostTemplate from './post-template';
+import TalkIndexTemplate from './talk-index-template';
+import TalkTemplate from './talk-template';
 import { wrapperStyles } from '../../../scss/page/styles.module.scss';
 
-export function postIndex() {
+const youtubes = ['Ks-_Mh1QhMc', 'c0KYU2j0TM4', 'eIho2S0ZahI'];
+
+export function talkIndex() {
     const props = {
         title: faker.company.catchPhrase(),
         summary: faker.hacker.phrase(),
-        group: generatePosts(),
+        group: generateTalks(),
     };
 
     return (
         <section className={wrapperStyles}>
-            <PostIndexTemplate {...props} />
+            <TalkIndexTemplate {...props} />
         </section>
     );
 }
-
-export function postPage() {
-    const props = generatePostProps();
+export function talkPage() {
+    const props = generateTalkProps();
 
     return (
         <section className={wrapperStyles}>
-            <PostTemplate {...props} />
+            <TalkTemplate {...props} />
         </section>
     );
 }
 
-function generatePosts() {
+function generateTalks() {
     const number = faker.random.number({ min: 2, max: 10 });
 
     return Array(number)
         .fill(null)
-        .map(() => ({ node: generatePostSummaryProps() }));
+        .map(() => ({ node: generateTalkSummaryProps() }));
 }
 
-function generatePostSummaryProps() {
+function generateTalkSummaryProps() {
     return {
         id: faker.random.uuid(),
         fields: {
@@ -44,17 +45,17 @@ function generatePostSummaryProps() {
         },
         frontmatter: {
             title: faker.company.catchPhrase(),
-            image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
             summary: faker.hacker.phrase(),
+            youtube: faker.random.arrayElement(youtubes),
         },
     };
 }
 
-function generatePostProps() {
+function generateTalkProps() {
     return {
         title: faker.company.catchPhrase(),
-        image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
         summary: faker.hacker.phrase(),
+        youtube: faker.random.arrayElement(youtubes),
         content: faker.lorem
             .paragraphs(10)
             .split('\n')

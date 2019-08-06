@@ -69,7 +69,7 @@ function SEO({ summary: description, lang, meta, title }) {
 
     const props = {
         htmlAttributes: { lang },
-        title: title,
+        title,
         titleTemplate: `%s | ${site.siteMetadata.title}`,
         meta: defautMeta.concat(meta),
     };

@@ -16,10 +16,11 @@ TalkIndexTemplate.propTypes = {
     last: PropTypes.bool.isRequired,
     pageCount: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
     pathPrefix: PropTypes.string.isRequired,
 };
 
-function TalkIndexTemplate({ group: posts, index, first, last, pageCount, title, summary }) {
+function TalkIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';
     const next = index < pageCount ? (index + 1).toString() : index.toString();
 
@@ -30,10 +31,13 @@ function TalkIndexTemplate({ group: posts, index, first, last, pageCount, title,
 
     const talkListProps = {
         children: postList.map(({ id: key, fields, frontmatter }) => {
-            const { slug } = fields;
-            const { title, imageUrl, summary } = frontmatter;
+            const talkProps = {
+                key,
+                ...fields,
+                ...frontmatter,
+            };
 
-            return <TalkSummary {...{ key, slug, title, imageUrl, summary }} />;
+            return <TalkSummary {...talkProps} />;
         }),
     };
 

@@ -15,25 +15,28 @@ PostIndexTemplate.propTypes = {
     last: PropTypes.bool.isRequired,
     pageCount: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
     pathPrefix: PropTypes.string.isRequired,
 };
 
-function PostIndexTemplate({ group: posts, index, first, last, pageCount, title, summary }) {
+function PostIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';
     const next = index < pageCount ? (index + 1).toString() : index.toString();
 
-    const postList = posts.map(({ node }) => {
-        return { ...node };
-    });
+    const postList = posts.map(({ node }) => ({ ...node }));
+
     const hasPosts = !!postList.length;
     const hasPages = !!pageCount && pageCount < 1;
 
     const postListProps = {
         children: postList.map(({ id: key, fields, frontmatter }) => {
-            const { slug } = fields;
-            const { title, image, summary } = frontmatter;
+            const postProps = {
+                key,
+                ...fields,
+                ...frontmatter,
+            };
 
-            return <PostSummary {...{ key, slug, title, image, summary }} />;
+            return <PostSummary {...postProps} />;
         }),
     };
 

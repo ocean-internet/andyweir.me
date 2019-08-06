@@ -16,10 +16,11 @@ BookIndexTemplate.propTypes = {
     last: PropTypes.bool.isRequired,
     pageCount: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
     pathPrefix: PropTypes.string.isRequired,
 };
 
-function BookIndexTemplate({ group: posts, index, first, last, pageCount, title, summary }) {
+function BookIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';
     const next = index < pageCount ? (index + 1).toString() : index.toString();
 
@@ -30,10 +31,13 @@ function BookIndexTemplate({ group: posts, index, first, last, pageCount, title,
 
     const bookListProps = {
         children: postList.map(({ id: key, fields, frontmatter }) => {
-            const { slug } = fields;
-            const { title, image, summary } = frontmatter;
+            const bookProps = {
+                key,
+                ...fields,
+                ...frontmatter,
+            };
 
-            return <BookSummary {...{ key, slug, title, image, summary }} />;
+            return <BookSummary {...bookProps} />;
         }),
     };
 

@@ -1,7 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Image, { imageProp } from '../../layout/image';
 import PropTypes from 'prop-types';
+import Image, { imageProp } from '../../layout/image';
+import { plainLink } from './styles.module.scss';
 
 export default PostSummary;
 
@@ -12,15 +13,13 @@ PostSummary.propTypes = {
     summary: PropTypes.string.isRequired,
 };
 
-function PostSummary({ slug, title, image: imageFile, summary }) {
-    const { childImageSharp: image } = imageFile;
-
+function PostSummary({ slug, title, image, summary }) {
     return (
-        <Link to={slug}>
+        <Link to={slug} className={plainLink}>
             <section>
                 <h1>{title}</h1>
                 <p>{summary}</p>
-                <Image image={image} />
+                <Image image={image} alt={title} />
             </section>
         </Link>
     );

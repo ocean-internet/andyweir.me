@@ -23,7 +23,7 @@ function BookTemplate({ title, author, image, summary, content, contentComponent
     const BookContent = contentComponent || Content;
     const { name, url } = author;
 
-    const Author = () => <span>by {!!url ? <a href={url}>{name}</a> : name}</span>;
+    const Author = () => <span>by {url ? <a href={url}>{name}</a> : name}</span>;
 
     return (
         <Fragment>

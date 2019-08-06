@@ -8,5 +8,6 @@
   "parser": "babel",
   "printWidth": 120,
   "proseWrap": "preserve",
-  "useTabs": false
+  "useTabs": false,
+  "alignObjectProperties": true
 }

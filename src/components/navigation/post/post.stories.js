@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import faker from 'faker';
 import moment from 'moment';
+import { wrapperStyles } from '../../../scss/page/styles.module.scss';
 import PostNavigation from './index';
 
 storiesOf('Components/Navigation/Post Navigation', module)
@@ -46,7 +47,7 @@ function withDateString() {
 
 function showWith(props) {
     return (
-        <Fragment>
+        <section className={wrapperStyles}>
             <article>
                 <h1>{faker.lorem.sentence()}</h1>
                 {faker.lorem
@@ -57,7 +58,7 @@ function showWith(props) {
                     ))}
             </article>
             <PostNavigation {...props} />
-        </Fragment>
+        </section>
     );
 }
 

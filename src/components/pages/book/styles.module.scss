@@ -1,5 +1,8 @@
 @import "../../../scss/base";
 
+.plainLink {
+    @include plainLink;
+}
 .indexHeaderStyle {
 
     @include page-header;
