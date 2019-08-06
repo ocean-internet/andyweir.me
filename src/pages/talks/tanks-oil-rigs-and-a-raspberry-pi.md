@@ -6,7 +6,7 @@ title: 'Tanks, Oil Rigs, and a Raspberry Pi'
 summary: A Crash Course In Electronics
 youtube: wRP-q4xx5Pc
 ---
-The whole of electrics & electronics reduced to a 45-minute talk...
+The whole of electrics & electronics reduced to a 45-minute talk @Headforwards micro-conference - HeadTalks.
 
 * Part 1: Electrics
   * Basic Concepts of Electricity
@@ -14,3 +14,5 @@ The whole of electrics & electronics reduced to a 45-minute talk...
 * Part 2: Electronics
   * Power & Signal
   * PID Control Loop
+
+My post @Agileonthebeach review
