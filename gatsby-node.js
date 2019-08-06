@@ -124,7 +124,7 @@ function getData(graphql) {
                     }
                 }
             }
-            posts: allMarkdownRemark(filter: { frontmatter: { path: { eq: "blog" } } }) {
+            posts: allMarkdownRemark(filter: { frontmatter: { path: { eq: "blog" } } }, orderBy: date, order: DESC) {
                 edges {
                     node {
                         id
@@ -151,7 +151,7 @@ function getData(graphql) {
                     }
                 }
             }
-            talks: allMarkdownRemark(filter: { frontmatter: { path: { eq: "talks" } } }) {
+            talks: allMarkdownRemark(filter: { frontmatter: { path: { eq: "talks" } } }, orderBy: date, order: DESC) {
                 edges {
                     node {
                         id
@@ -168,7 +168,7 @@ function getData(graphql) {
                     }
                 }
             }
-            books: allMarkdownRemark(filter: { frontmatter: { path: { eq: "books" } } }) {
+            books: allMarkdownRemark(filter: { frontmatter: { path: { eq: "books" } } }, orderBy: date, order: DESC) {
                 edges {
                     node {
                         id
