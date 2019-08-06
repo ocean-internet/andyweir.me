@@ -34,15 +34,7 @@ export default function() {
     `);
 
     const { frontmatter, summary } = partial;
-    const {
-        backgroundImage: backgroundImageFile,
-        title,
-        profileImage,
-        work,
-        twitter,
-        linkedin,
-        github,
-    } = frontmatter;
+    const { backgroundImage: backgroundImageFile, title, profileImage, work, twitter, linkedin, github } = frontmatter;
     const { src: backgroundImage } = backgroundImageFile.childImageSharp.fluid;
     const contentComponent = HTMLContent;
 

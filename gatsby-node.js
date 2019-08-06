@@ -69,45 +69,50 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (type === `MarkdownRemark`) {
         const value = createFilePath({ node, getNode });
-        createNodeField({
+        return createNodeField({
             name: `slug`,
             node,
             value,
         });
     }
+    return Promise.resolve();
 };
 
 function createAllPages(createPage, { edges: pages = [] }) {
-    return pages.forEach(({ node: page }) => {
-        const { id, frontmatter } = page;
-        const { path: pagePath, type } = frontmatter;
+    return Promise.all(
+        pages.map(({ node: page }) => {
+            const { id, frontmatter } = page;
+            const { path: pagePath, type } = frontmatter;
 
-        return createPage({
-            path: pagePath,
-            component: path.resolve(`src/templates/${pagePath}-${type}.js`),
-            context: { id },
-        });
-    });
+            return createPage({
+                path: pagePath,
+                component: path.resolve(`src/templates/${pagePath}-${type}.js`),
+                context: { id },
+            });
+        })
+    );
 }
 
 function createAllPosts(createPage, { edges: posts = [] }) {
     const firstIndex = 0;
     const lastIndex = posts.length - 1;
 
-    return posts.forEach(({ node: post }, index) => {
-        const { id, fields, frontmatter } = post;
-        const { slug } = fields;
-        const { path: postPath, type } = frontmatter;
+    return Promise.all(
+        posts.map(({ node: post }, index) => {
+            const { id, fields, frontmatter } = post;
+            const { slug } = fields;
+            const { path: postPath, type } = frontmatter;
 
-        const { id: prevId = '' } = index > firstIndex ? posts[index - 1].node : {};
-        const { id: nextId = '' } = index < lastIndex ? posts[index + 1].node : {};
+            const { id: prevId = '' } = index > firstIndex ? posts[index - 1].node : {};
+            const { id: nextId = '' } = index < lastIndex ? posts[index + 1].node : {};
 
-        return createPage({
-            path: slug,
-            component: path.resolve(`src/templates/${postPath}/${type}-page.js`),
-            context: { id, prevId, nextId },
-        });
-    });
+            return createPage({
+                path: slug,
+                component: path.resolve(`src/templates/${postPath}/${type}-page.js`),
+                context: { id, prevId, nextId },
+            });
+        })
+    );
 }
 
 function getData(graphql) {
