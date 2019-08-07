@@ -19,9 +19,10 @@ export const BookProp = {
 
 BookTemplate.propTypes = BookProp;
 
-function BookTemplate({ title=null, author={}, image=null, summary=null, content=null, contentComponent }) {
+function BookTemplate({ title = null, author = {}, image = null, summary = null, content = null, contentComponent }) {
     const BookContent = contentComponent || Content;
     const { name, url } = author;
+    const ratio = 129 / 198;
 
     const Author = () => <span>by {url ? <a href={url}>{name}</a> : name}</span>;
 
@@ -33,7 +34,7 @@ function BookTemplate({ title=null, author={}, image=null, summary=null, content
                     <Author />
                 </h1>
                 <p>{summary}</p>
-                <Image className={imageStyle} image={image} alt={title} />
+                <Image className={imageStyle} ratio={ratio} image={image} alt={title} />
             </header>
             <BookContent className={contentStyle} content={content} />
         </Fragment>
