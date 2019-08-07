@@ -75,8 +75,10 @@ $gutter-xl-s: $gutter-xl $gutter-s;
 $gutter-xl-m: $gutter-xl $gutter-m;
 $gutter-xl-l: $gutter-xl $gutter-l;
 
-$screenLarge: (1200px/$fontMedium)+2rem;
+$screenLarge: (1200px);
+$screenMedium: (800px);
 $mediaLarge: screen and (min-width: $screenLarge);
+$mediaMedium: screen and (min-width: $screenMedium);
 
 $card-radius: 0.1rem;
 $card-0: 0 1px  1px  rgba($ink, 0.06), 0 1px  1px  rgba($ink,0.12);

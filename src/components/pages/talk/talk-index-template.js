@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { icon } from '../../layout/styles.module.scss';
 import PaginationNavigation from '../../navigation/pagination';
-import { indexHeaderStyle } from './styles.module.scss';
+import { indexHeaderStyle, talkListStyle } from './styles.module.scss';
 import TalkSummary from './talk-summary';
 
 export default TalkIndexTemplate;
@@ -60,7 +60,7 @@ function TalkIndexTemplate({ group: posts = [], index = 1, first, last, pageCoun
                 <p>{summary}</p>
             </header>
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
-            {hasPosts && <section {...talkListProps} />}
+            {hasPosts && <section {...talkListProps} className={talkListStyle} />}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );

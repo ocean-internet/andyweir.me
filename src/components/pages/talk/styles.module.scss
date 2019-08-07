@@ -1,7 +1,40 @@
 @import "../../../scss/base";
 
-.plainLink {
+.talkLinkStyle {
     @include plainLink;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    section {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        h1 {
+            display: flex;
+            flex-direction: column;
+            @include font-l;
+            flex-grow: 1;
+            :last-child {
+                text-transform: initial;
+                font-family: $labelFont;
+                @include font-s;
+                padding-left: $gutter-m;
+
+                &:before {
+                    content: "\2014\00a0";
+                }
+            }
+        }
+    }
+}
+@media #{$mediaLarge} {
+    .talkLinkStyle {
+        width: calc(50% - #{$gutter-m/2});
+    }
+}
+
+.imageStyle {
+    @include card-1;
 }
 
 .indexHeaderStyle {
@@ -16,6 +49,14 @@
             margin-right: 0.25rem;
         }
     }
+}
+
+.talkListStyle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .headerStyle {

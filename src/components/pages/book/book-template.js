@@ -22,7 +22,7 @@ BookTemplate.propTypes = BookProp;
 function BookTemplate({ title = null, author = {}, image = null, summary = null, content = null, contentComponent }) {
     const BookContent = contentComponent || Content;
     const { name, url } = author;
-    const ratio = 129 / 198;
+    const ratio = 198 / 129;
 
     const Author = () => <span>by {url ? <a href={url}>{name}</a> : name}</span>;
 

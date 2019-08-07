@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { icon } from '../../layout/styles.module.scss';
 import PaginationNavigation from '../../navigation/pagination';
-import { indexHeaderStyle } from './styles.module.scss';
+import { indexHeaderStyle, bookListStyle } from './styles.module.scss';
 import BookSummary from './book-summary';
 
 export default BookIndexTemplate;
@@ -28,7 +28,7 @@ function BookIndexTemplate({ group: posts = [], index = 1, first, last, pageCoun
     const postList = posts.map(({ node }) => ({ ...node }));
 
     const hasPosts = !!postList.length;
-    const hasPages = !!pageCount && pageCount < 1;
+    const hasPages = !!pageCount && pageCount > 1;
 
     const bookListProps = {
         children: postList.map(({ id: key, fields, frontmatter }) => {
@@ -59,8 +59,7 @@ function BookIndexTemplate({ group: posts = [], index = 1, first, last, pageCoun
                 </h1>
                 <p>{summary}</p>
             </header>
-            {hasPages && <PaginationNavigation {...paginationNavProps} />}
-            {hasPosts && <section {...bookListProps} />}
+            {hasPosts && <section {...bookListProps} className={bookListStyle} />}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );

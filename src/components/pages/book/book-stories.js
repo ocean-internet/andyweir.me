@@ -48,8 +48,7 @@ function generateBookSummaryProps() {
                 name: faker.name.findName(),
                 url: faker.random.boolean() ? faker.internet.url() : null,
             },
-            image: `https://picsum.photos/id/600/900/${faker.random.number(100)}`,
-            summary: faker.hacker.phrase(),
+            image: `https://picsum.photos/id/${faker.random.number(100)}/516/792/`,
         },
     };
 }
@@ -61,7 +60,7 @@ function generateBookProps() {
             name: faker.name.findName(),
             url: faker.random.boolean() ? faker.internet.url() : null,
         },
-        image: `https://picsum.photos/id/600/900/${faker.random.number(100)}`,
+        image: `https://picsum.photos/id/${faker.random.number(100)}/516/792/`,
         summary: faker.hacker.phrase(),
         content: faker.lorem
             .paragraphs(10)

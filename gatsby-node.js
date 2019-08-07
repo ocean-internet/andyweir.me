@@ -44,7 +44,7 @@ exports.createPages = ({ actions, graphql }) => {
                 edges: books.edges,
                 createPage,
                 pageTemplate: './src/templates/books/book-index.js',
-                pageLength: 10,
+                pageLength: 6,
                 pathPrefix: '/books',
                 context: bookIndexMeta,
             };
@@ -173,7 +173,7 @@ function getData(graphql) {
                             type
                             path
                             title
-                            summary
+                            dateString: date(fromNow: true)
                             youtube
                         }
                     }
@@ -193,7 +193,9 @@ function getData(graphql) {
                             type
                             path
                             title
-                            summary
+                            author {
+                                name
+                            }
                             image {
                                 childImageSharp {
                                     fluid(fit: COVER, maxWidth: 129, maxHeight: 198, cropFocus: ENTROPY) {

@@ -32,7 +32,7 @@ function PreviewCompatibleImage({ image, ratio, alt, className }) {
         };
 
         return (
-            <div className={wrapperStyle}>
+            <div className={`${className} ${wrapperStyle}`}>
                 <div className={packerStyle} style={style} />
                 <img className={imageStyle} src={image} alt={alt} />
             </div>

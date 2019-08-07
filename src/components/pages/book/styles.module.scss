@@ -1,7 +1,17 @@
 @import "../../../scss/base";
 
-.plainLink {
+.bookLinkStyle {
     @include plainLink;
+}
+@media #{$mediaMedium} {
+    .bookLinkStyle {
+        width: calc(50% - #{$gutter-m/2});
+    }
+}
+@media #{$mediaLarge} {
+    .bookLinkStyle {
+        width: calc(33.33333% - #{2*$gutter-m/3});
+    }
 }
 .indexHeaderStyle {
 
@@ -15,6 +25,49 @@
             margin-right: 0.25rem;
         }
     }
+}
+
+.bookListStyle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summaryStyle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: $gutter-s 0;
+}
+
+.summaryHeaderStyle {
+    order: 2;
+    flex-basis: calc(62% - #{2*$gutter-m});
+    padding: $gutter-m;
+    h1 {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        @include font-m;
+        > :last-child {
+            text-transform: initial;
+            font-family: $labelFont;
+            @include font-s;
+            padding-left: $gutter-m;
+
+            &:before {
+                content: "\2014\00a0";
+            }
+        }
+    }
+}
+
+.summaryImageStyle {
+    order: 1;
+    flex-basis: 38%;
+    @include card-1;
 }
 
 .headerStyle {
