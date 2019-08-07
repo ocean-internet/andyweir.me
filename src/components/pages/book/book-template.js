@@ -19,7 +19,7 @@ export const BookProp = {
 
 BookTemplate.propTypes = BookProp;
 
-function BookTemplate({ title, author, image, summary, content, contentComponent }) {
+function BookTemplate({ title=null, author={}, image=null, summary=null, content=null, contentComponent }) {
     const BookContent = contentComponent || Content;
     const { name, url } = author;
 

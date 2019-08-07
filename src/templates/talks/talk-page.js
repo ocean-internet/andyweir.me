@@ -64,14 +64,18 @@ function TalkPage({ data }) {
     };
 
     const navigationProps = {
-        prev: prev ? {
-            ...(prev.fields || defaultNav),
-            ...(prev.frontmatter || defaultNav),
-        } : null,
-        next: next ? {
-            ...(next.fields || defaultNav),
-            ...(next.frontmatter || defaultNav),
-        } : null,
+        prev: prev
+            ? {
+                  ...(prev.fields || defaultNav),
+                  ...(prev.frontmatter || defaultNav),
+              }
+            : null,
+        next: next
+            ? {
+                  ...(next.fields || defaultNav),
+                  ...(next.frontmatter || defaultNav),
+              }
+            : null,
     };
 
     return (
