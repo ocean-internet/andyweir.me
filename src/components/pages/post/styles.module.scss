@@ -1,7 +1,47 @@
 @import "../../../scss/base";
 
-.plainLink {
+.postLinkStyle {
     @include plainLink;
+    @include card-1;
+    margin: $gutter-m/2;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        width: calc(100% - #{$gutter-l});
+        margin: $gutter-m/2 $gutter-l/2;
+    }
+    @media #{$mediaLarge} {
+        margin: $gutter-l/2 $gutter-xl/2;
+        width: calc(50% - #{$gutter-xl});
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        h1 {
+            display: flex;
+            flex-direction: column;
+            @include font-l;
+            margin: $gutter-s;
+            flex-grow: 1;
+            :last-child {
+                text-transform: initial;
+                font-family: $labelFont;
+                @include font-s;
+                padding-left: $gutter-m;
+
+                &:before {
+                    content: "\2014\00a0";
+                }
+            }
+        }
+        p {
+            @include font-s;
+            margin: $gutter-s;
+        }
+    }
 }
 
 .indexHeaderStyle {
@@ -15,6 +55,21 @@
         :first-child {
             margin-right: 0.25rem;
         }
+    }
+}
+
+.postListStyle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: -$gutter-m/2;
+    @media #{$mediaMedium} {
+        margin: -#{$gutter-m/2} -#{$gutter-l/2};
+    }
+    @media #{$mediaLarge} {
+        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
     }
 }
 

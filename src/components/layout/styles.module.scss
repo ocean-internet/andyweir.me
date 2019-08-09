@@ -7,33 +7,44 @@
     overflow-y: auto;
 
     > nav {
-        padding-top: $gutter-m;
-        margin: $gutter-0-xl;
+        padding: $gutter-0-m;
         position: sticky;
         top: 0;
-        background: $chalk;
-        color: white;
+        background: $primary;
+        color: $chalk;
         z-index: 999;
         box-shadow: $gutter-0-xs $gutter-m-s rgba($chalk,$captionOpacity);
-        border-bottom: 1px solid $ink;
-        line-height: $lineHeight-l;
-        @include font-l;
+        @include font-xl;
+        height: 2*$fontXLarge;
+        font-family: $labelFont;
+        text-transform: uppercase;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        align-items: center;
+        justify-content: flex-start;
 
-        > a {
-            opacity: $captionOpacity;
-            padding: $gutter-0-s;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+        h1 {
+            flex-grow: 1;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: 2;
+            margin: 0;
+        }
+
+        svg {
+            margin-left: $gutter-m;
+            justify-self: flex-end;
         }
     }
 
     > main {
-        margin: $gutter-m-xl;
+        margin: $gutter-m;
+        @media #{$mediaMedium} {
+            margin: $gutter-m-l;
+        }
+        @media #{$mediaLarge} {
+            margin: $gutter-m-xl;
+        }
         flex-grow: 1;
 
         > :first-child {
@@ -50,6 +61,12 @@
         background: rgba($primary, 0.5);
         color: white;
     }
+}
+
+.logoStyle {
+    height: 2*$fontXLarge;
+    width: 2*$fontXLarge;
+    margin-right: $gutter-m;
 }
 
 .active {

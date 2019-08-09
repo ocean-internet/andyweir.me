@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import faker from 'faker';
 import PostIndexTemplate from './post-index-template';
@@ -44,7 +45,8 @@ function generatePostSummaryProps() {
         },
         frontmatter: {
             title: faker.company.catchPhrase(),
-            image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
+            dateString: moment(faker.date.past()).fromNow(),
+            image: `https://picsum.photos/id/${faker.random.number(100)}/900/600/`,
             summary: faker.hacker.phrase(),
         },
     };
@@ -53,7 +55,8 @@ function generatePostSummaryProps() {
 function generatePostProps() {
     return {
         title: faker.company.catchPhrase(),
-        image: `https://picsum.photos/id/900/600/${faker.random.number(100)}`,
+        dateString: moment(faker.date.past()).fromNow(),
+        image: `https://picsum.photos/id/${faker.random.number(100)}/900/600/`,
         summary: faker.hacker.phrase(),
         content: faker.lorem
             .paragraphs(10)

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import PaginationNavigation from '../../navigation/pagination';
 import PostSummary from './post-summary';
-import { indexHeaderStyle } from './styles.module.scss';
+import { indexHeaderStyle, postListStyle } from './styles.module.scss';
 
 export default PostIndexTemplate;
 export const PostIndexProp = {
@@ -60,7 +60,7 @@ function PostIndexTemplate({ group: posts = [], index = 1, first, last, pageCoun
                 <p>{summary}</p>
             </header>
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
-            {hasPosts && <section {...postListProps} />}
+            {hasPosts && <section {...postListProps} className={postListStyle} />}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );

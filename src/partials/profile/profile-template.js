@@ -1,11 +1,13 @@
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faBookReader, faCommentAlt, faHome, faPenAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'gatsby';
 import Content from '../../components/layout/content';
 import Image from '../../components/layout/image';
 import { fluidObject } from '../../prop-types/gatsby-image';
+import { icon, active } from '../../components/layout/styles.module.scss';
 
 import { profile, profileImageStyle } from './styles.module.scss';
 
@@ -31,6 +33,28 @@ const ProfileTemplate = ({
                 {profileImage && <Image className={profileImageStyle} image={profileImage} alt={title} />}
             </header>
             <Summary content={summary} />
+            <nav>
+                <Link activeClassName={active} to="/">
+                    <FontAwesomeIcon className={icon} icon={faHome} fixedWidth />
+                    Home
+                </Link>
+                <Link activeClassName={active} partiallyActive to="/blog">
+                    <FontAwesomeIcon className={icon} icon={faPenAlt} fixedWidth />
+                    Posts
+                </Link>
+                <Link activeClassName={active} partiallyActive to="/talks">
+                    <FontAwesomeIcon className={icon} icon={faCommentAlt} />
+                    Talks
+                </Link>
+                <Link activeClassName={active} partiallyActive to="/books">
+                    <FontAwesomeIcon className={icon} icon={faBookReader} fixedWidth />
+                    Books
+                </Link>
+                <Link activeClassName={active} partiallyActive to="/about">
+                    <FontAwesomeIcon className={icon} icon={faUser} />
+                    About
+                </Link>
+            </nav>
             <nav>
                 {work && (
                     <a href={`https://twitter.com/${work}`}>

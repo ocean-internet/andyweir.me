@@ -2,9 +2,18 @@
 
 .talkLinkStyle {
     @include plainLink;
-    width: 100%;
+    margin: $gutter-m/2;
     display: flex;
     flex-direction: column;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        width: calc(100% - #{$gutter-l});
+        margin: $gutter-m/2 $gutter-l/2;
+    }
+    @media #{$mediaLarge} {
+        margin: $gutter-l/2 $gutter-xl/2;
+        width: calc(50% - #{$gutter-xl});
+    }
     section {
         display: flex;
         flex-direction: column;
@@ -13,6 +22,7 @@
             display: flex;
             flex-direction: column;
             @include font-l;
+            margin: 0 $gutter-0-s;
             flex-grow: 1;
             :last-child {
                 text-transform: initial;
@@ -25,11 +35,6 @@
                 }
             }
         }
-    }
-}
-@media #{$mediaLarge} {
-    .talkLinkStyle {
-        width: calc(50% - #{$gutter-m/2});
     }
 }
 
@@ -55,8 +60,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
+    margin: -$gutter-m/2;
+    @media #{$mediaMedium} {
+        margin: -#{$gutter-m/2} -#{$gutter-l/2};
+    }
+    @media #{$mediaLarge} {
+        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
+    }
 }
 
 .headerStyle {
@@ -74,12 +86,19 @@
 }
 .embedStyle {
     @include card-1;
+    margin: 0 auto;
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
     background-size:cover;
+    @media #{$mediaMedium} {
+        width: $golden-l;
+    }
+
+    > div {
+        padding-bottom: 56.25%;
+        height: 0;
+    }
 
     iframe, object, embed {
         position: absolute;

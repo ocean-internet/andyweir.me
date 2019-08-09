@@ -2,15 +2,15 @@
 
 .bookLinkStyle {
     @include plainLink;
-}
-@media #{$mediaMedium} {
-    .bookLinkStyle {
-        width: calc(50% - #{$gutter-m/2});
+    margin: $gutter-m/2;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        margin: $gutter-m/2 $gutter-l/2;
+        width: calc(50% - #{$gutter-l});
     }
-}
-@media #{$mediaLarge} {
-    .bookLinkStyle {
-        width: calc(33.33333% - #{2*$gutter-m/3});
+    @media #{$mediaLarge} {
+        margin: $gutter-l/2 $gutter-xl/2;
+        width: calc(33.33333% - #{$gutter-xl});
     }
 }
 .indexHeaderStyle {
@@ -31,20 +31,26 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    margin: -$gutter-m/2;
+    @media #{$mediaMedium} {
+        margin: -#{$gutter-m/2} -#{$gutter-l/2};
+    }
+    @media #{$mediaLarge} {
+        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
+    }
 }
 
 .summaryStyle {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: $gutter-s 0;
 }
 
 .summaryHeaderStyle {
     order: 2;
-    flex-basis: calc(62% - #{2*$gutter-m});
+    flex-basis: calc(#{$golden-l} - #{2*$gutter-m});
     padding: $gutter-m;
     h1 {
         margin: 0;
@@ -66,7 +72,7 @@
 
 .summaryImageStyle {
     order: 1;
-    flex-basis: 38%;
+    flex-basis: $golden-s;
     @include card-1;
 }
 
@@ -87,7 +93,10 @@
 }
 .imageStyle {
     align-self: center;
-    width: 38%;
+    width: $golden-l;
+    @media #{$mediaMedium} {
+        width: $golden-s;
+    }
 }
 .contentStyle {
     @include page-content;

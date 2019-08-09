@@ -3,6 +3,12 @@
 $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
 
 .profile {
+    position: absolute;
+    left: -100vw;
+    @media #{$mediaMedium} {
+        position: relative;
+        left: initial;
+    }
     flex-basis: 25%;
     flex-shrink: 0;
 

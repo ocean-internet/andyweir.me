@@ -143,10 +143,11 @@ function getData(graphql) {
                             type
                             path
                             title
+                            dateString: date(fromNow: true)
                             summary
                             image {
                                 childImageSharp {
-                                    fluid(fit: COVER, maxWidth: 200, maxHeight: 200, cropFocus: ENTROPY) {
+                                    fluid(fit: COVER, maxWidth: 600, maxHeight: 400, cropFocus: ENTROPY) {
                                         tracedSVG
                                         aspectRatio
                                         src
@@ -198,7 +199,7 @@ function getData(graphql) {
                             }
                             image {
                                 childImageSharp {
-                                    fluid(fit: COVER, maxWidth: 129, maxHeight: 198, cropFocus: ENTROPY) {
+                                    fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
                                         tracedSVG
                                         aspectRatio
                                         src

@@ -30,6 +30,7 @@ function TalkTemplate({ title, dateString, summary, youtube, content, contentCom
                 <p>{summary}</p>
             </header>
             <div className={embedStyle} style={backgroundImage}>
+                <div />
                 <iframe
                     title={title}
                     src={`https://www.youtube.com/embed/${youtube}`}
