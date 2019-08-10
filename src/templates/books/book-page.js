@@ -30,44 +30,10 @@ export const query = graphql`
             content: html
         }
         prev: markdownRemark(id: { eq: $prevId }) {
-            fields {
-                slug
-            }
-            frontmatter {
-                type
-                path
-                title
-                author {
-                    name
-                }
-                image {
-                    childImageSharp {
-                        fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
-                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                        }
-                    }
-                }
-            }
+            ...BookSummaryFragment
         }
         next: markdownRemark(id: { eq: $nextId }) {
-            fields {
-                slug
-            }
-            frontmatter {
-                type
-                path
-                title
-                author {
-                    name
-                }
-                image {
-                    childImageSharp {
-                        fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
-                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                        }
-                    }
-                }
-            }
+            ...BookSummaryFragment
         }
     }
 `;
