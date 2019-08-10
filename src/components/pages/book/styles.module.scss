@@ -85,12 +85,19 @@
         width: calc(50% - #{$gutter-l});
     }
     .summaryHeaderStyle {
+        padding-right: 0;
         flex-basis: initial;
         justify-content: flex-end;
+        h1 {
+            @include font-m;
+            span {
+                @include font-s;
+            }
+        }
     }
     .summaryImageStyle {
         flex-basis: initial;
-        width: 129px;
+        width: 100px;
         flex-shrink: 0;
     }
 }
@@ -109,6 +116,11 @@
         order: 2;
         .summaryStyle {
             justify-content: flex-end;
+        }
+        .summaryHeaderStyle {
+            text-align: right;
+            padding-right: $gutter-m;
+            padding-left: 0;
         }
         .summaryImageStyle {
             order: 2;

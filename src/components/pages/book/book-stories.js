@@ -1,5 +1,6 @@
 import React from 'react';
 import faker from 'faker';
+import { generateBookProps, generateBookSummaryProps } from '../../../lib/story-lib';
 import BookIndexTemplate from './book-index-template';
 import BookTemplate from './book-template';
 import { wrapperStyles } from '../../../scss/page/styles.module.scss';
@@ -34,37 +35,4 @@ function generateBooks() {
     return Array(number)
         .fill(null)
         .map(() => ({ node: generateBookSummaryProps() }));
-}
-
-function generateBookSummaryProps() {
-    return {
-        id: faker.random.uuid(),
-        fields: {
-            slug: faker.lorem.slug(),
-        },
-        frontmatter: {
-            title: faker.company.catchPhrase(),
-            author: {
-                name: faker.name.findName(),
-                url: faker.random.boolean() ? faker.internet.url() : null,
-            },
-            image: `https://picsum.photos/id/${faker.random.number(100)}/516/792/`,
-        },
-    };
-}
-
-function generateBookProps() {
-    return {
-        title: faker.company.catchPhrase(),
-        author: {
-            name: faker.name.findName(),
-            url: faker.random.boolean() ? faker.internet.url() : null,
-        },
-        image: `https://picsum.photos/id/${faker.random.number(100)}/516/792/`,
-        summary: faker.hacker.phrase(),
-        content: faker.lorem
-            .paragraphs(10)
-            .split('\n')
-            .map(p => <p>{p}</p>),
-    };
 }

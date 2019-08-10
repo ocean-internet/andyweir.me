@@ -12,7 +12,7 @@
     }
     @media #{$mediaLarge} {
         margin: $gutter-l/2 $gutter-xl/2;
-        width: calc(50% - #{$gutter-xl});
+        width: calc(33.33333% - #{$gutter-xl});
     }
     section {
         display: flex;
@@ -38,7 +38,7 @@
     }
 }
 
-.imageStyle {
+.summaryImageStyle {
     @include card-1;
 }
 
@@ -68,6 +68,57 @@
     }
     @media #{$mediaLarge} {
         margin: -#{$gutter-l/2} -#{$gutter-xl/2};
+    }
+}
+
+.prevStyle, .nextStyle  {
+    @include plainLink;
+    margin: 0 $gutter-m/2;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        align-items: stretch;
+        margin: 0 $gutter-l/2;
+        width: calc(50% - #{$gutter-l});
+    }
+    @media #{$mediaLarge} {
+        margin: 0 $gutter-xl/2;
+        width: calc(33.3333% - #{$gutter-l});
+    }
+    .summaryHeaderStyle {
+        flex-basis: initial;
+        justify-content: flex-end;
+        h1 {
+            @include font-m;
+            span {
+                @include font-s;
+            }
+        }
+    }
+    .summaryImageStyle {
+        flex-basis: initial;
+        width: $golden-l;
+        align-self: center;
+        @media #{$mediaMedium} {
+            width: 100%;
+        }
+    }
+}
+.prevStyle {
+    justify-self: flex-start;
+    margin-right: auto;
+    margin-top: $gutter-m;
+    @media #{$mediaMedium} {
+        margin-top: 0;
+    }
+}
+.nextStyle {
+    justify-self: flex-end;
+    margin-left: auto;
+    @media #{$mediaMedium} {
+        order: 2;
+        .summaryHeaderStyle h1 {
+            text-align: right;
+        }
     }
 }
 

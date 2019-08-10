@@ -81,8 +81,8 @@ function TalkPage({ data }) {
         : null;
 
     const navigationProps = {
-        prev: prev ? <TalkSummary {...prevProps} /> : null,
-        next: next ? <TalkSummary {...nextProps} /> : null,
+        prev: prev ? () => <TalkSummary isPrev {...prevProps} /> : null,
+        next: next ? () => <TalkSummary isNext {...nextProps} /> : null,
     };
 
     return (

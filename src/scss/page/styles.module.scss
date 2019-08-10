@@ -1,7 +1,13 @@
 @import "../settings";
 
 .wrapperStyles {
-    padding: $gutter-m;
+    margin: $gutter-m;
+    @media #{$mediaMedium} {
+        margin: $gutter-m-l;
+    }
+    @media #{$mediaLarge} {
+        margin: $gutter-m-xl;
+    }
     > :first-child {
         margin-top: 0;
     }

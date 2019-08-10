@@ -26,7 +26,6 @@ export const query = graphql`
             content: html
         }
         prev: markdownRemark(id: { eq: $prevId }) {
-            id
             fields {
                 slug
             }
@@ -46,7 +45,6 @@ export const query = graphql`
             }
         }
         next: markdownRemark(id: { eq: $nextId }) {
-            id
             fields {
                 slug
             }
@@ -102,8 +100,8 @@ function PostPage({ data }) {
         : null;
 
     const navigationProps = {
-        prev: prev ? <PostSummary {...prevProps} /> : null,
-        next: next ? <PostSummary {...nextProps} /> : null,
+        prev: prev ? () => <PostSummary isPrev {...prevProps} /> : null,
+        next: next ? () => <PostSummary isNext {...nextProps} /> : null,
     };
 
     return (

@@ -2,35 +2,23 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import faker from 'faker';
+import { generateBookSummaryProps, generatePostSummaryProps, generateTalkSummaryProps } from '../../../lib/story-lib';
 import { wrapperStyles } from '../../../scss/page/styles.module.scss';
 import BookSummary from '../../pages/book/book-summary';
+import PostSummary from '../../pages/post/post-summary';
+import TalkSummary from '../../pages/talk/talk-summary';
 import PostNavigation from './index';
 
 storiesOf('Components/Navigation/Post Navigation', module)
     .addDecorator((storyFn, context) => withConsole()(storyFn)(context))
-    .add('with Prev Post', withPrevPost)
-    .add('with Next Post', withNextPost)
-    .add('with Prev & Next Post', withPrevNextPost)
+    .add('with post links', withPostLinks)
+    .add('with talk links', withTalkLinks)
     .add('with book links', withBookLinks);
 
-function withPrevPost() {
+function withPostLinks() {
     const props = {
-        prev: generateLink(),
-    };
-
-    return showWith(props);
-}
-function withNextPost() {
-    const props = {
-        next: generateLink(),
-    };
-
-    return showWith(props);
-}
-function withPrevNextPost() {
-    const props = {
-        prev: generateLink(),
-        next: generateLink(),
+        prev: () => <PostSummary isPrev {...generatePostSummaryProps()} />,
+        next: () => <PostSummary isNext {...generatePostSummaryProps()} />,
     };
 
     return showWith(props);
@@ -40,6 +28,15 @@ function withBookLinks() {
     const props = {
         prev: () => <BookSummary isPrev {...generateBookSummaryProps()} />,
         next: () => <BookSummary isNext {...generateBookSummaryProps()} />,
+    };
+
+    return showWith(props);
+}
+
+function withTalkLinks() {
+    const props = {
+        prev: () => <TalkSummary isPrev {...generateTalkSummaryProps()} />,
+        next: () => <TalkSummary isNext {...generateTalkSummaryProps()} />,
     };
 
     return showWith(props);
@@ -60,20 +57,4 @@ function showWith(props) {
             <PostNavigation {...props} />
         </section>
     );
-}
-
-function generateLink() {
-    const title = faker.lorem.sentence();
-    const slug = faker.lorem.slug();
-
-    return <a href={slug}>{title}</a>;
-}
-
-function generateBookSummaryProps() {
-    return {
-        slug: faker.lorem.slug(),
-        title: faker.company.catchPhrase(),
-        author: { name: faker.name.findName() },
-        image: `https://picsum.photos/id/${faker.random.number(100)}/198/129/`,
-    };
 }

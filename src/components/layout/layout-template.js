@@ -1,12 +1,12 @@
-import { faBars }                        from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon }               from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import moment                            from 'moment';
-import PropTypes                         from 'prop-types';
-import React, { Fragment }               from 'react';
-import Profile                           from '../../partials/profile';
-import Image                             from './image';
-import { homeLinkStyle, logoStyle, page }               from './styles.module.scss';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
+import Profile from '../../partials/profile';
+import Image from './image';
+import { homeLinkStyle, logoStyle, page } from './styles.module.scss';
 
 export default LayoutTemplate;
 

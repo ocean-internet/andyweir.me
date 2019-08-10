@@ -30,7 +30,6 @@ export const query = graphql`
             content: html
         }
         prev: markdownRemark(id: { eq: $prevId }) {
-            id
             fields {
                 slug
             }
@@ -51,7 +50,6 @@ export const query = graphql`
             }
         }
         next: markdownRemark(id: { eq: $nextId }) {
-            id
             fields {
                 slug
             }
