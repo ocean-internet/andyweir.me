@@ -20,12 +20,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: -$gutter-m/2;
+    margin: $gutter-m -#{$gutter-m/2} 0;
     @media #{$mediaMedium} {
-        margin: -#{$gutter-m/2} -#{$gutter-l/2};
+        margin: $gutter-m -#{$gutter-l/2} 0;
     }
     @media #{$mediaLarge} {
-        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
+        margin: $gutter-m -#{$gutter-xl/2} 0;
     }
 }
 

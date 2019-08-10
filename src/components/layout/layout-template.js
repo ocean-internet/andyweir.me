@@ -1,12 +1,12 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { graphql, useStaticQuery } from 'gatsby';
-import moment from 'moment';
-import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
-import Profile from '../../partials/profile';
-import Image from './image';
-import { logoStyle, page } from './styles.module.scss';
+import { faBars }                        from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon }               from '@fortawesome/react-fontawesome';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import moment                            from 'moment';
+import PropTypes                         from 'prop-types';
+import React, { Fragment }               from 'react';
+import Profile                           from '../../partials/profile';
+import Image                             from './image';
+import { homeLinkStyle, logoStyle, page }               from './styles.module.scss';
 
 export default LayoutTemplate;
 
@@ -46,8 +46,10 @@ function LayoutTemplate({ children, showMenu, toggleMenu }) {
             <Profile {...{ showMenu, toggleMenu }} />
             <section className={page}>
                 <nav>
-                    <Image image={logo} alt={title} className={logoStyle} />
-                    <h1>{title}</h1>
+                    <Link to="/" className={homeLinkStyle}>
+                        <Image image={logo} alt={title} className={logoStyle} />
+                        <h1>{title}</h1>
+                    </Link>
                     <FontAwesomeIcon icon={faBars} fixedWidth onClick={toggleMenu} />
                 </nav>
                 <main>{children}</main>

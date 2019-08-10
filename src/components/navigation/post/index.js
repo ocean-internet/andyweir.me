@@ -17,8 +17,8 @@ PostNavigation.defaultProps = {
 function PostNavigation({ prev: Prev, next: Next }) {
     return (
         <nav className={prevNextStyle}>
-            {Prev && <Prev />}
             {Next && <Next />}
+            {Prev && <Prev />}
         </nav>
     );
 }

@@ -78,10 +78,10 @@
 
 .prevStyle, .nextStyle  {
     @include plainLink;
-    margin: $gutter-m/2;
+    margin: 0 $gutter-m/2;
     width: calc(100% - #{$gutter-m});
     @media #{$mediaMedium} {
-        margin: $gutter-m/2 $gutter-l/2;
+        margin: 0 $gutter-l/2;
         width: calc(50% - #{$gutter-l});
     }
     .summaryHeaderStyle {
@@ -97,11 +97,16 @@
 .prevStyle {
     justify-self: flex-start;
     margin-right: auto;
+    margin-top: $gutter-m;
+    @media #{$mediaMedium} {
+        margin-top: 0;
+    }
 }
 .nextStyle {
     justify-self: flex-end;
     margin-left: auto;
     @media #{$mediaMedium} {
+        order: 2;
         .summaryStyle {
             justify-content: flex-end;
         }

@@ -66,6 +66,13 @@
     }
 }
 
+.homeLinkStyle {
+    @include plainLink($chalk);
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
 .logoStyle {
     height: 2*$fontXLarge;
     width: 2*$fontXLarge;
