@@ -19,7 +19,7 @@ function Profile({ showMenu, toggleMenu }) {
                     backgroundImage {
                         childImageSharp {
                             fluid {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }
@@ -27,7 +27,7 @@ function Profile({ showMenu, toggleMenu }) {
                     profileImage {
                         childImageSharp {
                             fluid {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }

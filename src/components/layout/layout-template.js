@@ -29,7 +29,7 @@ function LayoutTemplate({ children, showMenu, toggleMenu }) {
                     logo: profileImage {
                         childImageSharp {
                             fluid(maxWidth: 64, maxHeight: 64) {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
