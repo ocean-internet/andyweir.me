@@ -1,14 +1,33 @@
 @import "../../scss/base";
+@import "../../scss/transition";
 
 $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
 
 .profile {
     position: absolute;
     left: -100vw;
+    z-index: 200;
+    @include transition($style:left, $time: 250ms);
+    &.show {
+        left: 0;
+    }
     @media #{$mediaMedium} {
         position: relative;
         left: initial;
     }
+
+    .closeStyle {
+        position: absolute;
+        padding: $gutter-0-m;
+        top: 0;
+        right: 0;
+        color: $chalk;
+        height: 2*$fontXLarge;
+        @media #{$mediaMedium} {
+            display: none;
+        }
+    }
+
     flex-basis: 25%;
     flex-shrink: 0;
 
@@ -52,17 +71,39 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
 
     > section {
         @include font-l;
-        flex-grow: 1;
     }
 
-    > nav {
-        padding: $gutter-0-l;
+    .pageNavStyle {
+        flex-grow: 1;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin: 0;
+
+        a {
+            @include card-1;
+            @include transition($style:background);
+            @include font-l;
+            line-height: $lineHeight-l;
+            background: rgba($secondary-l, $captionOpacity);
+            margin: $gutter-s/2 0;
+            &:hover, &:active, &.active {
+                background: rgba($primary-l, $captionOpacity);
+            }
+        }
+    }
+
+    .socialNavStyle {
+        margin: $gutter-l -#{$gutter-s/2};
         display: flex;
         flex-grow: 0;
         align-self: stretch;
-        justify-content: space-between;
+        justify-content: center;
         a {
             filter: drop-shadow( $shadow);
+            margin: 0 #{$gutter-s/2};
         }
     }
     background-position: center center;

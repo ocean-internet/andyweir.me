@@ -4,6 +4,7 @@ import React from 'react';
 import HTMLContent from '../../components/layout/html-content';
 import Layout from '../../components/layout/layout';
 import PostNavigation from '../../components/navigation/post';
+import TalkSummary from '../../components/pages/talk/talk-summary';
 import SEO from '../../components/seo';
 import TalkTemplate, { TalkProp } from '../../components/pages/talk/talk-template';
 
@@ -24,9 +25,11 @@ export const query = graphql`
                 slug
             }
             frontmatter {
+                type
+                path
                 title
                 dateString: date(fromNow: true)
-                summary
+                youtube
             }
         }
         next: markdownRemark(id: { eq: $nextId }) {
@@ -34,9 +37,11 @@ export const query = graphql`
                 slug
             }
             frontmatter {
+                type
+                path
                 title
                 dateString: date(fromNow: true)
-                summary
+                youtube
             }
         }
     }
@@ -47,7 +52,6 @@ TalkPage.propTypes = {
 };
 
 function TalkPage({ data }) {
-    const defaultNav = { fields: null, frontmatter: null };
     const { page, prev, next } = data;
     const { content, frontmatter } = page;
     const { title, summary } = frontmatter;
@@ -63,19 +67,22 @@ function TalkPage({ data }) {
         contentComponent: HTMLContent,
     };
 
+    const prevProps = prev
+        ? {
+              ...prev.fields,
+              ...prev.frontmatter,
+          }
+        : null;
+    const nextProps = next
+        ? {
+              ...next.fields,
+              ...next.frontmatter,
+          }
+        : null;
+
     const navigationProps = {
-        prev: prev
-            ? {
-                  ...(prev.fields || defaultNav),
-                  ...(prev.frontmatter || defaultNav),
-              }
-            : null,
-        next: next
-            ? {
-                  ...(next.fields || defaultNav),
-                  ...(next.frontmatter || defaultNav),
-              }
-            : null,
+        prev: prev ? <TalkSummary {...prevProps} /> : null,
+        next: next ? <TalkSummary {...nextProps} /> : null,
     };
 
     return (

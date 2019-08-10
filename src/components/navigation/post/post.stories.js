@@ -12,7 +12,6 @@ storiesOf('Components/Navigation/Post Navigation', module)
     .add('with Next Post', withNextPost)
     .add('with Prev & Next Post', withPrevNextPost)
     .add('with date string', withDateString);
-
 function withPrevPost() {
     const props = {
         prev: generateLink(),

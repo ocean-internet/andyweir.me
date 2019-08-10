@@ -26,10 +26,10 @@
     @include card-0;
     @include plainLink($textOn-s-l);
 
-    &.prevLink > :last-child {
+    &.prevLink > .detailsStyle {
         padding: $gutter-s #{$gutter-m + $gutter-s} $gutter-s $gutter-s;
     }
-    &.nextLink > :first-child {
+    &.nextLink > .detailsStyle {
         padding: $gutter-s $gutter-s $gutter-s #{$gutter-m + $gutter-s} ;
     }
 
@@ -41,7 +41,7 @@
     flex-direction: row;
     align-items: center;
 
-    > div {
+    > .detailsStyle {
         flex-grow: 1;
         flex-shrink: 1;
         text-align: center;

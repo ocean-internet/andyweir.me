@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import HTMLContent from '../../components/layout/html-content';
 import Layout from '../../components/layout/layout';
-import PostNavigation from '../../components/navigation/post';
 import SEO from '../../components/seo';
 import BookTemplate, { BookProp } from '../../components/pages/book/book-template';
+import BookSummary from '../../components/pages/book/book-summary';
+import PostNavigation from '../../components/navigation/post';
 
 export default BookPage;
 export const query = graphql`
@@ -19,7 +20,7 @@ export const query = graphql`
                 }
                 image {
                     childImageSharp {
-                        fluid {
+                        fluid(fit: COVER, maxWidth: 1032, maxHeight: 1584, cropFocus: ENTROPY) {
                             ...GatsbyImageSharpFluid_withWebp_tracedSVG
                         }
                     }
@@ -29,24 +30,44 @@ export const query = graphql`
             content: html
         }
         prev: markdownRemark(id: { eq: $prevId }) {
+            id
             fields {
                 slug
             }
             frontmatter {
+                type
+                path
                 title
                 author {
                     name
                 }
+                image {
+                    childImageSharp {
+                        fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                        }
+                    }
+                }
             }
         }
         next: markdownRemark(id: { eq: $nextId }) {
+            id
             fields {
                 slug
             }
             frontmatter {
+                type
+                path
                 title
                 author {
                     name
+                }
+                image {
+                    childImageSharp {
+                        fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                        }
+                    }
                 }
             }
         }
@@ -58,7 +79,6 @@ BookPage.propTypes = {
 };
 
 function BookPage({ data }) {
-    const defaultNav = { fields: null, frontmatter: null };
     const { page, prev, next } = data;
     const { content, frontmatter } = page;
     const { title, author, image, summary } = frontmatter;
@@ -76,20 +96,22 @@ function BookPage({ data }) {
         content,
         contentComponent: HTMLContent,
     };
+    const prevProps = prev
+        ? {
+              ...prev.fields,
+              ...prev.frontmatter,
+          }
+        : null;
+    const nextProps = next
+        ? {
+              ...next.fields,
+              ...next.frontmatter,
+          }
+        : null;
 
     const navigationProps = {
-        prev: prev
-            ? {
-                  ...(prev.fields || defaultNav),
-                  ...(prev.frontmatter || defaultNav),
-              }
-            : null,
-        next: next
-            ? {
-                  ...(next.fields || defaultNav),
-                  ...(next.frontmatter || defaultNav),
-              }
-            : null,
+        prev: prev ? <BookSummary {...prevProps} /> : null,
+        next: next ? <BookSummary {...nextProps} /> : null,
     };
 
     return (

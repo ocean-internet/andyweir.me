@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import HTMLContent from '../../components/layout/html-content';
 import Layout from '../../components/layout/layout';
+import PostNavigation from '../../components/navigation/post';
+import PostSummary from '../../components/pages/post/post-summary';
 import SEO from '../../components/seo';
 import PostTemplate, { PostProp } from '../../components/pages/post/post-template';
 
 export default PostPage;
 export const query = graphql`
-    query PostPage($id: String!) {
+    query PostPage($id: String!, $prevId: String!, $nextId: String!) {
         page: markdownRemark(id: { eq: $id }) {
             frontmatter {
                 title
                 image {
                     childImageSharp {
-                        fluid {
+                        fluid(fit: COVER, maxWidth: 1200, maxHeight: 800, cropFocus: ENTROPY) {
                             ...GatsbyImageSharpFluid_withWebp_tracedSVG
                         }
                     }
@@ -22,6 +24,46 @@ export const query = graphql`
                 summary
             }
             content: html
+        }
+        prev: markdownRemark(id: { eq: $prevId }) {
+            id
+            fields {
+                slug
+            }
+            frontmatter {
+                type
+                path
+                title
+                dateString: date(fromNow: true)
+                summary
+                image {
+                    childImageSharp {
+                        fluid(fit: COVER, maxWidth: 600, maxHeight: 400, cropFocus: ENTROPY) {
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                        }
+                    }
+                }
+            }
+        }
+        next: markdownRemark(id: { eq: $nextId }) {
+            id
+            fields {
+                slug
+            }
+            frontmatter {
+                type
+                path
+                title
+                dateString: date(fromNow: true)
+                summary
+                image {
+                    childImageSharp {
+                        fluid(fit: COVER, maxWidth: 600, maxHeight: 400, cropFocus: ENTROPY) {
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                        }
+                    }
+                }
+            }
         }
     }
 `;
@@ -31,7 +73,7 @@ PostPage.propTypes = {
 };
 
 function PostPage({ data }) {
-    const { page } = data;
+    const { page, prev, next } = data;
     const { content, frontmatter } = page;
     const { title, image, summary } = frontmatter;
 
@@ -46,11 +88,29 @@ function PostPage({ data }) {
         content,
         contentComponent: HTMLContent,
     };
+    const prevProps = prev
+        ? {
+              ...prev.fields,
+              ...prev.frontmatter,
+          }
+        : null;
+    const nextProps = next
+        ? {
+              ...next.fields,
+              ...next.frontmatter,
+          }
+        : null;
+
+    const navigationProps = {
+        prev: prev ? <PostSummary {...prevProps} /> : null,
+        next: next ? <PostSummary {...nextProps} /> : null,
+    };
 
     return (
         <Layout>
             <SEO {...seoProps} />
             <PostTemplate {...pageProps} />
+            <PostNavigation {...navigationProps} />
         </Layout>
     );
 }

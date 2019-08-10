@@ -17,8 +17,8 @@ PreviewCompatibleImage.propTypes = ImageProp;
 
 PreviewCompatibleImage.defaultProps = {
     ratio: 4 / 6,
-    alt: null,
-    className: null,
+    alt: '',
+    className: '',
 };
 
 function PreviewCompatibleImage({ image, ratio, alt, className }) {

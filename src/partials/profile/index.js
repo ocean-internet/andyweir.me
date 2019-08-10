@@ -1,9 +1,17 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import PropTypes from 'prop-types';
 import HTMLContent from '../../components/layout/html-content';
 import ProfileTemplate from './profile-template';
 
-export default function() {
+export default Profile;
+
+Profile.propTypes = {
+    showMenu: PropTypes.bool.isRequired,
+    toggleMenu: PropTypes.func.isRequired,
+};
+
+function Profile({ showMenu, toggleMenu }) {
     const { partial } = useStaticQuery(graphql`
         query ProfileQuery {
             partial: markdownRemark(frontmatter: { partial: { eq: "profile" } }) {
@@ -39,6 +47,8 @@ export default function() {
     const contentComponent = HTMLContent;
 
     const props = {
+        showMenu,
+        toggleMenu,
         title,
         profileImage,
         backgroundImage,
