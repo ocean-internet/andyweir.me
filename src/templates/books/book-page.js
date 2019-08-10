@@ -110,8 +110,8 @@ function BookPage({ data }) {
         : null;
 
     const navigationProps = {
-        prev: prev ? <BookSummary {...prevProps} /> : null,
-        next: next ? <BookSummary {...nextProps} /> : null,
+        prev: prev ? () => <BookSummary isPrev {...prevProps} /> : null,
+        next: next ? () => <BookSummary isNext {...nextProps} /> : null,
     };
 
     return (

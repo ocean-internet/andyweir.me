@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { prevNext } from '../pagination.module.scss';
+import { prevNextStyle } from '../pagination.module.scss';
 
 export default PostNavigation;
 
@@ -14,11 +14,11 @@ PostNavigation.defaultProps = {
     next: null,
 };
 
-function PostNavigation({ prev, next }) {
+function PostNavigation({ prev: Prev, next: Next }) {
     return (
-        <nav className={prevNext}>
-            {prev && <Fragment>{prev}</Fragment>}
-            {next && <Fragment>{next}</Fragment>}
+        <nav className={prevNextStyle}>
+            {Prev && <Prev />}
+            {Next && <Next />}
         </nav>
     );
 }

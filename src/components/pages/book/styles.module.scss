@@ -46,6 +46,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    .summaryImageStyle {
+        order: 1;
+        flex-basis: $golden-s;
+        @include card-1;
+    }
 }
 
 .summaryHeaderStyle {
@@ -70,10 +76,39 @@
     }
 }
 
-.summaryImageStyle {
-    order: 1;
-    flex-basis: $golden-s;
-    @include card-1;
+.prevStyle, .nextStyle  {
+    @include plainLink;
+    margin: $gutter-m/2;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        margin: $gutter-m/2 $gutter-l/2;
+        width: calc(50% - #{$gutter-l});
+    }
+    .summaryHeaderStyle {
+        flex-basis: initial;
+        justify-content: flex-end;
+    }
+    .summaryImageStyle {
+        flex-basis: initial;
+        width: 129px;
+        flex-shrink: 0;
+    }
+}
+.prevStyle {
+    justify-self: flex-start;
+    margin-right: auto;
+}
+.nextStyle {
+    justify-self: flex-end;
+    margin-left: auto;
+    @media #{$mediaMedium} {
+        .summaryStyle {
+            justify-content: flex-end;
+        }
+        .summaryImageStyle {
+            order: 2;
+        }
+    }
 }
 
 .headerStyle {

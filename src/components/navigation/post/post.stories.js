@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import faker from 'faker';
-import moment from 'moment';
 import { wrapperStyles } from '../../../scss/page/styles.module.scss';
+import BookSummary from '../../pages/book/book-summary';
 import PostNavigation from './index';
 
 storiesOf('Components/Navigation/Post Navigation', module)
@@ -11,7 +11,8 @@ storiesOf('Components/Navigation/Post Navigation', module)
     .add('with Prev Post', withPrevPost)
     .add('with Next Post', withNextPost)
     .add('with Prev & Next Post', withPrevNextPost)
-    .add('with date string', withDateString);
+    .add('with book links', withBookLinks);
+
 function withPrevPost() {
     const props = {
         prev: generateLink(),
@@ -35,10 +36,10 @@ function withPrevNextPost() {
     return showWith(props);
 }
 
-function withDateString() {
+function withBookLinks() {
     const props = {
-        prev: generateLink(true),
-        next: generateLink(true),
+        prev: () => <BookSummary isPrev {...generateBookSummaryProps()} />,
+        next: () => <BookSummary isNext {...generateBookSummaryProps()} />,
     };
 
     return showWith(props);
@@ -61,14 +62,18 @@ function showWith(props) {
     );
 }
 
-function generateLink(showDateString) {
-    const date = faker.date.past();
-    const dateString = moment(date).fromNow();
+function generateLink() {
+    const title = faker.lorem.sentence();
+    const slug = faker.lorem.slug();
 
-    const link = {
-        title: faker.lorem.sentence(),
+    return <a href={slug}>{title}</a>;
+}
+
+function generateBookSummaryProps() {
+    return {
         slug: faker.lorem.slug(),
+        title: faker.company.catchPhrase(),
+        author: { name: faker.name.findName() },
+        image: `https://picsum.photos/id/${faker.random.number(100)}/198/129/`,
     };
-
-    return showDateString ? { ...link, dateString } : { ...link, date };
 }

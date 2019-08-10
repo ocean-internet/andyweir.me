@@ -14,50 +14,18 @@
     }
 }
 
-.prevNext {
-    margin: $gutter-m-0 0;
-    display: flex;
-    flex-direction: column;
-    font-family: $labelFont;
-}
-
-.prevLink, .nextLink {
-
-    @include card-0;
-    @include plainLink($textOn-s-l);
-
-    &.prevLink > .detailsStyle {
-        padding: $gutter-s #{$gutter-m + $gutter-s} $gutter-s $gutter-s;
-    }
-    &.nextLink > .detailsStyle {
-        padding: $gutter-s $gutter-s $gutter-s #{$gutter-m + $gutter-s} ;
-    }
-
-    &:not(:last-child) {
-        margin-bottom: $gutter-s;
-    }
-    background: $secondary-l;
+.prevNextStyle {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-
-    > .detailsStyle {
-        flex-grow: 1;
-        flex-shrink: 1;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-
-        div {
-            height: $fontMedium * $lineHeight-m;
-            @include ellipsis;
-        }
-
-        span {
-            @include font-s;
-            font-style: italic;
-        }
+    margin: -$gutter-m/2;
+    @media #{$mediaMedium} {
+        margin: -#{$gutter-m/2} -#{$gutter-l/2};
+    }
+    @media #{$mediaLarge} {
+        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
     }
 }
 
