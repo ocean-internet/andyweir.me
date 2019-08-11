@@ -78,12 +78,3 @@
     width: 2*$fontXLarge;
     margin-right: $gutter-m;
 }
-
-.active {
-    opacity: 1;
-    @include link($secondary);
-}
-
-.icon {
-    margin-right: $gutter-xs;
-}

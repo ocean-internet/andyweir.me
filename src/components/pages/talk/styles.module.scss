@@ -4,42 +4,46 @@
 @import "../../../scss/pages/page-link";
 @import "../../../scss/pages/prev-next-page";
 
-.indexHeaderStyle {
+.textIcon {
+    @include text-icon;
+}
+
+.indexHeader {
     @include index-header;
 }
 
-.talkListStyle {
+.talkList {
     @include page-list;
 }
 
-.talkLinkStyle {
+.talkLink {
     @include page-link;
     @include card-1;
 }
 
-.summaryStyle {
+.summary {
     @include page-summary;
 }
 
-.summaryHeaderStyle {
+.summaryHeader {
     @include page-summary-heading;
 }
 
-.summaryImageStyle {
+.summaryImage {
     @include page-summary-image;
 }
 
-.prevStyle, .nextStyle  {
+.prev, .next  {
     @include prev-next-page;
 }
-.prevStyle {
+.prev {
     @include prev-page;
 }
-.nextStyle {
+.next {
     @include next-page;
 }
 
-.headerStyle {
+.header {
     @include page-header;
     h1 > :last-child {
         text-transform: initial;
@@ -54,7 +58,7 @@
 }
 
 
-.embedStyle {
+.embed {
     @include card-1;
     margin: 0 auto;
     position: relative;
@@ -78,6 +82,6 @@
         height: 100%;
     }
 }
-.contentStyle {
+.content {
     @include page-content;
 }

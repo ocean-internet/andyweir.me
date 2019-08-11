@@ -4,15 +4,19 @@
 @import "../../../scss/pages/page-link";
 @import "../../../scss/pages/prev-next-page";
 
-.indexHeaderStyle {
+.text-icon {
+    @include text-icon;
+}
+
+.indexHeader {
     @include index-header;
 }
 
-.bookListStyle {
+.bookList {
     @include page-list;
 }
 
-.bookLinkStyle {
+.bookLink {
     @include page-link;
     @media #{$mediaMedium} {
         margin: $gutter-m/2 $gutter-l/2;
@@ -23,14 +27,14 @@
         width: calc(33.33333% - #{$gutter-xl});
     }}
 
-.summaryStyle {
+.summary {
     @include page-summary;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.summaryHeaderStyle {
+.summaryHeader {
     @include page-summary-heading;
     order: 2;
     flex-basis: calc(#{$golden-l} - #{2*$gutter-m});
@@ -38,36 +42,36 @@
     padding-left: $gutter-m;
 }
 
-.summaryImageStyle {
+.summaryImage {
     @include page-summary-image;
     order: 1;
     flex-basis: $golden-s;
 }
 
-.prevStyle, .nextStyle  {
+.prev, .next  {
     @include prev-next-page;
-    .summaryImageStyle {
+    .summaryImage {
         width: 100px;
         flex-shrink: 0;
     }
 }
-.prevStyle {
+.prev {
     @include prev-page;
 }
-.nextStyle {
+.next {
     @include next-page;
     @media #{$mediaMedium} {
-        .summaryHeaderStyle {
+        .summaryHeader {
             padding-right: $gutter-m;
             padding-left: 0;
         }
-        .summaryImageStyle {
+        .summaryImage {
             order: 2;
         }
     }
 }
 
-.headerStyle {
+.header {
 
     @include page-header;
 
@@ -82,7 +86,7 @@
         }
     }
 }
-.imageStyle {
+.image {
     @include card-1;
     align-self: center;
     width: $golden-l;
@@ -90,7 +94,7 @@
         width: $golden-s;
     }
 }
-.contentStyle {
+.content {
     @include page-content;
 }
 

@@ -1,9 +1,8 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import { Menu } from 'react-feather';
 import Profile from '../../partials/profile';
 import Image from './image';
 import { homeLinkStyle, logoStyle, page } from './styles.module.scss';
@@ -50,7 +49,7 @@ function LayoutTemplate({ children, showMenu, toggleMenu }) {
                         <Image image={logo} alt={title} className={logoStyle} />
                         <h1>{title}</h1>
                     </Link>
-                    <FontAwesomeIcon icon={faBars} fixedWidth onClick={toggleMenu} />
+                    <Menu onClick={toggleMenu} />
                 </nav>
                 <main>{children}</main>
                 <footer>&copy; {moment().format('YYYY')} Andy Weir</footer>

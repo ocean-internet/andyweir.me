@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { prevNextStyle } from '../pagination.module.scss';
+import * as styles from '../pagination.module.scss';
 
 export default PostNavigation;
 
@@ -16,7 +16,7 @@ PostNavigation.defaultProps = {
 
 function PostNavigation({ prev: Prev, next: Next }) {
     return (
-        <nav className={prevNextStyle}>
+        <nav className={styles.prevNext}>
             {Next && <Next />}
             {Prev && <Prev />}
         </nav>

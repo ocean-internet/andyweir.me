@@ -16,7 +16,7 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
         left: initial;
     }
 
-    .closeStyle {
+    .close {
         position: absolute;
         padding: $gutter-0-m;
         top: 0;
@@ -73,7 +73,7 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
         @include font-l;
     }
 
-    .pageNavStyle {
+    .pageNav {
         flex-grow: 1;
         align-self: stretch;
         display: flex;
@@ -92,18 +92,31 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
             &:hover, &:active, &.active {
                 background: rgba($primary-l, $captionOpacity);
             }
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
-    .socialNavStyle {
-        margin: $gutter-l -#{$gutter-s/2};
+    .socialNav {
+        @include font-xl;
+        padding: $gutter-l -#{$gutter-s/2};
         display: flex;
         flex-grow: 0;
         align-self: stretch;
         justify-content: center;
         a {
+            height: 1em;
+            width: 1em;
             filter: drop-shadow( $shadow);
-            margin: 0 #{$gutter-s/2};
+            padding: $gutter-s;
+            border-radius: 100%;
+            @include transition;
+
+            &:hover, &:active {
+                background: $chalk;
+                color: $ink;
+            }
         }
     }
     background-position: center center;
@@ -111,8 +124,19 @@ $shadow: 0 1px  3px  rgba($ink, $captionOpacity);
     background-size: cover;
 }
 
-.profileImageStyle {
+.profileImage {
     @include card-2;
     border-radius: 100%;
     margin: $gutter-l-0;
+}
+
+.icon {
+    @include icon;
+}
+.textIcon {
+    @include text-icon;
+}
+
+.active {
+    @include active;
 }

@@ -1,6 +1,10 @@
 @import "../../../scss/base";
 
-.headerStyle {
+.textIcon {
+    @include text-icon;
+}
+
+.header {
     @include page-header;
     h1 {
         flex-direction: row;
@@ -11,6 +15,6 @@
         }
     }
 }
-.contentStyle {
+.content {
     @include page-content;
 }

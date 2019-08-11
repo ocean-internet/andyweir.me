@@ -2,14 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../../layout/image';
-import {
-    nextStyle,
-    prevStyle,
-    talkLinkStyle,
-    summaryStyle,
-    summaryHeaderStyle,
-    summaryImageStyle,
-} from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export default TalkSummary;
 
@@ -31,19 +24,19 @@ function TalkSummary({ isPrev, isNext, slug, title, dateString, youtube }) {
     const image = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
     const ratio = 9 / 16;
 
-    const className = [talkLinkStyle];
+    const className = [styles.talkLink];
 
-    isPrev && className.push(prevStyle);
-    isNext && className.push(nextStyle);
+    isPrev && className.push(styles.prev);
+    isNext && className.push(styles.next);
 
     return (
         <Link to={slug} className={className.join(' ')}>
-            <section className={summaryStyle}>
-                <h1 className={summaryHeaderStyle}>
+            <section className={styles.summary}>
+                <h1 className={styles.summaryHeader}>
                     {title}
                     <span>{dateString}</span>
                 </h1>
-                <Image image={image} className={summaryImageStyle} ratio={ratio} alt={title} />
+                <Image image={image} className={styles.summaryImage} ratio={ratio} alt={title} />
             </section>
         </Link>
     );

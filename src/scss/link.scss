@@ -15,3 +15,18 @@
         color: $color;
     }
 }
+
+@mixin active {
+    opacity: 1;
+    @include link($secondary);
+}
+
+@mixin icon {
+    height: 1em;
+    width: 1em;
+}
+
+@mixin text-icon {
+    @include icon;
+    margin-right: $gutter-xs;
+}

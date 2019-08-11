@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import Content from '../../layout/content';
 import Image, { imageProp } from '../../layout/image';
-import { headerStyle, imageStyle, contentStyle } from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export default BookTemplate;
 export const BookProp = {
@@ -28,15 +28,15 @@ function BookTemplate({ title = null, author = {}, image = null, summary = null,
 
     return (
         <Fragment>
-            <header className={headerStyle}>
+            <header className={styles.header}>
                 <h1>
                     {title}
                     <Author />
                 </h1>
                 <p>{summary}</p>
-                <Image className={imageStyle} ratio={ratio} image={image} alt={title} />
+                <Image className={styles.image} ratio={ratio} image={image} alt={title} />
             </header>
-            <BookContent className={contentStyle} content={content} />
+            <BookContent className={styles.content} content={content} />
         </Fragment>
     );
 }

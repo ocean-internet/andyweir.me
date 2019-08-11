@@ -1,0 +1,9 @@
+@import "../scss/link";
+.heading {
+    display: flex;
+    align-items: center;
+
+    .textIcon {
+        @include text-icon;
+    }
+}

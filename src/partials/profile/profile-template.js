@@ -1,30 +1,22 @@
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import {
-    faBriefcase,
-    faBookReader,
-    faCommentAlt,
-    faHome,
-    faPenAlt,
-    faUser,
-    faTimes,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
+import {
+    X as CloseIcon,
+    Home as HomeIcon,
+    PenTool as PostIcon,
+    MessageSquare as TalkIcon,
+    BookOpen as BookIcon,
+    User as MeIcon,
+    Briefcase as WorkIcon,
+    Twitter as TwitterIcon,
+    Linkedin as LinkedinIcon,
+    GitHub as GithubIcon,
+} from 'react-feather';
 import Content from '../../components/layout/content';
 import Image from '../../components/layout/image';
 import { fluidObject } from '../../prop-types/gatsby-image';
-import { icon } from '../../components/layout/styles.module.scss';
-import {
-    closeStyle,
-    show,
-    profile,
-    profileImageStyle,
-    pageNavStyle,
-    socialNavStyle,
-    active,
-} from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export default ProfileTemplate;
 ProfileTemplate.propTypes = {
@@ -67,56 +59,56 @@ function ProfileTemplate({
 
     const style = backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : null;
 
-    const className = showMenu ? `${show} ${profile}` : profile;
+    const className = showMenu ? `${styles.show} ${styles.profile}` : styles.profile;
     return (
         <section className={className} style={style}>
-            <FontAwesomeIcon className={closeStyle} icon={faTimes} fixedWidth onClick={toggleMenu} />
+            <CloseIcon className={styles.close} onClick={toggleMenu} />
             <header>
                 <h1>{title}</h1>
-                {profileImage && <Image className={profileImageStyle} image={profileImage} alt={title} />}
+                {profileImage && <Image className={styles.profileImage} image={profileImage} alt={title} />}
             </header>
             <Summary content={summary} />
-            <nav className={pageNavStyle}>
-                <Link activeClassName={active} to="/">
-                    <FontAwesomeIcon className={icon} icon={faHome} fixedWidth />
+            <nav className={styles.pageNav}>
+                <Link activeClassName={styles.active} to="/" onClick={toggleMenu}>
+                    <HomeIcon className={styles.textIcon} />
                     Home
                 </Link>
-                <Link activeClassName={active} partiallyActive to="/blog">
-                    <FontAwesomeIcon className={icon} icon={faPenAlt} fixedWidth />
+                <Link activeClassName={styles.active} partiallyActive to="/blog" onClick={toggleMenu}>
+                    <PostIcon className={styles.textIcon} />
                     Posts
                 </Link>
-                <Link activeClassName={active} partiallyActive to="/talks">
-                    <FontAwesomeIcon className={icon} icon={faCommentAlt} />
+                <Link activeClassName={styles.active} partiallyActive to="/talks" onClick={toggleMenu}>
+                    <TalkIcon className={styles.textIcon} />
                     Talks
                 </Link>
-                <Link activeClassName={active} partiallyActive to="/books">
-                    <FontAwesomeIcon className={icon} icon={faBookReader} fixedWidth />
+                <Link activeClassName={styles.active} partiallyActive to="/books" onClick={toggleMenu}>
+                    <BookIcon className={styles.textIcon} />
                     Books
                 </Link>
-                <Link activeClassName={active} partiallyActive to="/about">
-                    <FontAwesomeIcon className={icon} icon={faUser} />
+                <Link activeClassName={styles.active} partiallyActive to="/about" onClick={toggleMenu}>
+                    <MeIcon className={styles.textIcon} />
                     About
                 </Link>
             </nav>
-            <nav className={socialNavStyle}>
+            <nav className={styles.socialNav}>
                 {work && (
                     <a href={`https://twitter.com/${work}`}>
-                        <FontAwesomeIcon icon={faBriefcase} fixedWidth size="2x" title={work} />
+                        <WorkIcon className={styles.icon} title={work} />
                     </a>
                 )}
                 {twitter && (
                     <a href={`https://twitter.com/${twitter}`}>
-                        <FontAwesomeIcon icon={faTwitter} fixedWidth size="2x" title={twitter} />
+                        <TwitterIcon className={styles.icon} title={twitter} />
                     </a>
                 )}
                 {linkedin && (
                     <a href={`https://linkedin.com/in/${linkedin}`}>
-                        <FontAwesomeIcon icon={faLinkedin} fixedWidth size="2x" title={linkedin} />
+                        <LinkedinIcon className={styles.icon} title={linkedin} />
                     </a>
                 )}
                 {github && (
                     <a href={`https://github.com/${github}`}>
-                        <FontAwesomeIcon icon={faGithub} fixedWidth size="2x" title={github} />
+                        <GithubIcon className={styles.icon} title={github} />
                     </a>
                 )}
             </nav>

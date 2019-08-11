@@ -14,7 +14,7 @@
     }
 }
 
-.prevNextStyle {
+.prevNext {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -30,6 +30,11 @@
     }
 }
 
+.icon {
+    @include icon;
+    display: block;
+}
 .disabled {
+    @include icon;
     opacity: 0.2;
 }

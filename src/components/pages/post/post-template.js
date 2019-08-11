@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Content from '../../layout/content';
 import Image, { imageProp } from '../../layout/image';
-import { contentStyle, headerStyle, imageStyle } from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export default PostTemplate;
 export const PostProp = {
@@ -20,12 +20,12 @@ function PostTemplate({ title, image, summary, content, contentComponent }) {
 
     return (
         <article>
-            <header className={headerStyle}>
+            <header className={styles.header}>
                 <h1>{title}</h1>
                 <p>{summary}</p>
             </header>
-            <Image className={imageStyle} image={image} />
-            <PostContent className={contentStyle} content={content} />
+            <Image className={styles.image} image={image} />
+            <PostContent className={styles.content} content={content} />
         </article>
     );
 }

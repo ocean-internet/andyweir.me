@@ -1,10 +1,8 @@
-import { faBookReader } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import { icon } from '../../layout/styles.module.scss';
+import { BookOpen as BookIcon } from 'react-feather';
 import PaginationNavigation from '../../navigation/pagination';
-import { indexHeaderStyle, bookListStyle } from './styles.module.scss';
+import * as styles from './styles.module.scss';
 import BookSummary from './book-summary';
 
 export default BookIndexTemplate;
@@ -42,14 +40,14 @@ function BookIndexTemplate({ posts = [], index = 1, first, last, pageCount = 1, 
     };
     return (
         <Fragment>
-            <header className={indexHeaderStyle}>
+            <header className={styles.indexHeader}>
                 <h1>
-                    <FontAwesomeIcon className={icon} icon={faBookReader} fixedWidth />
+                    <BookIcon className={styles.textIcon} />
                     {title}&hellip;
                 </h1>
                 <p>{summary}</p>
             </header>
-            {hasPosts && <section {...bookListProps} className={bookListStyle} />}
+            {hasPosts && <section {...bookListProps} className={styles.bookList} />}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );

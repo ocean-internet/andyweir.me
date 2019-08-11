@@ -1,10 +1,9 @@
-import { faPenAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import { PenTool as PostIcon } from 'react-feather';
 import PaginationNavigation from '../../navigation/pagination';
 import PostSummary from './post-summary';
-import { indexHeaderStyle, postListStyle } from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export default PostIndexTemplate;
 export const PostIndexProp = {
@@ -42,15 +41,15 @@ function PostIndexTemplate({ posts = [], index = 1, first, last, pageCount = 1, 
 
     return (
         <Fragment>
-            <header className={indexHeaderStyle}>
+            <header className={styles.indexHeader}>
                 <h1>
-                    <FontAwesomeIcon icon={faPenAlt} fixedWidth />
+                    <PostIcon className={styles.textIcon} />
                     {title}&hellip;
                 </h1>
                 <p>{summary}</p>
             </header>
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
-            {hasPosts && <section {...postListProps} className={postListStyle} />}
+            {hasPosts && <section {...postListProps} className={styles.postList} />}
             {hasPages && <PaginationNavigation {...paginationNavProps} />}
         </Fragment>
     );

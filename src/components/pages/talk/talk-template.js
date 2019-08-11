@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import Content from '../../layout/content';
-import { headerStyle, embedStyle, contentStyle } from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export default TalkTemplate;
 export const TalkProp = {
@@ -22,14 +22,14 @@ function TalkTemplate({ title, dateString, summary, youtube, content, contentCom
 
     return (
         <Fragment>
-            <header className={headerStyle}>
+            <header className={styles.header}>
                 <h1>
                     {title}
                     <span>{dateString}</span>
                 </h1>
                 <p>{summary}</p>
             </header>
-            <div className={embedStyle} style={backgroundImage}>
+            <div className={styles.embed} style={backgroundImage}>
                 <div />
                 <iframe
                     title={title}
@@ -38,7 +38,7 @@ function TalkTemplate({ title, dateString, summary, youtube, content, contentCom
                     allowFullScreen
                 />
             </div>
-            <PostContent className={contentStyle} content={content} />
+            <PostContent className={styles.content} content={content} />
         </Fragment>
     );
 }

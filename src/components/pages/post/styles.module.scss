@@ -4,52 +4,56 @@
 @import "../../../scss/pages/page-link";
 @import "../../../scss/pages/prev-next-page";
 
-.indexHeaderStyle {
+.textIcon {
+    @include text-icon;
+}
+
+.indexHeader {
     @include index-header;
 }
 
-.postListStyle {
+.postList {
     @include page-list;
 }
 
-.postLinkStyle {
+.postLink {
     @include page-link;
     @include card-1;
 }
 
-.summaryStyle {
+.summary {
     @include page-summary;
 }
 
-.summaryHeaderStyle {
+.summaryHeader {
     @include page-summary-heading;
 }
 
-.summaryImageStyle {
+.summaryImage {
     @include page-summary-image;
 }
 
-.prevStyle, .nextStyle  {
+.prev, .next  {
     @include prev-next-page;
 }
-.prevStyle {
+.prev {
     @include prev-page;
 }
-.nextStyle {
+.next {
     @include next-page;
 }
 
-.headerStyle {
+.header {
     @include page-header;
 }
 
-.imageStyle {
+.image {
     @include card-1;
     margin: 0 auto;
     @media #{$mediaLarge} {
         width: $golden-l;
     }
 }
-.contentStyle {
+.content {
     @include page-content;
 }
