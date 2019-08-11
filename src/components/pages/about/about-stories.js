@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 import AboutTemplate from './about-template';
-import { wrapperStyles } from '../../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../../scss/layout/styles.module.scss';
 
 // eslint-disable-next-line import/prefer-default-export
 export function aboutTemplate() {

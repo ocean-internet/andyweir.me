@@ -1,135 +1,54 @@
 @import "../../../scss/base";
-
-.postLinkStyle {
-    @include plainLink;
-    margin: $gutter-m/2;
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - #{$gutter-m});
-    @media #{$mediaMedium} {
-        width: calc(100% - #{$gutter-l});
-        margin: $gutter-m/2 $gutter-l/2;
-    }
-    @media #{$mediaLarge} {
-        margin: $gutter-l/2 $gutter-xl/2;
-        width: calc(50% - #{$gutter-xl});
-    }
-    section {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-
-        h1 {
-            display: flex;
-            flex-direction: column;
-            @include font-l;
-            margin: $gutter-s;
-            flex-grow: 1;
-            :last-child {
-                text-transform: initial;
-                font-family: $labelFont;
-                @include font-s;
-                padding-left: $gutter-m;
-
-                &:before {
-                    content: "\2014\00a0";
-                }
-            }
-        }
-        p {
-            @include font-s;
-            margin: $gutter-s;
-        }
-    }
-}
+@import "../../../scss/pages/index-header";
+@import "../../../scss/pages/page-list";
+@import "../../../scss/pages/page-link";
+@import "../../../scss/pages/prev-next-page";
 
 .indexHeaderStyle {
-
-    @include page-header;
-    h1 {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-
-        :first-child {
-            margin-right: 0.25rem;
-        }
-    }
+    @include index-header;
 }
 
 .postListStyle {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    margin: -$gutter-m/2;
-    @media #{$mediaMedium} {
-        margin: -#{$gutter-m/2} -#{$gutter-l/2};
-    }
-    @media #{$mediaLarge} {
-        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
-    }
+    @include page-list;
 }
 
+.postLinkStyle {
+    @include page-link;
+    @include card-1;
+}
+
+.summaryStyle {
+    @include page-summary;
+}
+
+.summaryHeaderStyle {
+    @include page-summary-heading;
+}
+
+.summaryImageStyle {
+    @include page-summary-image;
+}
 
 .prevStyle, .nextStyle  {
-    @include plainLink;
-    margin: 0 $gutter-m/2;
-    width: calc(100% - #{$gutter-m});
-    @media #{$mediaMedium} {
-        align-items: stretch;
-        margin: 0 $gutter-l/2;
-        width: calc(50% - #{$gutter-l});
-    }
-    @media #{$mediaLarge} {
-        margin: 0 $gutter-xl/2;
-        width: calc(33.3333% - #{$gutter-l});
-    }
-    .summaryHeaderStyle {
-        flex-basis: initial;
-        justify-content: flex-end;
-        h1 {
-            margin-top: 0;
-            @include font-m;
-            span {
-                @include font-s;
-            }
-        }
-    }
-    .summaryImageStyle {
-        flex-basis: initial;
-        width: $golden-l;
-        align-self: center;
-        @media #{$mediaMedium} {
-            width: 100%;
-        }
-    }
+    @include prev-next-page;
 }
 .prevStyle {
-    justify-self: flex-start;
-    margin-right: auto;
-    margin-top: $gutter-m;
-    @media #{$mediaMedium} {
-        margin-top: 0;
-    }
+    @include prev-page;
 }
 .nextStyle {
-    justify-self: flex-end;
-    margin-left: auto;
-    @media #{$mediaMedium} {
-        order: 2;
-        .summaryHeaderStyle h1 {
-            text-align: right;
-        }
-    }
+    @include next-page;
 }
 
 .headerStyle {
     @include page-header;
 }
-.summaryImageStyle {
+
+.imageStyle {
     @include card-1;
+    margin: 0 auto;
+    @media #{$mediaLarge} {
+        width: $golden-l;
+    }
 }
 .contentStyle {
     @include page-content;

@@ -11,17 +11,25 @@ BookIndex.propTypes = {
 };
 
 function BookIndex({ pageContext }) {
-    const { title, summary } = pageContext;
+    const { title, summary, group } = pageContext;
 
     const seoProps = {
         title,
         summary,
     };
 
+    const posts = group
+        .map(({ node }) => ({ ...node }))
+        .map(({ id: key, fields, frontmatter }) => ({
+            key,
+            ...fields,
+            ...frontmatter,
+        }));
+
     return (
         <Layout>
             <SEO {...seoProps} />
-            <BookIndexTemplate {...pageContext} />
+            <BookIndexTemplate {...{ ...pageContext, posts }} />
         </Layout>
     );
 }

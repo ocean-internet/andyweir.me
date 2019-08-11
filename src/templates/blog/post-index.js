@@ -11,17 +11,25 @@ PostIndex.propTypes = {
 };
 
 function PostIndex({ pageContext }) {
-    const { title, summary } = pageContext;
+    const { title, summary, group } = pageContext;
 
     const seoProps = {
         title,
         summary,
     };
 
+    const posts = group
+        .map(({ node }) => ({ ...node }))
+        .map(({ id: key, fields, frontmatter }) => ({
+            key,
+            ...fields,
+            ...frontmatter,
+        }));
+
     return (
         <Layout>
             <SEO {...seoProps} />
-            <PostIndexTemplate {...pageContext} />
+            <PostIndexTemplate {...{ ...pageContext, posts }} />
         </Layout>
     );
 }

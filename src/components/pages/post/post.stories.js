@@ -3,13 +3,13 @@ import faker from 'faker';
 import { generatePostProps, generatePostSummaryProps } from '../../../lib/story-lib';
 import PostIndexTemplate from './post-index-template';
 import PostTemplate from './post-template';
-import { wrapperStyles } from '../../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../../scss/layout/styles.module.scss';
 
 export function postIndex() {
     const props = {
         title: faker.company.catchPhrase(),
         summary: faker.hacker.phrase(),
-        group: generatePosts(),
+        posts: generatePosts(),
     };
 
     return (
@@ -34,5 +34,5 @@ function generatePosts() {
 
     return Array(number)
         .fill(null)
-        .map(() => ({ node: generatePostSummaryProps() }));
+        .map(() => generatePostSummaryProps());
 }

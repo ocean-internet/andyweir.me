@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { wrapperStyles } from '../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../scss/layout/styles.module.scss';
 import AboutTemplate from '../../components/pages/about/about-template';
 
 export default AboutPreview;

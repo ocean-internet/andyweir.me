@@ -3,12 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image, { imageProp } from '../../layout/image';
 import {
+    prevStyle,
+    nextStyle,
     bookLinkStyle,
     summaryStyle,
     summaryHeaderStyle,
     summaryImageStyle,
-    prevStyle,
-    nextStyle,
 } from './styles.module.scss';
 
 export default BookSummary;
@@ -42,12 +42,10 @@ function BookSummary({ isPrev, isNext, slug, title, author, image }) {
     return (
         <Link to={slug} className={className.join(' ')}>
             <section className={summaryStyle}>
-                <header className={summaryHeaderStyle}>
-                    <h1>
-                        {title}
-                        {name && <span>by {name}</span>}
-                    </h1>
-                </header>
+                <h1 className={summaryHeaderStyle}>
+                    {title}
+                    {name && <span>by {name}</span>}
+                </h1>
                 <Image image={image} alt={title} className={summaryImageStyle} ratio={ratio} />
             </section>
         </Link>

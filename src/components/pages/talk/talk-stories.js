@@ -2,14 +2,14 @@ import React from 'react';
 import faker from 'faker';
 import TalkIndexTemplate from './talk-index-template';
 import TalkTemplate from './talk-template';
-import { wrapperStyles } from '../../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../../scss/layout/styles.module.scss';
 import { generateTalkProps, generateTalkSummaryProps } from '../../../lib/story-lib';
 
 export function talkIndex() {
     const props = {
         title: faker.company.catchPhrase(),
         summary: faker.hacker.phrase(),
-        group: generateTalks(),
+        posts: generateTalks(),
     };
 
     return (
@@ -33,5 +33,5 @@ function generateTalks() {
 
     return Array(number)
         .fill(null)
-        .map(() => ({ node: generateTalkSummaryProps() }));
+        .map(() => generateTalkSummaryProps());
 }

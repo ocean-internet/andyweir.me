@@ -1,0 +1,35 @@
+@import "../settings";
+@import "../link";
+@import "../fonts";
+@mixin prev-next-page {
+    @include plainLink;
+    margin: 0 $gutter-m/2;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        align-items: stretch;
+        margin: 0 $gutter-l/2;
+        width: calc(50% - #{$gutter-l});
+    }
+    @media #{$mediaLarge} {
+        margin: 0 $gutter-xl/2;
+        width: calc(33.3333% - #{$gutter-l});
+    }
+}
+@mixin prev-page {
+    justify-self: flex-start;
+    margin-right: auto;
+    margin-top: $gutter-m;
+    @media #{$mediaMedium} {
+        margin-top: 0;
+    }
+}
+@mixin next-page{
+    justify-self: flex-end;
+    margin-left: auto;
+    @media #{$mediaMedium} {
+        order: 2;
+        h1 {
+            text-align: right;
+        }
+    }
+}

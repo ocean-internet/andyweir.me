@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import faker from 'faker';
-import { wrapperStyles } from '../../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../../scss/layout/styles.module.scss';
 import PaginationNavigation from './index';
 
 storiesOf('Components/Navigation/Pagination', module)

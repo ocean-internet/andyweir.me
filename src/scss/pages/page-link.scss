@@ -1,0 +1,50 @@
+@import "../settings";
+@import "../link";
+@import "../fonts";
+
+@mixin page-link {
+    @include plainLink;
+    display: flex;
+    flex-direction: column;
+    margin: $gutter-m/2;
+    width: calc(100% - #{$gutter-m});
+    @media #{$mediaMedium} {
+        width: calc(100% - #{$gutter-l});
+        margin: $gutter-m/2 $gutter-l/2;
+    }
+    @media #{$mediaLarge} {
+        margin: $gutter-l/2 $gutter-xl/2;
+        width: calc(50% - #{$gutter-xl});
+    }
+}
+
+@mixin page-summary {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    p {
+        @include font-s;
+        margin: 0 $gutter-s $gutter-s;
+    }
+}
+
+@mixin page-summary-heading {
+    margin: $gutter-s;
+    display: flex;
+    flex-direction: column;
+    @include font-m;
+    flex-grow: 1;
+    :last-child {
+        text-transform: initial;
+        font-family: $labelFont;
+        @include font-s;
+
+        &:before {
+            content: "\2014\00a0";
+        }
+    }
+}
+
+@mixin page-summary-image {
+    @include card-1;
+}

@@ -2,7 +2,14 @@ import { Link } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image, { imageProp } from '../../layout/image';
-import { nextStyle, prevStyle, postLinkStyle, summaryHeaderStyle, summaryImageStyle } from './styles.module.scss';
+import {
+    nextStyle,
+    prevStyle,
+    postLinkStyle,
+    summaryStyle,
+    summaryHeaderStyle,
+    summaryImageStyle,
+} from './styles.module.scss';
 
 export default PostSummary;
 
@@ -30,8 +37,8 @@ function PostSummary({ isPrev, isNext, slug, title, dateString, image, summary }
 
     return (
         <Link to={slug} className={className.join(' ')}>
-            <section className={summaryHeaderStyle}>
-                <h1>
+            <section className={summaryStyle}>
+                <h1 className={summaryHeaderStyle}>
                     {title}
                     <span>{dateString}</span>
                 </h1>

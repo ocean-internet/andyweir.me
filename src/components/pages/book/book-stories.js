@@ -3,13 +3,13 @@ import faker from 'faker';
 import { generateBookProps, generateBookSummaryProps } from '../../../lib/story-lib';
 import BookIndexTemplate from './book-index-template';
 import BookTemplate from './book-template';
-import { wrapperStyles } from '../../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../../scss/layout/styles.module.scss';
 
 export function bookIndex() {
     const props = {
         title: faker.company.catchPhrase(),
         summary: faker.hacker.phrase(),
-        group: generateBooks(),
+        posts: generateBooks(),
     };
 
     return (
@@ -34,5 +34,5 @@ function generateBooks() {
 
     return Array(number)
         .fill(null)
-        .map(() => ({ node: generateBookSummaryProps() }));
+        .map(() => generateBookSummaryProps());
 }

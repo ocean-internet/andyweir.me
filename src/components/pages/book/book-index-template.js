@@ -9,7 +9,7 @@ import BookSummary from './book-summary';
 
 export default BookIndexTemplate;
 export const BookIndexProp = {
-    group: PropTypes.arrayOf(PropTypes.any).isRequired,
+    posts: PropTypes.arrayOf(PropTypes.any).isRequired,
     index: PropTypes.number.isRequired,
     first: PropTypes.bool.isRequired,
     last: PropTypes.bool.isRequired,
@@ -21,25 +21,15 @@ export const BookIndexProp = {
 
 BookIndexTemplate.propTypes = BookIndexProp;
 
-function BookIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
+function BookIndexTemplate({ posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';
     const next = index < pageCount ? (index + 1).toString() : index.toString();
 
-    const postList = posts.map(({ node }) => ({ ...node }));
-
-    const hasPosts = !!postList.length;
+    const hasPosts = !!posts.length;
     const hasPages = !!pageCount && pageCount > 1;
 
     const bookListProps = {
-        children: postList.map(({ id: key, fields, frontmatter }) => {
-            const bookProps = {
-                key,
-                ...fields,
-                ...frontmatter,
-            };
-
-            return <BookSummary {...bookProps} />;
-        }),
+        children: posts.map(bookProps => <BookSummary {...bookProps} />),
     };
 
     const paginationNavProps = {

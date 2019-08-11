@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import BookTemplate from '../../components/pages/book/book-template';
-import { wrapperStyles } from '../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../scss/layout/styles.module.scss';
 
 export default BookPreview;
 

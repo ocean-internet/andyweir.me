@@ -1,0 +1,16 @@
+@import "../settings";
+
+@mixin page-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: -$gutter-m/2;
+    @media #{$mediaMedium} {
+        margin: -#{$gutter-m/2} -#{$gutter-l/2};
+    }
+    @media #{$mediaLarge} {
+        margin: -#{$gutter-l/2} -#{$gutter-xl/2};
+    }
+}

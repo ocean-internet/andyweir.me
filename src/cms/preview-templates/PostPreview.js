@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PostTemplate from '../../components/pages/post/post-template';
-import { wrapperStyles } from '../../scss/page/styles.module.scss';
+import { wrapperStyles } from '../../scss/layout/styles.module.scss';
 
 export default PostPreview;
 

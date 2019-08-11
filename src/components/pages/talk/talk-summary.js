@@ -2,7 +2,14 @@ import { Link } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../../layout/image';
-import { nextStyle, prevStyle, talkLinkStyle, summaryHeaderStyle, summaryImageStyle } from './styles.module.scss';
+import {
+    nextStyle,
+    prevStyle,
+    talkLinkStyle,
+    summaryStyle,
+    summaryHeaderStyle,
+    summaryImageStyle,
+} from './styles.module.scss';
 
 export default TalkSummary;
 
@@ -31,8 +38,8 @@ function TalkSummary({ isPrev, isNext, slug, title, dateString, youtube }) {
 
     return (
         <Link to={slug} className={className.join(' ')}>
-            <section className={summaryHeaderStyle}>
-                <h1>
+            <section className={summaryStyle}>
+                <h1 className={summaryHeaderStyle}>
                     {title}
                     <span>{dateString}</span>
                 </h1>

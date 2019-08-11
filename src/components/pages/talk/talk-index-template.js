@@ -9,7 +9,7 @@ import TalkSummary from './talk-summary';
 
 export default TalkIndexTemplate;
 export const TalkIndexProp = {
-    group: PropTypes.arrayOf(PropTypes.any).isRequired,
+    posts: PropTypes.arrayOf(PropTypes.any).isRequired,
     index: PropTypes.number.isRequired,
     first: PropTypes.bool.isRequired,
     last: PropTypes.bool.isRequired,
@@ -21,25 +21,15 @@ export const TalkIndexProp = {
 
 TalkIndexTemplate.propTypes = TalkIndexProp;
 
-function TalkIndexTemplate({ group: posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
+function TalkIndexTemplate({ posts = [], index = 1, first, last, pageCount = 1, title, summary }) {
     const prev = index > 2 ? (index - 1).toString() : '';
     const next = index < pageCount ? (index + 1).toString() : index.toString();
 
-    const postList = posts.map(({ node }) => ({ ...node }));
-
-    const hasPosts = !!postList.length;
+    const hasPosts = !!posts.length;
     const hasPages = !!pageCount && pageCount < 1;
 
     const talkListProps = {
-        children: postList.map(({ id: key, fields, frontmatter }) => {
-            const talkProps = {
-                key,
-                ...fields,
-                ...frontmatter,
-            };
-
-            return <TalkSummary {...talkProps} />;
-        }),
+        children: posts.map(talkProps => <TalkSummary {...talkProps} />),
     };
 
     const paginationNavProps = {
