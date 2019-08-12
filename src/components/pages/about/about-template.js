@@ -9,16 +9,17 @@ export const AboutProp = {
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     content: PropTypes.string,
+    footnote: PropTypes.string,
     contentComponent: PropTypes.func,
 };
+AboutTemplate.propTypes = AboutProp;
 AboutTemplate.defaultProps = {
     content: null,
+    footnote: null,
     contentComponent: null,
 };
 
-AboutTemplate.propTypes = AboutProp;
-
-function AboutTemplate({ title, summary, content, contentComponent }) {
+function AboutTemplate({ title, summary, content, footnote, contentComponent }) {
     const PageContent = contentComponent || Content;
 
     return (
@@ -31,6 +32,7 @@ function AboutTemplate({ title, summary, content, contentComponent }) {
                 <p>{summary}</p>
             </header>
             <PageContent className={styles.content} content={content} />
+            {footnote && <p className={footnote}>{footnote}</p>}
         </article>
     );
 }

@@ -82,11 +82,11 @@ function createAllPages(createPage, { edges: pages = [] }) {
     return Promise.all(
         pages.map(({ node: page }) => {
             const { id, frontmatter } = page;
-            const { path: pagePath, type } = frontmatter;
+            const { path: pagePath, template, type } = frontmatter;
 
             return createPage({
                 path: pagePath,
-                component: path.resolve(`src/templates/${pagePath}-${type}.js`),
+                component: path.resolve(`src/templates/${template}-${type}.js`),
                 context: { id },
             });
         })
@@ -125,6 +125,7 @@ function getData(graphql) {
                         frontmatter {
                             type
                             path
+                            template
                         }
                     }
                 }

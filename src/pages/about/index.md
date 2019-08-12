@@ -1,8 +1,10 @@
 ---
 path: about
+template: about
 type: page
 title: About Me...
 summary: 'Seven years ago, I managed to convince my employer that repairing tanks and making beds were transferable skills appropriate for a software business.'
+footnote: 
 ---
 I still work for that same employer, as part of [Headforwards](https://headforwards.com) Special Projects Division (SPD).
 

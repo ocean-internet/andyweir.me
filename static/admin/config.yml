@@ -92,12 +92,25 @@ collections:
     create: false
     delete: false
     files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: "Path", name: "path", widget: "hidden", default: "/"}
+          - {label: "Template", name: "template", widget: "hidden", default: "index"}
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Summary", name: "summary", widget: "string"}
+          - {label: "Footnote", name: "footnote", widget: "string"}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
           - {label: "Path", name: "path", widget: "hidden", default: "about"}
+          - {label: "Template", name: "template", widget: "hidden", default: "about"}
           - {label: "Type", name: "type", widget: "hidden", default: "page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Summary", name: "summary", widget: "string"}
           - {label: "Content", name: "body", widget: "markdown"}
+          - {label: "Footnote", name: "footnote", widget: "string"}
+

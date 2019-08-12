@@ -1,26 +1,25 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { wrapperStyles } from '../../scss/layout/styles.module.scss';
-import AboutTemplate from '../../components/pages/about/about-template';
+import HomeTemplate from '../../components/pages/home/home-template';
 
-export default AboutPreview;
+export default HomePreview;
 
-AboutPreview.propTypes = {
+HomePreview.propTypes = {
     entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired,
     widgetFor: PropTypes.func.isRequired,
 };
 
-function AboutPreview({ entry, widgetFor }) {
+function HomePreview({ entry }) {
     const props = {
         title: entry.getIn(['data', 'title']),
         summary: entry.getIn(['data', 'summary']),
-        content: widgetFor('body'),
         footnote: entry.getIn(['data', 'footnote']),
     };
 
     return (
         <section className={wrapperStyles}>
-            <AboutTemplate {...props} />
+            <HomeTemplate {...props} />
         </section>
     );
 }

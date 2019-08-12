@@ -60,7 +60,13 @@
 
     > footer {
         @include font-s;
-        padding: $gutter-m-xl;
+        padding: $gutter-m;
+        @media #{$mediaMedium} {
+            padding: $gutter-m-l;
+        }
+        @media #{$mediaLarge} {
+            padding: $gutter-m-xl;
+        }
         background: rgba($primary, 0.5);
         color: white;
     }

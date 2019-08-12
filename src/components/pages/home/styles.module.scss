@@ -11,7 +11,15 @@
 .textIcon {
     @include text-icon;
 }
-
-.content {
+.summary {
     @include page-content;
+}
+.footnote {
+    width: $golden-l;
+    margin: $gutter-m auto 0;
+    @include card-1;
+    padding: $gutter-m;
+    @include font-s;
+    border: 1px solid $secondary-l;
+    background: rgba($secondary-l, 1-$captionOpacity);
 }

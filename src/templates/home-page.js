@@ -1,49 +1,47 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import HTMLContent from '../components/layout/html-content';
 import Layout from '../components/layout/layout';
+import HomeTemplate, { HomeProp } from '../components/pages/home/home-template';
 import SEO from '../components/seo';
-import AboutTemplate, { AboutProp } from '../components/pages/about/about-template';
 
-export default AboutPage;
+export default HomePage;
 
-AboutPage.propTypes = {
-    data: PropTypes.shape(AboutProp).isRequired,
+HomePage.propTypes = {
+    data: PropTypes.shape(HomeProp).isRequired,
 };
 
 export const query = graphql`
-    query AboutPage($id: String!) {
+    query HomePage($id: String!) {
         page: markdownRemark(id: { eq: $id }) {
             frontmatter {
                 title
                 summary
                 footnote
             }
-            content: html
         }
     }
 `;
 
-function AboutPage({ data }) {
-    const { frontmatter, content } = data.page;
-    const { title, summary } = frontmatter;
+function HomePage({ data }) {
+    const { frontmatter } = data.page;
+    const { summary } = frontmatter;
 
     const seoProps = {
-        title,
         summary,
     };
 
     const pageProps = {
         ...frontmatter,
-        content,
         contentComponent: HTMLContent,
     };
 
     return (
         <Layout>
             <SEO {...seoProps} />
-            <AboutTemplate {...pageProps} />
+            <HomeTemplate {...pageProps} />
         </Layout>
     );
 }
