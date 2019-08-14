@@ -1,8 +1,9 @@
 ---
 path: books
 type: book
-date: 2019-02-06
-title: 'Turn The Ship Around!: A True Story of Building Leaders by Breaking the Rules'
+date: 2019-02-06T00:00:00.000Z
+title: Turn The Ship Around!
+subtitle: A True Story of Building Leaders by Breaking the Rules
 author:
   name: L. David Marquet
   url: 'https://www.davidmarquet.com'
