@@ -1,10 +1,11 @@
 ---
 path: books
 type: book
-date: 2018-12-24
-title: >-
-  The Chimp Paradox: The Mind Management Programme to Help You Achieve
-  Success, Confidence and Happiness
+date: 2018-12-24T00:00:00.000Z
+title: The Chimp Paradox
+subtitle: >-
+  The Mind Management Programme to Help You Achieve Success, Confidence and
+  Happiness
 author:
   name: Steve Peters
 image: /img/the-chimp-paradox.jpg
