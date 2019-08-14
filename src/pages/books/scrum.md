@@ -1,8 +1,9 @@
 ---
 path: books
 type: book
-date: 2019-01-19
-title: 'Scrum: The Art of Doing Twice the Work in Half the Time'
+date: 2019-01-19T00:00:00.000Z
+title: Scrum
+subtitle: The Art of Doing Twice the Work in Half the Time
 author:
   name: Jeff Sutherland
   url: 'https://twitter.com/jeffsutherland'

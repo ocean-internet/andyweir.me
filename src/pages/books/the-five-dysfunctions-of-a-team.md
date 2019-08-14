@@ -1,8 +1,9 @@
 ---
 path: books
 type: book
-date: 2019-03-23
-title: 'The Five Dysfunctions of a Team: A Leadership Fable'
+date: 2019-03-23T00:00:00.000Z
+title: The Five Dysfunctions of a Team
+subtitle: A Leadership Fable
 author:
   name: Patrick M. Lencioni
   url: 'https://twitter.com/patricklencioni'

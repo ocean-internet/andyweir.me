@@ -2,9 +2,10 @@
 path: books
 type: book
 date: 2019-05-19
-title: >-
-  The Believing Brain: From Spiritual Faiths to Political Convictions – How We
-  Construct Beliefs and Reinforce Them as Truths.
+title: The Believing Brain
+subtitle: >-
+  From Spiritual Faiths to Political Convictions – How We Construct Beliefs and
+  Reinforce Them as Truths.
 author:
   name: Michael Shermer
   url: 'https://michaelshermer.com/'

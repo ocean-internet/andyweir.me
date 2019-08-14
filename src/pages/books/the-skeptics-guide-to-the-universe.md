@@ -1,10 +1,9 @@
 ---
 path: books
 type: book
-date: 2019-03-24
-title: >-
-  The Skeptics' Guide to the Universe: How To Know What's Really Real in a World
-  Increasingly Full of Fake
+date: 2019-03-24T00:00:00.000Z
+title: The Skeptics' Guide to the Universe
+subtitle: How To Know What's Really Real in a World Increasingly Full of Fake
 author:
   name: Steven Novella
 image: /img/the-skeptics-guide-to-the-universe.jpg

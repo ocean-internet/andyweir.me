@@ -2,7 +2,8 @@
 path: books
 type: book
 date: 2016-11-01T22:43:00.000Z
-title: 'Leading Lean Software Development: Results Are not the Point'
+title: Leading Lean Software Development
+subtitle: Results Are not the Point
 author:
   name: Tom & Mary Poppendieck
   url: 'http://www.poppendieck.com/'
