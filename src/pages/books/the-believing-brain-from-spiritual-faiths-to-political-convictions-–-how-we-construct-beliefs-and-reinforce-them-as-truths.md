@@ -8,7 +8,7 @@ title: >-
 author:
   name: Michael Shermer
   url: 'https://michaelshermer.com/'
-image: /img/51a7smwpqal.jpg
+image: /img/the-believing-brain.jpg
 summary: >-
   Synthesizing thirty years of research, psychologist and science historian,
   Michael Shermer upends the traditional thinking about how humans form beliefs
