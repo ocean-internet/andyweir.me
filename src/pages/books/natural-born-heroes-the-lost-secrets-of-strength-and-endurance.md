@@ -1,8 +1,9 @@
 ---
 path: books
 type: book
-date: 2017-09-17
-title: 'Natural Born Heroes: The Lost Secrets of Strength and Endurance'
+date: 2017-09-17T00:00:00.000Z
+title: Natural Born Heroes
+subtitle: The Lost Secrets of Strength and Endurance
 author:
   name: Christopher McDougall
   url: 'https://www.chrismcdougall.com/'
