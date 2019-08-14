@@ -2,7 +2,8 @@
 path: books
 type: book
 date: 2016-10-01T21:41:00.000Z
-title: 'Implementing Lean Software Development: From Concept to Cash '
+title: Implementing Lean Software Development
+subtitle: From Concept to Cash
 author:
   name: Tom & Mary Poppendieck
   url: 'http://www.poppendieck.com/'
