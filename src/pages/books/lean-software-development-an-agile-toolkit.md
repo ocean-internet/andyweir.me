@@ -2,7 +2,8 @@
 path: books
 type: book
 date: 2016-09-01T21:08:33.592Z
-title: 'Lean Software Development: An Agile Toolkit'
+title: Lean Software Development
+subtitle: An Agile Toolkit
 author:
   name: Tom & Mary Poppendieck
   url: 'http://www.poppendieck.com/'
