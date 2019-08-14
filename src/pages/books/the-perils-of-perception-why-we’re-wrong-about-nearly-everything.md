@@ -1,7 +1,7 @@
 ---
 path: books
 type: book
-date: 2019-08-07T17:48:03.050Z
+date: 2019-03-30
 title: 'The Perils of Perception: Why We’re Wrong About Nearly Everything'
 author:
   name: Bobby Duffy

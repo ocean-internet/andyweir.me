@@ -1,7 +1,7 @@
 ---
 path: books
 type: book
-date: 2019-08-07T19:28:30.893Z
+date: 2019-03-24
 title: >-
   The Skeptics' Guide to the Universe: How To Know What's Really Real in a World
   Increasingly Full of Fake

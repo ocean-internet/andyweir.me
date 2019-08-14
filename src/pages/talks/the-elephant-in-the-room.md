@@ -1,7 +1,7 @@
 ---
 path: talks
 type: talk
-date: 2019-07-31T11:52:35.437Z
+date: 2019-07-31
 title: The Elephant in the Room
 summary: Post Agile on the Beach lightning talk.
 youtube: K4wwf3VxBDo

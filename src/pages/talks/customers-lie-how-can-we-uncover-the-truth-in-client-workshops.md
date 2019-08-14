@@ -1,7 +1,7 @@
 ---
 path: talks
 type: talk
-date: 2019-02-19T21:13:13.948Z
+date: 2019-02-19
 title: Customers Lie! How can we uncover the truth in client workshops?
 summary: >-
   Find out about my first agile project (a loft conversion for our guesthouse in

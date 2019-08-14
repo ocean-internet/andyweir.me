@@ -1,7 +1,7 @@
 ---
 path: books
 type: book
-date: 2019-08-07T17:25:02.112Z
+date: 2019-01-27
 title: Scrum Mastery
 author:
   name: Geoff Watts

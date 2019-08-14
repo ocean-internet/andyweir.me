@@ -1,7 +1,7 @@
 ---
 path: books
 type: book
-date: 2019-08-07T17:30:34.501Z
+date: 2019-01-30
 title: 'The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win'
 author:
   name: 'Gene Kim, Kevin Behr, George Spafford'

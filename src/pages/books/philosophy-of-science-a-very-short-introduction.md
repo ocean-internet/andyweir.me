@@ -1,7 +1,7 @@
 ---
 path: books
 type: book
-date: 2019-08-07T17:50:35.637Z
+date: 2019-06-23
 title: 'Philosophy of Science: A Very Short Introduction'
 author:
   name: Samir Okasha
