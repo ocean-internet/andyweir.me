@@ -13,6 +13,7 @@ BookPreview.propTypes = {
 function BookPreview({ entry, widgetFor }) {
     const props = {
         title: entry.getIn(['data', 'title']),
+        subtitle: entry.getIn(['data', 'subtitle']),
         author: entry.getIn(['data', 'author']),
         image: entry.getIn(['data', 'image']),
         summary: entry.getIn(['data', 'summary']),

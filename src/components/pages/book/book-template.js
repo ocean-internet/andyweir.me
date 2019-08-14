@@ -7,6 +7,7 @@ import * as styles from './styles.module.scss';
 export default BookTemplate;
 export const BookProp = {
     title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
     author: PropTypes.shape({
         name: PropTypes.string.isRequired,
         url: PropTypes.string,
@@ -18,8 +19,19 @@ export const BookProp = {
 };
 
 BookTemplate.propTypes = BookProp;
+BookTemplate.defaultProps = {
+    subtitle: null,
+};
 
-function BookTemplate({ title = null, author = {}, image = null, summary = null, content = null, contentComponent }) {
+function BookTemplate({
+    title = null,
+    subtitle = null,
+    author = {},
+    image = null,
+    summary = null,
+    content = null,
+    contentComponent,
+}) {
     const BookContent = contentComponent || Content;
     const { name, url } = author;
     const ratio = 198 / 129;
@@ -31,6 +43,7 @@ function BookTemplate({ title = null, author = {}, image = null, summary = null,
             <header className={styles.header}>
                 <h1>
                     {title}
+                    {subtitle && <span>{subtitle}</span>}
                     <Author />
                 </h1>
                 <p>{summary}</p>
