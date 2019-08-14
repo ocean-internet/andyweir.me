@@ -6,7 +6,7 @@ title: Scrum Mastery
 author:
   name: Geoff Watts
   url: 'https://inspectandadapt.com/about-me/'
-image: /img/411si3qkh7l.jpg
+image: /img/scrum-mastery.jpg
 summary: >-
   he basics of being a ScrumMaster are fairly straightforward: At face value all
   a ScrumMaster needs to do is facilitate the Scrum process and remove

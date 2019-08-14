@@ -5,7 +5,7 @@ date: 2019-03-30
 title: 'The Perils of Perception: Why We’re Wrong About Nearly Everything'
 author:
   name: Bobby Duffy
-image: /img/416choqdzkl.jpg
+image: /img/the-perils-of-perception.jpg
 summary: >-
   Do you eat too much sugar? What proportion of your country are immigrants?
   What does it cost to raise a child? How much tax do the rich pay? Are we more

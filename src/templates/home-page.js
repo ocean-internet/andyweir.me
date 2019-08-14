@@ -22,11 +22,11 @@ export const query = graphql`
                 footnote
             }
         }
-#        list: allMarkdownRemark {
-#            ...PostSummaryFragment
-#            ...TalkSummaryFragment
-#            ...BookSummaryFragment
-#        }
+        #        list: allMarkdownRemark {
+        #            ...PostSummaryFragment
+        #            ...TalkSummaryFragment
+        #            ...BookSummaryFragment
+        #        }
     }
 `;
 

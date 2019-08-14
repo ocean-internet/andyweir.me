@@ -7,7 +7,7 @@ title: >-
   Success, Confidence and Happiness
 author:
   name: Steve Peters
-image: /img/51cqgojmm2l.jpg
+image: /img/the-chimp-paradox.jpg
 summary: >-
   The Chimp Paradox is an incredibly powerful mind management model that can
   help you become a happy, confident, healthier and more successful person. Prof

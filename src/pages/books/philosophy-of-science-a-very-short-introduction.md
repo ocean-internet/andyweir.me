@@ -5,7 +5,7 @@ date: 2019-06-23
 title: 'Philosophy of Science: A Very Short Introduction'
 author:
   name: Samir Okasha
-image: /img/51zodwyiejl.jpg
+image: /img/philosophy-of-science.jpg
 summary: >-
   What is science? Is there a real difference between science and myth? Is
   science objective? Can science explain everything? This Very Short

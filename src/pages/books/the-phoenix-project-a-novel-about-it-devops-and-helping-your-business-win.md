@@ -5,7 +5,7 @@ date: 2019-01-30
 title: 'The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win'
 author:
   name: 'Gene Kim, Kevin Behr, George Spafford'
-image: /img/51muw70krll.jpg
+image: /img/the-phoenix-project.jpg
 summary: >-
   Five years after this sleeper hit took on the world of IT and flipped it on
   its head, the 5th Anniversary Edition of The Phoenix Project continues to

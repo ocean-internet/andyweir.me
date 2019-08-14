@@ -1,12 +1,12 @@
 ---
 path: books
 type: book
-date: 2019-08-14T19:11:48.884Z
+date: 2019-02-06
 title: 'Turn The Ship Around!: A True Story of Building Leaders by Breaking the Rules'
 author:
   name: L. David Marquet
   url: 'https://www.davidmarquet.com'
-image: /img/51inq8o4t9l.jpg
+image: /img/turn-the-ship-around.jpg
 summary: >-
   Captain David Marquet was used to giving orders. In the high-stress
   environment of the USS Santa Fe, a nuclear-powered submarine, it was crucial

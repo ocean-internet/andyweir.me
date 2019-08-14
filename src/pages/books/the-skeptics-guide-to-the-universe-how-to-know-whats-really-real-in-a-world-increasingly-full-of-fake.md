@@ -7,7 +7,7 @@ title: >-
   Increasingly Full of Fake
 author:
   name: Steven Novella
-image: /img/51jfadddyfl.jpg
+image: /img/the-skeptics-guide-to-the-universe.jpg
 summary: >-
   In this tie-in to their popular 'The Skeptics Guide to the Universe' podcast,
   Steven Novella, along with 'Skeptical Rogues' Bob Novella, Cara Santa Maria,

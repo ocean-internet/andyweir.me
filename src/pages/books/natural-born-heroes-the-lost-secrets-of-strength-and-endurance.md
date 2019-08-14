@@ -1,12 +1,12 @@
 ---
 path: books
 type: book
-date: 2019-08-14T19:25:52.146Z
+date: 2017-09-17
 title: 'Natural Born Heroes: The Lost Secrets of Strength and Endurance'
 author:
   name: Christopher McDougall
   url: 'https://www.chrismcdougall.com/'
-image: /img/reader.jpeg
+image: /img/natural-born-heroes.jpg
 summary: >-
   When Chris McDougall stumbled across the story of Churchill's 'dirty
   tricksters', a motley crew of English poets and academics who helped resist

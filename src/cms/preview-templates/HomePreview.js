@@ -6,7 +6,7 @@ import HomeTemplate from '../../components/pages/home/home-template';
 export default HomePreview;
 
 HomePreview.propTypes = {
-    entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired
+    entry: PropTypes.shape({ getIn: PropTypes.func }).isRequired,
 };
 
 function HomePreview({ entry }) {

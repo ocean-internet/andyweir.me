@@ -6,7 +6,7 @@ title: 'Scrum: The Art of Doing Twice the Work in Half the Time'
 author:
   name: Jeff Sutherland
   url: 'https://twitter.com/jeffsutherland'
-image: /img/515tsl4uozl.jpg
+image: /img/scrum.jpg
 summary: >-
   The definitive account of the Scrum methodology from its co-creator and the
   CEO of Scrum, Inc., Jeff Sutherland.
