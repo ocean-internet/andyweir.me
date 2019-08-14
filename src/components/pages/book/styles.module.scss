@@ -1,4 +1,5 @@
 @import "../../../scss/base";
+@import "../../../scss/fonts";
 @import "../../../scss/pages/index-header";
 @import "../../../scss/pages/page-list";
 @import "../../../scss/pages/page-link";
@@ -75,7 +76,17 @@
 
     @include page-header;
 
-    h1 > :last-child {
+    h1 {
+        display: block;
+        :last-child {
+            @include font-xl;
+            &:before {
+                content: '\00a0:\00a0';
+            }
+        }
+    }
+
+    .author {
         text-transform: initial;
         font-family: $labelFont;
         @include font-m;

@@ -14,6 +14,7 @@ export const query = graphql`
         page: markdownRemark(id: { eq: $id }) {
             frontmatter {
                 title
+                subtitle
                 author {
                     name
                     url
@@ -45,7 +46,7 @@ BookPage.propTypes = {
 function BookPage({ data }) {
     const { page, prev, next } = data;
     const { content, frontmatter } = page;
-    const { title, author, image, summary } = frontmatter;
+    const { title, summary } = frontmatter;
 
     const seoProps = {
         title,
@@ -53,10 +54,7 @@ function BookPage({ data }) {
     };
 
     const pageProps = {
-        title,
-        author,
-        image,
-        summary,
+        ...frontmatter,
         content,
         contentComponent: HTMLContent,
     };

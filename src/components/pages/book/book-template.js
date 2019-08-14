@@ -36,7 +36,7 @@ function BookTemplate({
     const { name, url } = author;
     const ratio = 198 / 129;
 
-    const Author = () => <span>by {url ? <a href={url}>{name}</a> : name}</span>;
+    const Author = () => <div className={styles.author}>by {url ? <a href={url}>{name}</a> : name}</div>;
 
     return (
         <Fragment>
@@ -44,8 +44,8 @@ function BookTemplate({
                 <h1>
                     {title}
                     {subtitle && <span>{subtitle}</span>}
-                    <Author />
                 </h1>
+                <Author />
                 <p>{summary}</p>
                 <Image className={styles.image} ratio={ratio} image={image} alt={title} />
             </header>

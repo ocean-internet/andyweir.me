@@ -12,6 +12,7 @@ TalkSummary.propTypes = {
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     dateString: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
     youtube: PropTypes.string.isRequired,
 };
 
@@ -20,7 +21,7 @@ TalkSummary.defaultProps = {
     isNext: false,
 };
 
-function TalkSummary({ isPrev, isNext, slug, title, dateString, youtube }) {
+function TalkSummary({ isPrev, isNext, slug, title, dateString, date, youtube }) {
     const image = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
     const ratio = 9 / 16;
 
@@ -34,7 +35,7 @@ function TalkSummary({ isPrev, isNext, slug, title, dateString, youtube }) {
             <section className={styles.summary}>
                 <h1 className={styles.summaryHeader}>
                     {title}
-                    <span>{dateString}</span>
+                    <time dateTime={date}>{dateString}</time>
                 </h1>
                 <Image image={image} className={styles.summaryImage} ratio={ratio} alt={title} />
             </section>

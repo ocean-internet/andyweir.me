@@ -41,16 +41,14 @@ PostPage.propTypes = {
 function PostPage({ data }) {
     const { page, prev, next } = data;
     const { content, frontmatter } = page;
-    const { title, image, summary } = frontmatter;
+    const { title, summary } = frontmatter;
 
     const seoProps = {
         title,
         summary,
     };
     const pageProps = {
-        title,
-        summary,
-        image,
+        ...frontmatter,
         content,
         contentComponent: HTMLContent,
     };

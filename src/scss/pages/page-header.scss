@@ -16,6 +16,7 @@
     }
 
     h1 {
+        @include font-xxl;
         display: flex;
         flex-direction: column;
     }

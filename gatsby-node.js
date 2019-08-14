@@ -145,6 +145,7 @@ function getData(graphql) {
                             path
                             title
                             dateString: date(fromNow: true)
+                            date
                             summary
                             image {
                                 childImageSharp {
@@ -176,6 +177,7 @@ function getData(graphql) {
                             path
                             title
                             dateString: date(fromNow: true)
+                            date
                             youtube
                         }
                     }

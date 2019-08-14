@@ -1,4 +1,5 @@
 @import "../../../scss/base";
+@import "../../../scss/pages/page-list";
 
 .header {
     @include page-header;
@@ -13,6 +14,9 @@
 }
 .summary {
     @include page-content;
+}
+.list {
+    @include page-list;
 }
 .footnote {
     width: $golden-l;
