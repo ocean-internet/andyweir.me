@@ -1,8 +1,9 @@
 ---
 path: books
 type: book
-date: 2019-01-27
+date: 2019-01-27T00:00:00.000Z
 title: Scrum Mastery
+subtitle: From Good To Great Servant-Leadership
 author:
   name: Geoff Watts
   url: 'https://inspectandadapt.com/about-me/'
