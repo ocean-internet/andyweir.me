@@ -3,6 +3,7 @@ path: /
 template: home
 type: page
 title: What's new...
-summary: Index page intro
-footnote: 'index page footnote'
+summary: 'Latest posts I''ve written, talks I''ve given & books I''ve read.'
+footnote: ''
 ---
+
