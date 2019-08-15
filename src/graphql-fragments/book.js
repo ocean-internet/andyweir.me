@@ -13,7 +13,7 @@ export const BookSummaryFragment = graphql`
             author {
                 name
             }
-            image {
+            bookImage: image {
                 childImageSharp {
                     fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG

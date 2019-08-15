@@ -58,9 +58,16 @@ export const query = graphql`
                         dateString: date(fromNow: true)
                         date
                         summary
-                        image {
+                        postImage: image {
                             childImageSharp {
-                                fluid {
+                                fluid(fit: COVER, maxWidth: 600, maxHeight: 400, cropFocus: ENTROPY) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                }
+                            }
+                        }
+                        bookImage: image {
+                            childImageSharp {
+                                fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
                                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }

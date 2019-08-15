@@ -12,6 +12,7 @@ TalkSummary.propTypes = {
     isNext: PropTypes.bool,
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
     dateString: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     youtube: PropTypes.string.isRequired,
@@ -23,11 +24,12 @@ TalkSummary.defaultProps = {
     isNext: false,
 };
 
-function TalkSummary({ isHome, isPrev, isNext, slug, title, dateString, date, youtube }) {
+function TalkSummary({ isHome, isPrev, isNext, slug, title, summary, dateString, date, youtube }) {
     const image = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
-    const ratio = 9 / 16;
+    const ratio = 4 / 6;
 
     const className = [styles.talkLink];
+    const isPrevNext = isPrev || isNext;
 
     isHome && className.push(styles.home);
     isPrev && className.push(styles.prev);
@@ -40,6 +42,7 @@ function TalkSummary({ isHome, isPrev, isNext, slug, title, dateString, date, yo
                     {title}
                     <time dateTime={date}>{dateString}</time>
                 </h1>
+                {!isPrevNext && <p className={styles.caption}>{summary}</p>}
                 <Image image={image} className={styles.summaryImage} ratio={ratio} alt={title} />
             </section>
         </Link>

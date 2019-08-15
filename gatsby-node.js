@@ -147,7 +147,7 @@ function getData(graphql) {
                             dateString: date(fromNow: true)
                             date
                             summary
-                            image {
+                            postImage: image {
                                 childImageSharp {
                                     fluid(fit: COVER, maxWidth: 600, maxHeight: 400, cropFocus: ENTROPY) {
                                         tracedSVG
@@ -178,6 +178,7 @@ function getData(graphql) {
                             title
                             dateString: date(fromNow: true)
                             date
+                            summary
                             youtube
                         }
                     }
@@ -200,7 +201,7 @@ function getData(graphql) {
                             author {
                                 name
                             }
-                            image {
+                            bookImage: image {
                                 childImageSharp {
                                     fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
                                         tracedSVG

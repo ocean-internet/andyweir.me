@@ -19,12 +19,21 @@
 }
 
 @mixin page-summary {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    p {
-        @include font-s;
-        margin: 0 $gutter-s $gutter-s;
+    .caption {
+        @include font-m;
+        z-index: 100;
+        text-align:center;
+        position: absolute;
+        margin: 0;
+        padding: $gutter-s;
+        bottom:0;
+        left: 0;
+        right:0;
+        background: rgba($chalk, $captionOpacity);
     }
 }
 

@@ -12,7 +12,7 @@ export const PostSummaryFragment = graphql`
             title
             dateString: date(fromNow: true)
             summary
-            image {
+            postImage: image {
                 childImageSharp {
                     fluid(fit: COVER, maxWidth: 600, maxHeight: 400, cropFocus: ENTROPY) {
                         ...GatsbyImageSharpFluid_withWebp_tracedSVG

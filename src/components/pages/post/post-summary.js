@@ -14,7 +14,8 @@ PostSummary.propTypes = {
     title: PropTypes.string.isRequired,
     dateString: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    image: imageProp.isRequired,
+    postImage: imageProp.isRequired,
+    summary: PropTypes.string.isRequired,
 };
 
 PostSummary.defaultProps = {
@@ -23,7 +24,7 @@ PostSummary.defaultProps = {
     isNext: false,
 };
 
-function PostSummary({ isHome, isPrev, isNext, slug, title, dateString, date, image }) {
+function PostSummary({ isHome, isPrev, isNext, slug, title, dateString, date, postImage: image, summary }) {
     const className = [styles.postLink];
     const isPrevNext = isPrev || isNext;
 
@@ -38,7 +39,7 @@ function PostSummary({ isHome, isPrev, isNext, slug, title, dateString, date, im
                     {title}
                     <time dateTime={date}>{dateString}</time>
                 </h1>
-                {!isPrevNext && <p>{styles.summary}</p>}
+                {!isPrevNext && <p className={styles.caption}>{summary}</p>}
                 <Image className={styles.summaryImage} image={image} alt={title} />
             </section>
         </Link>

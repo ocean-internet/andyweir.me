@@ -21,7 +21,7 @@ HomeTemplate.defaultProps = {
     footnote: null,
 };
 
-function HomeTemplate({ title, summary, list=[], footnote }) {
+function HomeTemplate({ title, summary, list = [], footnote }) {
     const listProps = {
         children: list.map(({ id: key, fields, frontmatter }) => {
             const props = {

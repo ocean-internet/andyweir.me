@@ -14,11 +14,11 @@ BookSummary.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     author: PropTypes.shape({
-                                name: PropTypes.string.isRequired,
-                                url: PropTypes.string,
-                            }).isRequired,
-    image: imageProp.isRequired,
-    summary: imageProp.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string,
+    }).isRequired,
+    bookImage: imageProp.isRequired,
+    summary: PropTypes.string.isRequired,
 };
 
 BookSummary.defaultProps = {
@@ -27,7 +27,7 @@ BookSummary.defaultProps = {
     isNext: false,
 };
 
-function BookSummary({ isHome, isPrev, isNext, slug, title, subtitle, author, image, summary }) {
+function BookSummary({ isHome, isPrev, isNext, slug, title, subtitle, author, bookImage: image, summary }) {
     const ratio = 198 / 129;
     const { name } = author;
 
