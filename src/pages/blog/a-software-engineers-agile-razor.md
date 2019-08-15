@@ -2,7 +2,7 @@
 path: blog
 type: post
 date: 2019-08-01T20:24:32.157Z
-title: A Software Engineers Agile Razor
+title: A Software Engineers' Agile Razor
 image: /img/razor-blade.jpg
 summary: >-
   Is what I'm doing contributing towards, or delaying delivery the next piece of
