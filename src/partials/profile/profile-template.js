@@ -63,10 +63,12 @@ function ProfileTemplate({
     return (
         <section className={className} style={style}>
             <CloseIcon className={styles.close} onClick={toggleMenu} />
-            <header>
-                <h1>{title}</h1>
-                {profileImage && <Image className={styles.profileImage} image={profileImage} alt={title} />}
-            </header>
+            <Link to="/">
+                <header>
+                    <h1>{title}</h1>
+                    {profileImage && <Image className={styles.profileImage} image={profileImage} alt={title} />}
+                </header>
+            </Link>
             <Summary content={summary} />
             <nav className={styles.pageNav}>
                 <Link activeClassName={styles.active} to="/" onClick={toggleMenu}>
