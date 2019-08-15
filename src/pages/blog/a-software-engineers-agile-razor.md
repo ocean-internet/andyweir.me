@@ -5,8 +5,8 @@ date: 2019-08-01T20:24:32.157Z
 title: A Software Engineers' Agile Razor
 image: /img/razor-blade.jpg
 summary: >-
-  Is what I'm doing contributing towards, or delaying delivery of the next piece
-  of "valuable software"?
+  Is what I'm doing contributing towards, or delaying delivery of, the next
+  piece of "valuable software"?
 ---
 The first of the [12 Principals](https://agilemanifesto.org/principles.html) behind the [Agile Manifesto](https://agilemanifesto.org) states:
 
