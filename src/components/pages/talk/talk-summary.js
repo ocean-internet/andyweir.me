@@ -7,6 +7,7 @@ import * as styles from './styles.module.scss';
 export default TalkSummary;
 
 TalkSummary.propTypes = {
+    isHome: PropTypes.bool,
     isPrev: PropTypes.bool,
     isNext: PropTypes.bool,
     slug: PropTypes.string.isRequired,
@@ -17,16 +18,18 @@ TalkSummary.propTypes = {
 };
 
 TalkSummary.defaultProps = {
+    isHome: false,
     isPrev: false,
     isNext: false,
 };
 
-function TalkSummary({ isPrev, isNext, slug, title, dateString, date, youtube }) {
+function TalkSummary({ isHome, isPrev, isNext, slug, title, dateString, date, youtube }) {
     const image = `https://img.youtube.com/vi/${youtube}/hqdefault.jpg`;
     const ratio = 9 / 16;
 
     const className = [styles.talkLink];
 
+    isHome && className.push(styles.home);
     isPrev && className.push(styles.prev);
     isNext && className.push(styles.next);
 

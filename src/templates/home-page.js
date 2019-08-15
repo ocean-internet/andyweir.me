@@ -51,6 +51,7 @@ export const query = graphql`
                     frontmatter {
                         type
                         title
+                        subtitle
                         author {
                             name
                         }

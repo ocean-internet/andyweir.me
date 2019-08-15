@@ -7,6 +7,7 @@ import * as styles from './styles.module.scss';
 export default PostSummary;
 
 PostSummary.propTypes = {
+    isHome: PropTypes.bool,
     isPrev: PropTypes.bool,
     isNext: PropTypes.bool,
     slug: PropTypes.string.isRequired,
@@ -17,14 +18,16 @@ PostSummary.propTypes = {
 };
 
 PostSummary.defaultProps = {
+    isHome: false,
     isPrev: false,
     isNext: false,
 };
 
-function PostSummary({ isPrev, isNext, slug, title, dateString, date, image }) {
+function PostSummary({ isHome, isPrev, isNext, slug, title, dateString, date, image }) {
     const className = [styles.postLink];
     const isPrevNext = isPrev || isNext;
 
+    isHome && className.push(styles.home);
     isPrev && className.push(styles.prev);
     isNext && className.push(styles.next);
 

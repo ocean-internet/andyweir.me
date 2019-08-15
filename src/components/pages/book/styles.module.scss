@@ -23,10 +23,17 @@
         margin: $gutter-m/2 $gutter-l/2;
         width: calc(50% - #{$gutter-l});
     }
+    &.home {
+        width: calc(100% - #{$gutter-m});
+    }
     @media #{$mediaLarge} {
         margin: $gutter-l/2 $gutter-xl/2;
         width: calc(33.33333% - #{$gutter-xl});
-    }}
+        &.home {
+            width: calc(50% - #{$gutter-xl});
+        }
+    }
+}
 
 .summary {
     @include page-summary;
@@ -36,12 +43,55 @@
 }
 
 .summaryHeader {
-    @include page-summary-heading;
+    @include page-header;
     order: 2;
     flex-basis: calc(#{$golden-l} - #{2*$gutter-m});
-    margin: 0;
     padding-left: $gutter-m;
+    h1 {
+        @include font-l;
+        display: block;
+        margin-bottom: $gutter-s;
+        :last-child {
+            @include font-m;
+            &:before {
+                content: ':\00a0';
+            }
+        }
+    }
+
+    .author {
+        text-transform: initial;
+        font-family: $labelFont;
+        @include font-s;
+
+        &:before {
+            content: "\2014\00a0";
+        }
+    }
+
+    p {
+        @include font-m;
+    }
 }
+//    display: flex;
+//    flex-direction: column;
+//    h1 {
+//    @include font-m;
+//    flex-grow: 1;
+//    :last-child {
+//        text-transform: initial;
+//        font-family: $labelFont;
+//        @include font-s;
+//
+//        &:before {
+//            content: "\2014\00a0";
+//        }
+//    }
+//    order: 2;
+//    flex-basis: calc(#{$golden-l} - #{2*$gutter-m});
+//    margin: 0;
+//    padding-left: $gutter-m;
+//}
 
 .summaryImage {
     @include page-summary-image;
@@ -81,7 +131,7 @@
         :last-child {
             @include font-xl;
             &:before {
-                content: '\00a0:\00a0';
+                content: ':\00a0';
             }
         }
     }
