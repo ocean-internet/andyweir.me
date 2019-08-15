@@ -1,13 +1,11 @@
 ---
 path: talks
 type: talk
-date: 2019-02-19
+date: 2019-02-19T00:00:00.000Z
 title: Customers Lie! How can we uncover the truth in client workshops?
 summary: >-
-  Find out about my first agile project (a loft conversion for our guesthouse in
-  Newquay) and the lean principals I learned from "Mez the builder". Take a
-  crash course in Behaviour Driven Development (BDD), and find out how I use
-  deliberate discovery to "hear" what clients want.
+  My first agile project, and the lean principals I learned from "Mez the
+  builder".
 youtube: GJO21Nex_ho
 ---
 First, find out about my first agile project (a loft conversion for our guesthouse in Newquay) and the lean principals I learned from "Mez the builder". This is a brief overview of the Agile principals (what good agile talk would be complete without it) without reading out loud the Agile Manifesto from a powerpoint slide.
