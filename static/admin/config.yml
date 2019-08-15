@@ -5,6 +5,10 @@ publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
+media_library:
+  name: uploadcare
+  config:
+    publicKey: 9ee93bb42e3280f03126
 
 site_url: https://andyweir.me
 logo_url: /img/andy-weir.jpg
