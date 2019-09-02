@@ -3,7 +3,7 @@ path: blog
 type: post
 date: 2019-09-01T20:33:16.106Z
 title: The Pareto Principal - Agile's Secret Sauce
-image: /img/14566416_10155014001021490_4309608384918274850_o.jpg
+image: /img/pareto-principal.jpg
 summary: >-
   The Pareto principle helps Agile software development deliver on the promise
   of "Doing Twice the Work in Half the Time"
