@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 import React, { Fragment } from 'react';
 import { Home as HomeIcon } from 'react-feather';
 import BookSummary from '../book/book-summary';
@@ -8,10 +8,16 @@ import * as styles from './styles.module.scss';
 
 export default HomeTemplate;
 export const HomeProp = {
-    title: PropTypes.string.isRequired,
-    summary: PropTypes.string,
-    list: PropTypes.arrayOf(PropTypes.any).isRequired,
-    footnote: PropTypes.string,
+    title: string.isRequired,
+    summary: string,
+    list: arrayOf(
+        shape({
+            frontmatter: shape({
+                type: string,
+            }),
+        })
+    ).isRequired,
+    footnote: string,
 };
 
 HomeTemplate.propTypes = HomeProp;
@@ -31,6 +37,7 @@ function HomeTemplate({ title, summary, list = [], footnote }) {
                 ...frontmatter,
             };
 
+            // eslint-disable-next-line react/prop-types
             const { type } = props;
 
             switch (type) {

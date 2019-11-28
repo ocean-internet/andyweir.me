@@ -26,7 +26,7 @@ function Profile({ showMenu, toggleMenu }) {
                     title
                     profileImage {
                         childImageSharp {
-                            fluid {
+                            fluid(maxWidth: 100, maxHeight: 100) {
                                 ...GatsbyImageSharpFluid_withWebp
                             }
                         }

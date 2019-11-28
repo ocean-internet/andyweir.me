@@ -31,6 +31,7 @@ HomePage.propTypes = {
 export const query = graphql`
     query HomePage($id: String!) {
         page: markdownRemark(id: { eq: $id }) {
+            id
             frontmatter {
                 title
                 summary
@@ -67,7 +68,7 @@ export const query = graphql`
                         }
                         bookImage: image {
                             childImageSharp {
-                                fluid(fit: COVER, maxWidth: 516, maxHeight: 792, cropFocus: ENTROPY) {
+                                fluid(fit: COVER, maxWidth: 316, maxHeight: 485, cropFocus: ENTROPY) {
                                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }

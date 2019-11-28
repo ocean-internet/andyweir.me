@@ -25,9 +25,9 @@ function LayoutTemplate({ children, showMenu, toggleMenu }) {
             }
             profile: markdownRemark(frontmatter: { partial: { eq: "profile" } }) {
                 frontmatter {
-                    logo: profileImage {
+                    profileImage {
                         childImageSharp {
-                            fluid(maxWidth: 64, maxHeight: 64) {
+                            fluid(maxWidth: 48, maxHeight: 48) {
                                 ...GatsbyImageSharpFluid_withWebp
                             }
                         }
@@ -38,7 +38,7 @@ function LayoutTemplate({ children, showMenu, toggleMenu }) {
     `);
 
     const { title } = site.siteMetadata;
-    const { logo } = profile.frontmatter;
+    const { profileImage } = profile.frontmatter;
 
     return (
         <Fragment>
@@ -46,7 +46,7 @@ function LayoutTemplate({ children, showMenu, toggleMenu }) {
             <section className={page}>
                 <nav>
                     <Link to="/" className={homeLinkStyle}>
-                        <Image image={logo} alt={title} className={logoStyle} />
+                        <Image image={profileImage} alt={title} className={logoStyle} />
                         <h1>{title}</h1>
                     </Link>
                     <Menu onClick={toggleMenu} />
